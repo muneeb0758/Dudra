@@ -1,4 +1,3 @@
-//   Mukesh  is responsible
 
 import {
   Box,
@@ -34,6 +33,9 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { CheckCircleIcon, WarningIcon } from '@chakra-ui/icons'
 import { userLogin, userLogout } from '../Redux/auth/auth.actions'
+import dudra from './images/dudra.png'
+
+
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const dispatch = useDispatch()
@@ -120,7 +122,7 @@ const Navbar = () => {
             <Link to='/'>
               <Image
                 className="logo"
-                src="https://imgur.com/a/Ra7TyzG"
+                src= {dudra}
                 alt="logo"
               />
             </Link>
@@ -215,128 +217,42 @@ const Navbar = () => {
             margin="auto"
             id="hover-black"
           >
-            <Link to='/brands'><div id="menu-title">Brands</div></Link>
+            {/* <Link to='/brands'><div id="menu-title">Brands</div></Link> */}
             <div id="menu-dropdown">
-              <Link to='/holiday'><div id="menu-title">Holiday Gifts</div></Link>
-              <div className="menu-dropdown-content">
-                <Box display="flex" gap="50px" pt={5} padding="20px">
-                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
-                    <p
-                      style={{
-                        paddingTop: "15px",
-                        textAlign: "left",
-                        borderTop: "1px solid gray",
-                        fontWeight: "bold",
-                        marginBottom: "20px",
-                      }}
-                    >
-                      Populer Categories
-                    </p>
-                    <div
-                      style={{
-                        textAlign: "left",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "10px",
-                      }}
-                    >
-                      <Link to='/holiday'><p>Show All Products by Beuty Gift</p></Link>
-                      <Link to='/holiday'>   <p>Our Favorite Beuty Gift Sets</p></Link>
-                      <Link to='/holiday'>      <p>Skinstore Exclusive Gifts</p></Link>
-                      <Link to='/holiday'>   <p>SkinStore's Holiday Edit Box</p></Link>
-                      <Link to='/holiday'>     <p>Holiday Gift Ideas for Her</p></Link>
-                      <Link to='/holiday'>     <p>Holiday Gift Ideas for Him</p></Link>
-                    </div>
-                  </div>
-                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
-                    <p
-                      style={{
-                        paddingTop: "15px",
-                        textAlign: "left",
-                        borderTop: "1px solid gray",
-                        fontWeight: "bold",
-                        marginBottom: "20px",
-                      }}
-                    >
-                      By Gift Idea
-                    </p>
-                    <div
-                      style={{
-                        textAlign: "left",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "10px",
-                      }}
-                    >
-                      <Link to='/holiday'> <p>Budget Friendly and Small Gifts</p></Link>
-                      <Link to='/holiday'> <p>Stocking Stuffer Ideas</p></Link>
-                      <Link to='/holiday'> <p>Thoughtful Gifts for Smart Splurges</p></Link>
-                      <Link to='/holiday'> <p>Luxury Holiday Gifts</p></Link>
-                      <Link to='/holiday'> <p> Last Minute Gift Ideas</p></Link>
-                      <Link to='/holiday'> <p>Gifts For You</p></Link>
-                    </div>
-                  </div>
+  <Link to='/brands'><div id="menu-title">Brands</div></Link>
+  <div className="menu-dropdown-content">
+    <Box display="flex" gap="50px" pt={5} padding="20px">
+      <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
+        <p style={{
+          paddingTop: "15px",
+          textAlign: "left",
+          borderTop: "1px solid gray",
+          fontWeight: "bold",
+          marginBottom: "20px",
+        }}>
+          Shop by Brand
+        </p>
+        <div style={{
+          textAlign: "left",
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px",
+        }}>
+          <Link to='/brands'><p>All Brands</p></Link>
+          <Link to='/brands/Dudra'><p>Dudra</p></Link>
+          <Link to='/brands/countryrange'><p>Country Range</p></Link>
+          <Link to='/brands/eurocollection'><p>Euro Collection</p></Link>
+          <Link to='/brands/naturevalley'><p>Nature Valley</p></Link>
+          {/* Add more brands here */}
+        </div>
+      </div>
+    </Box>
+  </div>
+</div>
 
-                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
-                    <p
-                      style={{
-                        paddingTop: "15px",
-                        textAlign: "left",
-                        borderTop: "1px solid gray",
-                        fontWeight: "bold",
-                        marginBottom: "20px",
-                      }}
-                    >
-                      By Price
-                    </p>
-                    <div
-                      style={{
-                        textAlign: "left",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "10px",
-                      }}
-                    >
-                      <Link to='/holiday'><p>Gifts Under $25</p></Link>
-                      <Link to='/holiday'><p>Gifts Under $50</p></Link>
-                      <Link to='/holiday'><p>Gifts Under $100</p></Link>
-                      <Link to='/holiday'><p>Gifts Over $100</p></Link>
-                    </div>
-                  </div>
+           
 
-                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
-                    <p
-                      style={{
-                        paddingTop: "15px",
-                        textAlign: "left",
-                        borderTop: "1px solid gray",
-                        fontWeight: "bold",
-                        marginBottom: "20px",
-                      }}
-                    >
-                      By Category
-                    </p>
-                    <div
-                      style={{
-                        textAlign: "left",
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "10px",
-                      }}
-                    >
-                      <Link to='/holiday'><p>Skin Care Gifts</p></Link>
-                      <Link to='/holiday'><p>Body Care Gifts</p></Link>
-                      <Link to='/holiday'><p>Home Scents and Candle Gifts</p></Link>
-                      <Link to='/holiday'><p>Makeup Gifts</p></Link>
-                      <Link to='/holiday'><p>Hair Care Gifts</p></Link>
-                      <Link to='/holiday'><p>Beauty Tools and Hair Styling Gifts</p></Link>
-                    </div>
-                  </div>
-                </Box>
-              </div>
-            </div>
-
-            <div id="menu-dropdown">
+            {/* <div id="menu-dropdown">
               <Link to='/sale'> <div id="menu-title">Sales</div></Link>
               <div className="menu-dropdown-content">
                 <Box display="flex" gap="50px" pt={5} padding="20px">
@@ -452,9 +368,9 @@ const Navbar = () => {
                   </div>
                 </Box>
               </div>
-            </div>
+            </div> */}
 
-            <div id="menu-dropdown">
+            {/* <div id="menu-dropdown">
               <Link to="/skincare"><div id="menu-title">Skin Care</div></Link>
               <div className="menu-dropdown-content">
                 <Box display="flex" gap="50px" pt={5} padding="20px">
@@ -604,10 +520,10 @@ const Navbar = () => {
                   </div>
                 </Box>
               </div>
-            </div>
+            </div> */}
 
             <div id="menu-dropdown">
-              <Link to='/hair'><div id="menu-title">Hair</div></Link>
+              <Link to='/breakfast'><div id="menu-title">Snacks</div></Link>
               <div className="menu-dropdown-content">
                 <Box display="flex" gap="50px" pt={5} padding="20px">
                   <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
@@ -620,7 +536,7 @@ const Navbar = () => {
                         marginBottom: "20px",
                       }}
                     >
-                      Populer Categories
+                      Popular Categories
                     </p>
                     <div
                       style={{
@@ -630,15 +546,15 @@ const Navbar = () => {
                         gap: "10px",
                       }}
                     >
-                      <Link to='/hair'><p>View All Hair Care</p></Link>
+                      <Link to='/hair'><p>View All Snacks</p></Link>
                       <Link to='/hair'><p>New In</p></Link>
-                      <Link to='/hair'><p>Clean Hair Care</p></Link>
-                      <Link to='/hair'><p>5 Rated Products</p></Link>
-                      <Link to='/hair'><p>Gift and Sets</p></Link>
-                      <Link to='/hair'><p>Travel Sizes</p></Link>
+                      <Link to='/hair'><p>Breakfast Cereals</p></Link>
+                      <Link to='/hair'><p>Choclates and Biscuits</p></Link>
+                      <Link to='/hair'><p>Drinks</p></Link>
+                      {/* <Link to='/hair'><p></p></Link> */}
                     </div>
                   </div>
-                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
+                  {/* <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
                     <p
                       style={{
                         paddingTop: "15px",
@@ -649,8 +565,8 @@ const Navbar = () => {
                       }}
                     >
                       Products Type
-                    </p>
-                    <div
+                    </p> }
+                    {/* <div
                       style={{
                         textAlign: "left",
                         display: "flex",
@@ -658,16 +574,16 @@ const Navbar = () => {
                         gap: "10px",
                       }}
                     >
-                      <Link to='/hair'> <p>Shampoo</p></Link>
-                      <Link to='/hair'> <p>Conditioners</p></Link>
-                      <Link to='/hair'> <p>Hair Treatments</p></Link>
-                      <Link to='/hair'> <p>Hair Masks</p></Link>
+                      <Link to='/hair'> <p>Cereal</p></Link>
+                      <Link to='/hair'> <p>Oats</p></Link>
+                      <Link to='/hair'> <p>Madera Cake</p></Link>
+                      <Link to='/hair'> <p></p></Link>
                       <Link to='/hair'> <p>Hair Oils</p></Link>
                       <Link to='/hair'> <p>Hair Sprays</p></Link>
-                    </div>
+                    </div> }
                   </div>
 
-                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
+                  { <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
                     <p
                       style={{
                         paddingTop: "15px",
@@ -694,9 +610,9 @@ const Navbar = () => {
                       <Link to='/hair'><p>Damaged Hair</p></Link>
                       <Link to='/hair'><p>Dry Hair</p></Link>
                     </div>
-                  </div>
+                  </div> }
 
-                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
+                  { <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
                     <p
                       style={{
                         paddingTop: "15px",
@@ -720,9 +636,9 @@ const Navbar = () => {
                       <p>Hair Dryers</p>
                       <p>Rollers & Curling Tongs</p>
                     </div>
-                  </div>
+                  </div> }
 
-                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
+                  { <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
                     <p
                       style={{
                         paddingTop: "15px",
@@ -746,32 +662,157 @@ const Navbar = () => {
                       <Link to='/hair'><p>Hair Removal Products</p></Link>
                       <Link to='/hair'><p>Men Shaving Products</p></Link>
                     </div>
-                  </div>
-                </Box>
-              </div>
-            </div>
+                    </div> */}
+                  </Box>
+                    </div>
+                </div>
 
             <div>
-              <Link to='/makeup'><div id="menu-title">Makeup</div></Link>
+              <Link to='/fruits'><div id="menu-title">Fruits & Veg</div></Link>
             </div>
             <div>
               <Link to='/bathbeauty'><div id="menu-title">Bath & Body</div></Link>
             </div>
             <div>
-              <Link to='/fragrence'><div id="menu-title">Fragrence</div></Link>
+              <Link to='/fragrence'><div id="menu-title">Spices</div></Link>
             </div>
+           
             <div>
-              <Link to="/selfcare"><div id="menu-title">Self Care</div></Link>
+              <Link to='/tools'><div id="menu-title">Packaging</div></Link>
             </div>
-            <div>
-              <Link to='/tools'><div id="menu-title">Tools</div></Link>
-            </div>
-            <div>
+            {/* <div>
               <Link to='/news'><div id="menu-title">News & Trending</div></Link>
             </div>
             <div>
               <Link to='/latest'><div id="menu-title">Latest</div></Link>
+            </div> */}
+
+
+
+
+<div id="menu-dropdown">
+              <Link to='/holiday'><div id="menu-title">Gifts</div></Link>
+              <div className="menu-dropdown-content">
+                <Box display="flex" gap="50px" pt={5} padding="20px">
+                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
+                    <p
+                      style={{
+                        paddingTop: "15px",
+                        textAlign: "left",
+                        borderTop: "1px solid gray",
+                        fontWeight: "bold",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Popular Categories
+                    </p>
+                    <div
+                      style={{
+                        textAlign: "left",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                    >
+                      <Link to='/holiday'><p>Show All Gifts</p></Link>
+                      {/* <Link to='/holiday'>   <p>Our Favorite Beuty Gift Sets</p></Link> */}
+                      <Link to='/holiday'>      <p>Dudra Exclusive Gifts</p></Link>
+                      <Link to='/holiday'>   <p>Dudra's Holiday Edit Box</p></Link>
+                      <Link to='/holiday'>     <p>Holiday Gift Ideas for Her</p></Link>
+                      <Link to='/holiday'>     <p>Holiday Gift Ideas for Him</p></Link>
+                    </div>
+                  </div>
+                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
+                    <p
+                      style={{
+                        paddingTop: "15px",
+                        textAlign: "left",
+                        borderTop: "1px solid gray",
+                        fontWeight: "bold",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      By Gift Idea
+                    </p>
+                    <div
+                      style={{
+                        textAlign: "left",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                    >
+                      <Link to='/holiday'> <p>Budget Friendly and Small Gifts</p></Link>
+                      {/* <Link to='/holiday'> <p>Stocking Stuffer Ideas</p></Link> */}
+                      {/* <Link to='/holiday'> <p>Thoughtful Gifts for Smart Splurges</p></Link> */}
+                      <Link to='/holiday'> <p>Luxury Holiday Gifts</p></Link>
+                      <Link to='/holiday'> <p> Last Minute Gift Ideas</p></Link>
+                      <Link to='/holiday'> <p>Gifts For You</p></Link>
+                    </div>
+                  </div>
+
+                  {/* <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
+                    <p
+                      style={{
+                        paddingTop: "15px",
+                        textAlign: "left",
+                        borderTop: "1px solid gray",
+                        fontWeight: "bold",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      By Price
+                    </p>
+                    <div
+                      style={{
+                        textAlign: "left",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                    >
+                      <Link to='/holiday'><p>Gifts Under $25</p></Link>
+                      <Link to='/holiday'><p>Gifts Under $50</p></Link>
+                      <Link to='/holiday'><p>Gifts Under $100</p></Link>
+                      <Link to='/holiday'><p>Gifts Over $100</p></Link>
+                    </div>
+                  </div> */}
+
+                  <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
+                    <p
+                      style={{
+                        paddingTop: "15px",
+                        textAlign: "left",
+                        borderTop: "1px solid gray",
+                        fontWeight: "bold",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      By Category
+                    </p>
+                    <div
+                      style={{
+                        textAlign: "left",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "10px",
+                      }}
+                    >
+                      <Link to='/holiday'><p>Skin Care Gifts</p></Link>
+                      <Link to='/holiday'><p>Body Care Gifts</p></Link>
+                      {/* <Link to='/holiday'><p>Home Scents and Candle Gifts</p></Link> */}
+                      {/* <Link to='/holiday'><p>Makeup Gifts</p></Link> */}
+                      {/* <Link to='/holiday'><p>Hair Care Gifts</p></Link> */}
+                      {/* <Link to='/holiday'><p>Beauty Tools and Hair Styling Gifts</p></Link> */}
+                    </div>
+                  </div>
+                </Box>
+              </div>
             </div>
+
+
+
+
             <div>
               <Link to='/admin'><div id="menu-title">Admin</div></Link>
             </div>
@@ -843,7 +884,9 @@ const Navbar = () => {
               </DrawerHeader>
                 }
 
-                <DrawerBody>
+             
+
+        <DrawerBody>
                   <Box display="flex" flexDirection="column" gap="20px">
                     <Link to="/brands" onClick={onClose}>Brands</Link>
                     <Link to="/holiday" onClick={onClose}>Holiday Gif</Link>
@@ -857,6 +900,7 @@ const Navbar = () => {
                   </Box>
                 </DrawerBody>
 
+
               </DrawerContent>
             </Drawer>
           </div>
@@ -866,7 +910,7 @@ const Navbar = () => {
 
         <div>
           <Link to="/">
-            <img style={{ width: "90px", height: "25px" }} src="https://imgur.com/a/Ra7TyzG" alt="logo" />
+            <img style={{ width: "90px", height: "25px" }} src={dudra} alt="logo" />
           </Link>
         </div>
 

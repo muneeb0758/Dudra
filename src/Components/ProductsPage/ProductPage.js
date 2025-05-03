@@ -1,5 +1,7 @@
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import { SkeletonCircle } from "@chakra-ui/react";
+import olives from '../Pages/images/dudra.png'
+import { allProducts } from "./allprooducts";
 
 import {
   Box,
@@ -79,21 +81,21 @@ const filters = {
 };
 
 const brands = [
-  "almay",
-  "anna sui",
-  "annabelle",
-  "cargo cosmetics",
-  "clinique",
-  "coastal classic creation",
-  "colourpop",
-  "covergirl",
-  "dalish",
-  "deciem",
-  "dior",
-  "dr. hauschka",
-  "maybelline",
-  "milani",
-  "mineral fusion",
+  "Kellogs",
+  "Dudra",
+  "Funtime",
+  "Tate & Lyle",
+  "Nature Valley",
+  "Country Range",
+  "Chef's Larder",
+  "Mornflake",
+  "Fruitypot",
+  "Mars",
+  "Snickers",
+  "Centrefeed Blue Roll",
+  "Walkers",
+  "Euro Collection",
+  "Nescafe",
 ];
 const categories = [
   "foundation",
@@ -163,22 +165,56 @@ const Shop = () => {
     onClose();
   };
 
+
+
+  const mockProducts = {
+    Dudra: [
+      { id: 1, name: "Dudra Olives", price: 49, image_link: 'https://i.imgur.com/W0CIqnJ.png' },
+      { id: 2, name: "Dudra Moisturizer", price: 39, image_link: "https://i.imgur.com/W0CIqnJ.png" },
+    ],
+    Kellogs: [
+      { id: 3, name: "Kellogs Cereal", price: 29, image_link: "https://i.imgur.com/W0CIqnJ.png" },
+    ],
+    // Add other brands...
+  };
+
+
   useEffect(() => {
     setLoading(true);
-    brand == ""
-      ? fetch(
-          `https://makeup-api.herokuapp.com/api/v1/products.json?&product_type=${category}&price_greater_than=11&price_lesser_than=${price}`
-        )
-          .then((res) => res.json())
-          .then((res) => setProducts(res))
-          .then((r) => setLoading(false))
-      : fetch(
-          `https://makeup-api.herokuapp.com/api/v1/products.json?&product_type=${category}&price_greater_than=11&price_lesser_than=${price}&brand=${brand}`
-        )
-          .then((res) => res.json())
-          .then((res) => setProducts(res))
-          .then((r) => setLoading(false));
-  }, [price, brand, category]);
+    if (brand) {
+      // Use mock data instead of API
+      const filteredProducts = allProducts[brand] || [];
+      setProducts(filteredProducts);
+    } else {
+      // Default view (all products)
+      const totalProducts = Object.values(allProducts).flat();
+      setProducts(totalProducts);
+    }
+    setLoading(false);
+  }, [brand, category, price]);
+
+
+
+
+// src/data/productsData.js
+
+
+  // useEffect(() => {
+  //   setLoading(true);
+  //   brand == ""
+  //     ? fetch(
+  //         `https://makeup-api.herokuapp.com/api/v1/products.json?&product_type=${category}&price_greater_than=11&price_lesser_than=${price}`
+  //       )
+  //         .then((res) => res.json())
+  //         .then((res) => setProducts(res))
+  //         .then((r) => setLoading(false))
+  //     : fetch(
+  //         `https://makeup-api.herokuapp.com/api/v1/products.json?&product_type=${category}&price_greater_than=11&price_lesser_than=${price}&brand=${brand}`
+  //       )
+  //         .then((res) => res.json())
+  //         .then((res) => setProducts(res))
+  //         .then((r) => setLoading(false));
+  // }, [price, brand, category]);
 
   return (
     <>

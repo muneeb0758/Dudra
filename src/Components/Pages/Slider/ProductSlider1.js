@@ -5,6 +5,7 @@ import ProductCard1 from "./ProductCard1";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProductSlider.css";
+import breakfast from "../images/breakfast.jpeg";
 
 class ProductSlider1 extends Component {
   constructor() {
@@ -12,62 +13,62 @@ class ProductSlider1 extends Component {
     this.state = {
       slides: [
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/13973768-8004998593922840.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"Chantecaille The Ultimate Lifting Duo (Worth $625.00)",
              discountmessage:"25% off with code REPLAY",
              price:"$550"
         
         },
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/13973771-3984998807083745.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"Eve Lom Decadent Double  Holiday Set 2022 (Worth $235.00)",
              discountmessage:"25% off with code REPLAY",
              price:"$350"
         },
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/13899712-9554998013127739.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"Elemis Cleanse and Pro-Collagen Tale Set (Worth $165.00)",
              discountmessage:"25% off with code REPLAY",
              price:"$250"
         },
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/13885104-1174996677060855.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"Molton Brown Festive Bauble Gift Set",
              discountmessage:"25% off with code REPLAY",
              price:"$350"
         },
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/13953408-7464994956261674.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"Medik8 A Winter's Night Kit",
              discountmessage:"25% off with code REPLAY",
              price:"$450"
         },
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/13973773-1724997258190192.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"U Beauty The Resurfacing Holiday Set (Worth $316.00)",
              discountmessage:"25% off with code REPLAY",
              price:"$150"
         },
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/11637470-2944864614490653.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"T3 Volume 2.5 Round Brush",
              discountmessage:"25% off with code REPLAY",
              price:"$50"
         },
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/12903729-5714884454997658.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"Obagi Clinical Kinetin+ Hydrating Cream 1.7 fl. oz",
              discountmessage:"25% off with code REPLAY",
              price:"$250"
         },
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/11288823-1724904688328701.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"NEST New York Bamboo Reed Diffuser 175ml",
              discountmessage:"25% off with code REPLAY",
              price:"$850"
         },
         {
-          img: "https://static.thcdn.com/images/xsmall/webp//productimg/original/13966971-1414998593602041.jpg",
+          img: "https://i.imgur.com/W0CIqnJ.png",
           productdetail:"Medik8 A Winter's Day Kit",
              discountmessage:"25% off with code REPLAY",
              price:"$550"

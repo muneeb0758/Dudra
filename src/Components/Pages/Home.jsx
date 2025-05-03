@@ -15,9 +15,12 @@ import { Link } from "react-router-dom"
 import ProductSlider1 from './Slider/ProductSlider1';
 import BrandSlider from './Slider/BrandSlider';
 import Footer from './Footer';
-
-
-
+import breakfast from './images/breakfast.png'
+import fruits from './images/FRUITS&VEG.png'
+import snacks from './images/SNACKS.png'
+import spices from './images/spices.png'
+import bath from './images/bath.png'
+import packaging from './images/packaging.png'
 
 const Home = () => {
   return (
@@ -33,34 +36,36 @@ const Home = () => {
       <Box marginBottom={12}>
         <SliderImage />
       </Box>
+    
+    
       {/* **********************************************************shop by Category ************************************** */}
       <Text fontSize={45} mb="14px" mt="14px" align="center">Shop by Category</Text>
       <Box mt={8} alignItems='center' w='85%' margin='auto'>
 
         <Box display={['grid', 'grid', 'flex']} justifyContent='space-between' gridTemplateColumns={'1fr 1fr'} >
-          <Link>
-            <Image w={205} src='https://imgur.com/a/huTWJGq' alt="cat-1" />
+          <Link to= '/breakfast'>
+            <Image w={395} src= {breakfast} alt="cat-1" />
           </Link>
           <Link>
-            <Image w={205} src="https://imgur.com/a/huTWJGq" alt="cat-2" />
+           <Image w={310} src={fruits} alt="Breakfast Drinks" />
           </Link>
           <Link>
-            <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/26/round_widget_ss_homepage_-_Untitled_Page_%282%29-062926.png" alt="cat-3" />
+            <Image w={205} src={snacks} alt="cat-3" />
           </Link>
           <Link>
-            <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/11/round_widget_ss_homepage_-_Untitled_Page_%283%29-063011.png" alt="cat-4" />
+            <Image w={305} src={spices} alt="cat-4" />
           </Link>
           <Link>
-            <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/07/round_widget_ss_homepage_-_Untitled_Page_%286%29-063207.png" alt="cat-5" />
+            <Image w={315} src={bath} alt="cat-5" />
           </Link>
           <Link>
-            <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/32/round_widget_ss_homepage_-_Untitled_Page_%285%29-063132.png" alt="cat-6" />
+            <Image w={295} src={packaging} alt="cat-6" />
           </Link>
         </Box>
 
       </Box>
 
-      {/* **********************************************************shop by Category ************************************** */}
+      {/* **********************************************************Missed Black Friday  ************************************** */}
       <Text fontSize={45} mt={"14px"} mb={"14px"} align="center">Missed Black Friday?</Text>
       <Box mt={8}><ProductSlider1 /></Box>
 
@@ -73,7 +78,7 @@ const Home = () => {
 
             <Box w={['100%', '100%', '30%']}>
               <Center>
-                <Image src="https://static.thcdn.com/images/small/webp/widgets/121-us/53/original-500x500-041753.jpeg" w={'100%'} alt="1" />
+                <Image src="https://i.imgur.com/W0CIqnJ.png" w={'100%'} alt="1" />
               </Center>
               <Heading fontSize={20} mt={4}>SkinCeuticals Gift</Heading>
               <Text fontSize={13} mt={2} color="gray">Receive a SkinCeuticals Resveratrol BE 4ml (Worth $21) when you spend $220 or more on the brand.</Text>
@@ -81,7 +86,7 @@ const Home = () => {
             </Box>
             <Box w={['100%', '100%', '30%']}>
               <Center>
-                <Image src="https://static.thcdn.com/images/small/webp/widgets/121-us/05/original-500x500-041805.jpeg" w={'100%'} alt={"2"} />
+                <Image src="https://i.imgur.com/W0CIqnJ.png" w={'100%'} alt={"2"} />
               </Center>
               <Heading fontSize={20} mt={4}>20%off SkinMedica+$135 gift</Heading>
               <Text fontSize={13} mt={2} color="gray">Receive a FREE SkinMedica Eye Illuminating Kit (Worth $135) when you spend $250 or more on the brand.</Text>
@@ -89,7 +94,7 @@ const Home = () => {
             </Box>
             <Box w={['100%', '100%', '30%']}>
               <Center>
-                <Image src="https://static.thcdn.com/images/small/webp/widgets/121-us/14/original-500x500-060614.jpg" w={'100%'} alt={"3"} />
+                <Image src="https://i.imgur.com/W0CIqnJ.png8" w={'100%'} alt={"3"} />
               </Center>
               <Heading fontSize={20} mt={4}>25%off 111SKIN with code REPLAY+$95 Gift</Heading>
               <Text fontSize={13} mt={2} color="gray">Plus, receive a 111SKIN Space Defence Bright Eye Lift Gel Mini 7.5ml (Worth $95) when you spend $250 or more on the brand.</Text>
