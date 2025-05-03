@@ -208,6 +208,8 @@ const Navbar = () => {
           </div>
         </Box>
 
+    
+    
         <Box id="menu_nav" style={{ borderTop: "2px solid black" }} borderBottom='1px solid gainsboro'>
           <Box
             alignItems="center"
@@ -217,9 +219,8 @@ const Navbar = () => {
             margin="auto"
             id="hover-black"
           >
-            {/* <Link to='/brands'><div id="menu-title">Brands</div></Link> */}
             <div id="menu-dropdown">
-  <Link to='/brands'><div id="menu-title">Brands</div></Link>
+  {/* <Link to='/brands'><div id="menu-title">Brands</div></Link> */}
   <div className="menu-dropdown-content">
     <Box display="flex" gap="50px" pt={5} padding="20px">
       <div style={{ fontFamily: "sans-serif", paddingLeft: "20px" }}>
@@ -674,11 +675,11 @@ const Navbar = () => {
               <Link to='/bathbeauty'><div id="menu-title">Bath & Body</div></Link>
             </div>
             <div>
-              <Link to='/fragrence'><div id="menu-title">Spices</div></Link>
+              <Link to='/spices'><div id="menu-title">Spices</div></Link>
             </div>
            
             <div>
-              <Link to='/tools'><div id="menu-title">Packaging</div></Link>
+              <Link to='/packaging'><div id="menu-title">Packaging</div></Link>
             </div>
             {/* <div>
               <Link to='/news'><div id="menu-title">News & Trending</div></Link>

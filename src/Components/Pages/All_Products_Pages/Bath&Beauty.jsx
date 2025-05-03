@@ -2,7 +2,9 @@ import Shop from "../../ProductsPage/ProductPage";
 
 const Bathbeuty = () => {
 
-  return (<Shop />)
+  return (      <Shop categoryFilter="Bath & Body" />  )
 };
 
 export default Bathbeuty;
+
+

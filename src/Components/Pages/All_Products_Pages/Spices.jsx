@@ -3,7 +3,7 @@ import Shop from '../../ProductsPage/ProductPage'
 
 const SelfCare = () => {
   return (
-    <Shop />
+     <Shop categoryFilter="Spices" />
   )
 }
 

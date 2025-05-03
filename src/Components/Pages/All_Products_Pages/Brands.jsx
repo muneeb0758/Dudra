@@ -3,8 +3,11 @@ import Shop from '../../ProductsPage/ProductPage'
 
 const Brands = () => {
   return (
-    <Shop />
+      <Shop categoryFilter="Brands" />
   )
 }
 
 export default Brands
+
+
+

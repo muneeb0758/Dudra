@@ -1,10 +1,10 @@
 import React from 'react'
 import Shop from '../../ProductsPage/ProductPage'
 
-const Fragrence = () => {
+const Packaging = () => {
   return (
-    <Shop />
+    <Shop categoryFilter="Packaging" />
   )
 }
 
-export default Fragrence
+export default Packaging
