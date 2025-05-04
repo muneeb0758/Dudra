@@ -13,65 +13,64 @@ class ProductSlider1 extends Component {
     this.state = {
       slides: [
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"Chantecaille The Ultimate Lifting Duo (Worth $625.00)",
-             discountmessage:"25% off with code REPLAY",
-             price:"$550"
-        
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Kelloggs Fruit N Fiber 40x45g",
+          discountmessage: "High fiber breakfast cereal",
+          price: "£18.99"
         },
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"Eve Lom Decadent Double  Holiday Set 2022 (Worth $235.00)",
-             discountmessage:"25% off with code REPLAY",
-             price:"$350"
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Quaker Oat So Simple",
+          discountmessage: "Quick and instant oats",
+          price: "Check Price"
         },
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"Elemis Cleanse and Pro-Collagen Tale Set (Worth $165.00)",
-             discountmessage:"25% off with code REPLAY",
-             price:"$250"
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Nature Valley P&C 40 count",
+          discountmessage: "Protein and cereal bars",
+          price: "£26.99"
         },
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"Molton Brown Festive Bauble Gift Set",
-             discountmessage:"25% off with code REPLAY",
-             price:"$350"
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Nescafe Original Sticks 1x200",
+          discountmessage: "Instant coffee sticks",
+          price: "£19.99"
         },
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"Medik8 A Winter's Night Kit",
-             discountmessage:"25% off with code REPLAY",
-             price:"$450"
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Tate & Lyle Sugar 15x1kg",
+          discountmessage: "White sugar multi-pack",
+          price: "£19.99"
         },
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"U Beauty The Resurfacing Holiday Set (Worth $316.00)",
-             discountmessage:"25% off with code REPLAY",
-             price:"$150"
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Kesar Mango Pulp 6x850g",
+          discountmessage: "Premium mango pulp",
+          price: "£19.99"
         },
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"T3 Volume 2.5 Round Brush",
-             discountmessage:"25% off with code REPLAY",
-             price:"$50"
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Laila Basmati Rice 1x20kg",
+          discountmessage: "Premium basmati rice",
+          price: "£34.99"
         },
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"Obagi Clinical Kinetin+ Hydrating Cream 1.7 fl. oz",
-             discountmessage:"25% off with code REPLAY",
-             price:"$250"
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Rajah Black Ground Pepper 10x100g",
+          discountmessage: "Ground black pepper",
+          price: "£25.99"
         },
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"NEST New York Bamboo Reed Diffuser 175ml",
-             discountmessage:"25% off with code REPLAY",
-             price:"$850"
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Sapna Ginger & Garlic Paste 6x1kg",
+          discountmessage: "Ready-to-use paste",
+          price: "£18.99"
         },
         {
-          img: "https://i.imgur.com/W0CIqnJ.png",
-          productdetail:"Medik8 A Winter's Day Kit",
-             discountmessage:"25% off with code REPLAY",
-             price:"$550"
+          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          productdetail: "Country Range Honey Portions 100x20g",
+          discountmessage: "Convenient honey portions",
+          price: "£25.99"
         }
       ]
     };

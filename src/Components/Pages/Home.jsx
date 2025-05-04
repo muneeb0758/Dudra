@@ -10,8 +10,8 @@ import { Box, Center, Heading, Text, Image, Flex, Button, Card, CardBody, Stack,
   ;
 import SliderImage from './Slider/SliderImage';
 import { Link } from "react-router-dom"
-
-
+import dudracar from './images/dudracar.png'
+import banner from './images/banner.png'
 import ProductSlider1 from './Slider/ProductSlider1';
 import BrandSlider from './Slider/BrandSlider';
 import Footer from './Footer';
@@ -46,19 +46,19 @@ const Home = () => {
           <Link to= '/breakfast'>
             <Image w={395} src= {breakfast} alt="cat-1" />
           </Link>
-          <Link>
-           <Image w={310} src={fruits} alt="Breakfast Drinks" />
+          <Link to={'/fruits'}>
+           <Image w={310} src={fruits} alt="Fruits & Veg" />
           </Link>
-          <Link>
+          <Link to={'/snacks'}>
             <Image w={205} src={snacks} alt="cat-3" />
           </Link>
-          <Link>
+          <Link to={'/spices'}>
             <Image w={305} src={spices} alt="cat-4" />
           </Link>
-          <Link>
+          <Link to={'/bathbeauty'}>
             <Image w={315} src={bath} alt="cat-5" />
           </Link>
-          <Link>
+          <Link to={'/packaging'}>
             <Image w={295} src={packaging} alt="cat-6" />
           </Link>
         </Box>
@@ -74,35 +74,84 @@ const Home = () => {
       <Text fontSize={45} mt={"14px"} mb="14px" align="center">Trending Offers</Text>
       <Box>
         <Center>
-          <Flex direction={['column', 'column', 'row']} w={"85%"} gap={4} m='auto' justifyContent={'space-between'}>
+        <Flex direction={['column', 'column', 'row']} gap={6} justify="center">
+  {/* Product 1 - Kelloggs Breakfast Cereal */}
+  <Box w={['100%', '100%', '30%']}>
+    <Center>
+      <Image 
+        src="https://i.imgur.com/L4env9T.jpg" 
+        w={'100%'} 
+        alt="Kelloggs Fruit N Fiber" 
+      />
+    </Center>
+    <Heading fontSize={20} mt={4}>Kelloggs Fruit N Fiber</Heading>
+    <Text fontSize={13} mt={2} color="gray">
+      High fiber breakfast cereal with dried fruits - 40x45g portion packs
+    </Text>
+    <Link to="/breakfast">
+      <Button 
+        bgColor={"white"} 
+        border='1px solid gray' 
+        borderRadius={'0'} 
+        mt={5}
+      >
+        SHOP NOW - £18.99
+      </Button>
+    </Link>
+  </Box>
 
-            <Box w={['100%', '100%', '30%']}>
-              <Center>
-                <Image src="https://i.imgur.com/W0CIqnJ.png" w={'100%'} alt="1" />
-              </Center>
-              <Heading fontSize={20} mt={4}>SkinCeuticals Gift</Heading>
-              <Text fontSize={13} mt={2} color="gray">Receive a SkinCeuticals Resveratrol BE 4ml (Worth $21) when you spend $220 or more on the brand.</Text>
-              <Link to="/skin"><Button bgColor={"white"} border='1px solid gray' borderRadius={'0'} mt={5}>SHOP-NOW</Button></Link>
-            </Box>
-            <Box w={['100%', '100%', '30%']}>
-              <Center>
-                <Image src="https://i.imgur.com/W0CIqnJ.png" w={'100%'} alt={"2"} />
-              </Center>
-              <Heading fontSize={20} mt={4}>20%off SkinMedica+$135 gift</Heading>
-              <Text fontSize={13} mt={2} color="gray">Receive a FREE SkinMedica Eye Illuminating Kit (Worth $135) when you spend $250 or more on the brand.</Text>
-              <Link to="/skin"><Button bgColor={"white"} border='1px solid gray' borderRadius={'0'} mt={5}>SHOP-NOW</Button></Link>
-            </Box>
-            <Box w={['100%', '100%', '30%']}>
-              <Center>
-                <Image src="https://i.imgur.com/W0CIqnJ.png8" w={'100%'} alt={"3"} />
-              </Center>
-              <Heading fontSize={20} mt={4}>25%off 111SKIN with code REPLAY+$95 Gift</Heading>
-              <Text fontSize={13} mt={2} color="gray">Plus, receive a 111SKIN Space Defence Bright Eye Lift Gel Mini 7.5ml (Worth $95) when you spend $250 or more on the brand.</Text>
-              <Link to="/skin"><Button bgColor={"white"} border='1px solid gray' borderRadius={'0'} mt={5}>SHOP-NOW</Button></Link>
-            </Box>
-          </Flex>
-        </Center>
-      </Box>
+  {/* Product 2 - Nature Valley Snack Bars */}
+  <Box w={['100%', '100%', '30%']}>
+    <Center>
+      <Image 
+        src="https://i.imgur.com/L4env9T.jpg" 
+        w={'100%'} 
+        alt="Nature Valley Bars" 
+      />
+    </Center>
+    <Heading fontSize={20} mt={4}>Nature Valley Protein Bars</Heading>
+    <Text fontSize={13} mt={2} color="gray">
+      Protein and cereal bars, 42g each - case of 40
+    </Text>
+    <Link to="/snacks">
+      <Button 
+        bgColor={"white"} 
+        border='1px solid gray' 
+        borderRadius={'0'} 
+        mt={5}
+      >
+        SHOP NOW - £26.99
+      </Button>
+    </Link>
+  </Box>
+
+  {/* Product 3 - Kesar Mango Pulp */}
+  <Box w={['100%', '100%', '30%']}>
+    <Center>
+      <Image 
+        src="https://i.imgur.com/L4env9T.jpg" 
+        w={'100%'} 
+        alt="Kesar Mango Pulp" 
+      />
+    </Center>
+    <Heading fontSize={20} mt={4}>Kesar Mango Pulp</Heading>
+    <Text fontSize={13} mt={2} color="gray">
+      Premium mango pulp in 850g cans - case of 6
+    </Text>
+    <Link to="/fruits">
+      <Button 
+        bgColor={"white"} 
+        border='1px solid gray' 
+        borderRadius={'0'} 
+        mt={5}
+      >
+        SHOP NOW - £19.99
+      </Button>
+    </Link>
+  </Box>
+</Flex>
+</Center>
+</Box>
       {/* **********************************************************  Logos ************************************** */}
 
       <Box mt={12}>
@@ -133,137 +182,124 @@ const Home = () => {
       {/* ********************************************************** What People Are Buying Right Now ************************************** */}
       <Text fontSize={35} mt={"14px"} mb="14px" align="center">What People Are Buying Right Now</Text>
 
-      <Box  >
-        <Center>
-          <Flex direction={['column', 'column', 'row']} w={"95%"} gap={4} m='auto' justifyContent={'space-between'} >
+<Box>
+  <Center>
+    <Flex direction={['column', 'column', 'row']} w={"95%"} gap={4} m='auto' justifyContent={'space-between'} wrap="wrap">
 
-            {/* ****************Card -1**************** */}
+      {/* Card 1 - Kelloggs Fruit N Fiber */}
+      <Card w={['70%', '70%', '30%']} marginLeft={12} cursor='pointer' margin='auto'>
+        <CardBody>
+          <Image
+            src='https://i.imgur.com/QLp1XeQ.jpg'
+            alt='Kelloggs Fruit N Fiber 40x45g'
+          />
+          <Stack mt='6' spacing='3'>
+            <Text color={"gray"}>
+              Kelloggs Fruit N Fiber 40x45g - High fiber breakfast cereal with dried fruits
+            </Text>
+            <Text fontSize={23} textAlign="left">
+              £18.99
+            </Text>
+          </Stack>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <Box w="100%">
+            <Link to="/breakfast">
+              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
+                <BiShoppingBag color='white' fontSize={25} /> View More
+              </Button>
+            </Link>
+          </Box>
+        </CardFooter>
+      </Card>
 
-            <Card w={['70%', '70%', '30%']} marginLeft={12} cursor='pointer' margin='auto'>
-              <CardBody>
-                <Image
-                  src='https://static.thcdn.com/images/small/webp//productimg/480/480/11289609-1174892770940184.jpg'
-                  alt='SkinCeuticals C E Ferulic with 15% L-Ascorbic Acid Vitamin C Serum 30ml'
+      {/* Card 2 - Nature Valley Protein Bars */}
+      <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
+        <CardBody>
+          <Image
+            src='https://i.imgur.com/QLp1XeQ.jpg'
+            alt='Nature Valley P&C 1x42g 40 count'
+          />
+          <Stack mt='6' spacing='3'>
+            <Text color={"gray"}>
+              Nature Valley Protein & Cereal Bars - 42g each, case of 40
+            </Text>
+            <Text fontSize={23} textAlign="left">
+              £26.99
+            </Text>
+          </Stack>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <Box w="100%">
+            <Link to="/snacks">
+              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
+                <BiShoppingBag color='white' fontSize={25} /> View More
+              </Button>
+            </Link>
+          </Box>
+        </CardFooter>
+      </Card>
 
-                />
-                <Stack mt='6' spacing='3'>
-                  <Text color={"gray"}>
-                    SkinCeuticals C E Ferulic with 15% L-Ascorbic Acid Vitamin C Serum 30ml
-                  </Text>
-                  <Text fontSize={23} textAlign="left">
-                    $430
-                  </Text>
-                </Stack>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Box w="100%">
-                  <Link to="/skin">
-                    <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                      <BiShoppingBag color='white' fontSize={25} />  View More
-                    </Button>
-                  </Link>
-                </Box>
-              </CardFooter>
-            </Card>
-            {/* ****************Card -2**************** */}
+      {/* Card 3 - Kesar Mango Pulp */}
+      <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
+        <CardBody>
+          <Image
+            src='https://i.imgur.com/QLp1XeQ.jpg'
+            alt='Kesar Mango Pulp 6x850g'
+          />
+          <Stack mt='6' spacing='3'>
+            <Text color={"gray"}>
+              Kesar Mango Pulp - Premium mango in 850g cans, case of 6
+            </Text>
+            <Text fontSize={23} textAlign="left">
+              £19.99
+            </Text>
+          </Stack>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <Box w="100%">
+            <Link to="/fruits">
+              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
+                <BiShoppingBag color='white' fontSize={25} /> View More
+              </Button>
+            </Link>
+          </Box>
+        </CardFooter>
+      </Card>
 
-            <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
-              <CardBody>
-                <Image
-                  src='https://static.thcdn.com/images/small/webp//productimg/480/480/13973771-1764998807002190.jpg'
-                  alt='Eve Lom Decadent Double Cleanse Ritual Holiday Set 2022 (Worth $235.00)'
-                  borderRadius='lg'
-                />
-                <Stack mt='6' spacing='3'>
-                  <Text color={"gray"}>
-                    Eve Lom Decadent Double Cleanse Ritual Holiday Set 2022 (Worth $235.00)
-                  </Text>
-                  <Text fontSize={23} textAlign="left">
-                    $250
-                  </Text>
-                </Stack>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Box w="100%">
-                  <Link to="/skin">
-                    <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                      <BiShoppingBag color='white' fontSize={25} />  View More
-                    </Button>
-                  </Link>
-                </Box>
-              </CardFooter>
-            </Card>
-
-
-            {/* ****************Card -3**************** */}
-
-
-            <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
-              <CardBody>
-                <Image
-                  src='https://static.thcdn.com/images/small/webp//productimg/480/480/12434373-1744821040696653.jpg'
-                  alt='BIOEFFECT EGF Eye Serum 6ml'
-
-
-                />
-                <Stack mt='6' spacing='3'>
-                  color={"gray"}
-                  <Text>
-                    BIOEFFECT EGF Eye Serum 6ml
-                  </Text>
-                  <Text fontSize={23} textAlign="left">
-                    $450
-                  </Text>
-                </Stack>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Box w="100%">
-                  <Link to="/skin">
-                    <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                      <BiShoppingBag color='white' fontSize={25} />  View More
-                    </Button>
-                  </Link>
-                </Box>
-              </CardFooter>
-            </Card>
-
-
-
-
-            {/* ****************Card -4**************** */}
-            <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
-              <CardBody>
-                <Image
-                  src='https://static.thcdn.com/images/small/webp//productimg/480/480/12588477-1794776910642146.jpg'
-                  alt='111SKIN Y Theorem Bio Cellulose Facial Mask Single 0.87 oz (Worth $32.00)'
-
-                />
-                <Stack mt='6' spacing='3'>
-                  <Text color={"gray"}>
-                    111SKIN Y Theorem Bio Cellulose Facial Mask Single 0.87 oz (Worth $32.00)
-                  </Text>
-                  <Text fontSize={23} textAlign="left">
-                    $450
-                  </Text>
-                </Stack>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Box w="100%">
-                  <Link to="/skin">
-                    <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                      <BiShoppingBag color='white' fontSize={25} />  View More
-                    </Button>
-                  </Link>
-                </Box>
-              </CardFooter>
-            </Card>
-          </Flex>
-        </Center>
-      </Box>
+      {/* Card 4 - Dettol Antibacterial Wipes */}
+      <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
+        <CardBody>
+          <Image
+            src='https://i.imgur.com/QLp1XeQ.jpg'
+            alt='Dettol Antibacterial Wipes'
+          />
+          <Stack mt='6' spacing='3'>
+            <Text color={"gray"}>
+              Dettol Antibacterial Wipes - 10 packs of 30 wipes, kills 99.9% of bacteria
+            </Text>
+            <Text fontSize={23} textAlign="left">
+              £12.99
+            </Text>
+          </Stack>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <Box w="100%">
+            <Link to="/cleaning-supplies">
+              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
+                <BiShoppingBag color='white' fontSize={25} /> View More
+              </Button>
+            </Link>
+          </Box>
+        </CardFooter>
+      </Card>
+    </Flex>
+  </Center>
+</Box>
 
       {/* ********************************************************** Brand of the Month: Olaplex************************************** */}
       <Text fontSize={35} mt={"14px"} mb="14px" align="center">Brand of the Month: Olaplex</Text>
@@ -271,7 +307,7 @@ const Home = () => {
 
         <Flex gap={12} direction={['column', 'column', 'row']} w={"95%"} m='auto' justifyContent={'space-between'} >
           <Box w={['100%', '100%', '55%']}>
-            <Image w={"120%"} h='100%' src='https://static.thcdn.com/images/medium/webp/widgets/121-us/28/600x600-065228.jpeg' alt='1' />
+            <Image w={"120%"} h='100%' src='https://i.imgur.com/QyX4txm.jpg' alt='1' />
           </Box>
 
           <Box w={['100%', '100%', '65%']}>
@@ -285,14 +321,14 @@ const Home = () => {
       <Center>
         <Box w={'90%'} mt={8}>
           <Link>
-            <Image src='https://static.thcdn.com/images/xlarge/webp/widgets/121-us/33/Skinstore_August_Referral_-_Untitled_Page_%281%29-022033.png' alt='img1' />
+            <Image src={dudracar} alt='img1' />
           </Link>
         </Box>
       </Center>
       <Center>
         <Box w={'90%'} mt={8}>
           <Link>
-            <Image src='https://static.thcdn.com/images/xlarge/webp/widgets/121-us/32/original-0308-STDCRE32346-SS-AH-SkinStore-Concierge-Banners-1180x200-084632.jpg' alt='img1' />
+            <Image src={banner} alt='img1' />
           </Link>
         </Box>
 
