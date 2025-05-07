@@ -17,9 +17,10 @@ import HairPages from "../Pages/All_Products_Pages/HairPages"
 import NewsTrending from '../Pages/All_Products_Pages/NewsTrending';
 import Sale from '../Pages/All_Products_Pages/Sale';
 import Spices from '../Pages/All_Products_Pages/Spices';
+import ProductPage from '../ProductsPage/ProductPage'; // <-- Add this line
 
 import Breakfast from '../Pages/All_Products_Pages/breakfast';
-
+import ProductDetail from '../ProductsPage/ProductDetail';
 import SkinPage from '../Pages/All_Products_Pages/SkinPage';
 import Tools from '../Pages/All_Products_Pages/Tools';
 import Cart from "../Pages/Cart";
@@ -28,7 +29,7 @@ import Shop from '../ProductsPage/ProductPage';
 import PrivateRoute, { AdminPrivateRoute } from './PrivateRoute';
 import FruitsVeg from '../Pages/All_Products_Pages/Fruitsveg';
 
-const AllRoutes = () => {
+const AllRoutes = (searchTerm) => {
   return (
     <div>
       <Routes>
@@ -54,6 +55,12 @@ const AllRoutes = () => {
         <Route path='/checkout' element={<PrivateRoute><Checkout /></PrivateRoute>} />
         <Route path='/skincare' element={<SkinPage />} />
         <Route path="/latest" element={<Latest />} />
+        <Route path="/skin" element={<Shop />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
+
+       
+
+
 
       </Routes>
     </div>

@@ -100,7 +100,7 @@ const brands = [
 
 
 const categories = [
- "Brands",         // This is the special key containing all brands
+  "Brands",         // This is the special key containing all brands
   "Breakfast",
   "Dairy",
   "Snacks",
@@ -118,10 +118,12 @@ const categories = [
   "Fruits",         // From Kesar Mango Pulp
   "Rice",           // From Laila Basmati Rice
   "Cooking Essentials", // From Sapna Ginger & Garlic Paste
-  "Beverages" 
+  "Beverages"
 ];
 
-const Shop = ({categoryFilter}) => {
+const Shop = ({ categoryFilter, searchTerm }) => {
+
+
   const [products, setProducts] = useState([]);
   let [loading, setLoading] = useState(false);
   let [price, setPrice] = useState(20);
@@ -199,73 +201,74 @@ const Shop = ({categoryFilter}) => {
   // ... rest of your state declarations
 
   // In your Shop component, modify the useEffect hook:
-useEffect(() => {
-  setLoading(true);
-  
-  // Get all products from allProducts.jsx
-  let filteredProducts = [];
-  
-  // Special handling for Fruits & Veg category
-  if (category === "Fruits & Veg" || categoryFilter === "Fruits & Veg") {
-    // Get all fruit and vegetable products from different categories
-    filteredProducts = [
-      // From Fruits & Veg category
-      ...(allProducts['Fruits & Veg'] || []),
-      
-      // From Fruits category
-      ...(allProducts['Fruits'] || []),
-      
-      // From other categories where fruits/veg might appear
-      ...(allProducts['Breakfast'] || []).filter(p => 
-        p.dietary?.includes('Fruit') || 
-        p.name.toLowerCase().includes('fruit') ||
-        p.name.toLowerCase().includes('veg')
-      ),
-      ...(allProducts['Snacks'] || []).filter(p => 
-        p.dietary?.includes('Fruit') || 
-        p.name.toLowerCase().includes('fruit') ||
-        p.name.toLowerCase().includes('veg')
-      ),
-    ].filter((product, index, self) =>
-      index === self.findIndex((p) => p.id === product.id)
-    );
-  } 
-  else if (brand) {
-    // Filter by brand
-    if (allProducts.Brands[brand]) {
-      filteredProducts = allProducts.Brands[brand];
+  useEffect(() => {
+    setLoading(true);
+
+    // Get all products from allProducts.jsx
+    let filteredProducts = [];
+
+    // Special handling for Fruits & Veg category
+    if (category === "Fruits & Veg" || categoryFilter === "Fruits & Veg") {
+      // Get all fruit and vegetable products from different categories
+      filteredProducts = [
+        // From Fruits & Veg category
+        ...(allProducts['Fruits & Veg'] || []),
+
+        // From Fruits category
+        ...(allProducts['Fruits'] || []),
+
+        // From other categories where fruits/veg might appear
+        ...(allProducts['Breakfast'] || []).filter(p =>
+          p.dietary?.includes('Fruit') ||
+          p.name.toLowerCase().includes('fruit') ||
+          p.name.toLowerCase().includes('veg')
+        ),
+        ...(allProducts['Snacks'] || []).filter(p =>
+          p.dietary?.includes('Fruit') ||
+          p.name.toLowerCase().includes('fruit') ||
+          p.name.toLowerCase().includes('veg')
+        ),
+      ].filter((product, index, self) =>
+        index === self.findIndex((p) => p.id === product.id)
+      );
     }
-  } 
-  else if (category || categoryFilter) {
-    // Filter by other categories
-    const activeCategory = category || categoryFilter;
-    if (activeCategory === "Brands") {
-      // Special case: show all brands
-      filteredProducts = Object.values(allProducts.Brands).flat();
-    } 
-    else if (allProducts[activeCategory]) {
-      filteredProducts = allProducts[activeCategory];
+    else if (brand) {
+      // Filter by brand
+      if (allProducts.Brands[brand]) {
+        filteredProducts = allProducts.Brands[brand];
+      }
     }
-  } 
-  else {
-    // Default view: show all products
-    filteredProducts = [
-      ...Object.values(allProducts.Brands).flat(),
-      ...Object.values(allProducts).filter(Array.isArray).flat()
-    ].filter((product, index, self) => 
-      index === self.findIndex((p) => p.id === product.id)
-    );
-  }
-  
-  setProducts(filteredProducts);
-  setLoading(false);
-}, [brand, category, price, categoryFilter]);
+    else if (category || categoryFilter) {
+      // Filter by other categories
+      const activeCategory = category || categoryFilter;
+      if (activeCategory === "Brands") {
+        // Special case: show all brands
+        filteredProducts = Object.values(allProducts.Brands).flat();
+      }
+      else if (allProducts[activeCategory]) {
+        filteredProducts = allProducts[activeCategory];
+      }
+    }
+    else {
+      // Default view: show all products
+      filteredProducts = [
+        ...Object.values(allProducts.Brands).flat(),
+        ...Object.values(allProducts).filter(Array.isArray).flat()
+      ].filter((product, index, self) =>
+        index === self.findIndex((p) => p.id === product.id)
+      );
+    }
+
+    setProducts(filteredProducts);
+    setLoading(false);
+  }, [brand, category, price, categoryFilter]);
 
 
 
   return (
     <>
-      <Flex w="90%" m="auto" justify="space-between" mt={["12","12","12","12","auto"]}>
+       
+      <Flex w="90%" m="auto" justify="space-between" mt={["12", "12", "12", "12", "auto"]}>
         <Box
           w="25%"
           display={["none", "none", "block"]}
@@ -416,12 +419,12 @@ useEffect(() => {
             </AccordionItem>
           </Accordion>
         </Box>
-      
-      
-      {/* This is for the top categories */}
 
 
-      
+        {/* This is for the top categories */}
+
+
+
         <Box w={["100", "100%", "70%"]} mt="25px">
           <Heading mb="30px">{`Up to 50% off!`}</Heading>
           <Flex justify="space-between">
@@ -529,13 +532,13 @@ useEffect(() => {
           <ModalOverlay />
           <ModalContent borderRadius="0px">
             <ModalHeader
-            p="10px"
-            bgColor="gainsboro"
-            borderBottom="1px solid black"
-            fontSize="20px"
-          >
-            {`Get Your ${modalProps.category} Fast Order Is Limited!!!`}
-          </ModalHeader>
+              p="10px"
+              bgColor="gainsboro"
+              borderBottom="1px solid black"
+              fontSize="20px"
+            >
+              {`Get Your ${modalProps.category} Fast Order Is Limited!!!`}
+            </ModalHeader>
             <ModalCloseButton />
             <ModalBody pt="35px" pb="35px">
               <Flex mt="10px" justify="space-between">
@@ -543,13 +546,13 @@ useEffect(() => {
                   <Image w="100%" src={modalProps.image_link} />
                 </Box>
                 <Box width="50%">
-  <Text mb="15px" fontSize="xl">
-    {modalProps.name}
-  </Text>
-  <Text mb="15px">{`Brand - ${modalProps.brand || 'Generic'}`}</Text>
-  <Text mb="15px">Quantity 1</Text>
-  <Heading>{`$${modalProps.price || 'Price not available'}`}</Heading>
-</Box>
+                  <Text mb="15px" fontSize="xl">
+                    {modalProps.name}
+                  </Text>
+                  <Text mb="15px">{`Brand - ${modalProps.brand || 'Generic'}`}</Text>
+                  <Text mb="15px">Quantity 1</Text>
+                  <Heading>{`$${modalProps.price || 'Price not available'}`}</Heading>
+                </Box>
               </Flex>
               <Text fontSize="20px">{"Subtotal:"}</Text>
               <Flex justify="space-between">
