@@ -44,32 +44,31 @@ const Home = () => {
     
     
       {/* **********************************************************shop by Category ************************************** */}
-      <Text fontSize={45} mb="14px" mt="14px" align="center">Shop by Category</Text>
-      <Box mt={8} alignItems='center' w='85%' margin='auto'>
+    <Text fontSize={45} mb="14px" mt="14px" align="center">Shop by Category</Text>
 
-        <Box display={['grid', 'grid', 'flex']} justifyContent='space-between' gridTemplateColumns={'1fr 1fr'} >
-         
-          <Link to= '/breakfast'>
-            <Image w={395} src= {breakfast} alt="cat-1" />
-          </Link>
-           <Link to={'/fruits'}>
-           <Image w={310} src={fruits} alt="Fruits & Veg" />
-          </Link>
-          <Link to={'/snacks'}>
-            <Image w={205} src={snacks} alt="cat-3" />
-          </Link>
-          <Link to={'/spices'}>
-            <Image w={305} src={spices} alt="cat-4" />
-          </Link>
-          <Link to={'/bathbeauty'}>
-            <Image w={315} src={bath} alt="cat-5" />
-          </Link>
-          <Link to={'/packaging'}>
-            <Image w={295} src={packaging} alt="cat-6" />
-          </Link>
-        </Box>
+<Box mt={8} w="85%" mx="auto">
+  <Flex wrap="wrap" justify="space-between" gap={4}>
+    {/* <Link to='/breakfast'>
+      <Image boxSize="150px" objectFit="cover" src="https://i.imgur.com/bwaIq7T.png" alt="Breakfast" />
+    </Link> */}
+    <Link to='/fruits'>
+      <Image boxSize="150px" objectFit="cover" src="https://i.imgur.com/5EeKDh2.jpg" alt="Fruits & Veg" />
+    </Link>
+    <Link to='/snacks'>
+      <Image boxSize="150px" objectFit="cover" src="https://i.imgur.com/KkF6aSX.png" alt="Snacks" />
+    </Link>
+    <Link to='/spices'>
+      <Image boxSize="150px" objectFit="cover" src="https://i.imgur.com/wAH6hi5.jpg" alt="Spices" />
+    </Link>
+    <Link to='/bathbeauty'>
+      <Image boxSize="150px" objectFit="cover" src="https://i.imgur.com/5GchCW6.jpg" alt="Bath & Beauty" />
+    </Link>
+    <Link to='/packaging'>
+      <Image boxSize="150px" objectFit="cover" src="https://i.imgur.com/GdrzeQo.png" alt="Packaging" />
+    </Link>
+  </Flex>
+</Box>
 
-      </Box>
 
       {/* **********************************************************Missed Black Friday  ************************************** */}
       <Text fontSize={45} mt={"14px"} mb={"14px"} align="center">Missed Black Friday?</Text>
@@ -169,7 +168,7 @@ const Home = () => {
               <Image w={205} src='https://static.thcdn.com/images/small/webp/widgets/121-us/26/180x72_4_233548301_CA_SS_Logo_Amend_BAU_THG0030424-041301-124116-063126.png' alt="cat-1" />
             </Link>
             <Link to="/skin">
-              <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/18/original-logo-1024x383-035229-063318.png" alt="cat-2" />
+              <Image w={205} src="https://i.imgur.com/qAY79TV.jpg" alt="cat-2" />
             </Link>
             <Link to="/skin">
               <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/11/Revision_Skincare_Logo_without_Tag_Line-052511.png" alt="cat-3" />
