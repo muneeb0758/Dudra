@@ -24,7 +24,7 @@ const ProductCard1 = props => {
         <CardFooter>
           <Box w="100%" m="auto" >
             <Link to="/skin">
-              <Button _hover={{ bgColor: "#28bdb7", color: "black" }} bg='black' borderRadius="0px" display="block" m="auto" w={"100%"} color={"white"}>
+              <Button _hover={{ bgColor: "#43a047", color: "white" }} bg='#4caf50' borderRadius="0px" display="block" m="auto" w={"100%"} color={"white"}>
                 See More
               </Button>
             </Link>
