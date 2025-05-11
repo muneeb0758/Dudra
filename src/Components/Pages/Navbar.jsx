@@ -141,7 +141,7 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
               style={{ width: "20px", height: "20px", borderRadius: "50%" }}
               src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
             />
-            <Text>us - USD</Text>
+            <Text>us - GBP</Text>
           </Box>
         </Box>
       </Box>
@@ -213,7 +213,7 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                         <Text fontWeight="bold">{product.name}</Text>
                         <Text fontSize="sm" color="gray.600">{product.brand}</Text>
                         <Text fontSize="sm" color="blue.600">
-                          {product.price ? `$${product.price}` : "Price not available"}
+                          {product.price ? `£${product.price}` : "Price not available"}
                         </Text>
                       </Box>
                     </Box>
@@ -340,10 +340,10 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
 
 
 
-            {/* <div id="menu-dropdown">
-              <Link to='/sale'> <div id="menu-title">Sales</div></Link>
+            { <div id="menu-dropdown">
+              <Link to='/sale'> <div id="menu-title">All Products</div></Link>
               <div className="menu-dropdown-content">
-                <Box display="flex" gap="50px" pt={5} padding="20px">
+                {/* <Box display="flex" gap="50px" pt={5} padding="20px">
                   <div style={{ display: "flex", gap: "20px" }}>
                     <div>
                       <div
@@ -357,7 +357,7 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                           borderRadius: "10px",
                         }}
                       >
-                        <Flex gap={4} alignItems="center">
+                        { <Flex gap={4} alignItems="center">
                           <BiDollar size="1.5em" />
                           <Link to='/sale'> <p style={{ fontSize: "20px" }}>Sale</p></Link>
                         </Flex>
@@ -412,11 +412,11 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                         <Flex gap={4} alignItems="center">
                           <TbDiscount2 size="1.5em" />
                           <Link to='/sale'><p style={{ fontSize: "18px" }}>Fetures Offer</p></Link>
-                        </Flex>
+                        </Flex> }
                       </div>
                     </div>
 
-                    <div>
+                    { <div>
                       <div
                         style={{
                           paddingTop: "20px",
@@ -452,11 +452,11 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                           <p style={{ fontSize: "18px" }}>Gift and Sets</p>
                         </Flex>
                       </div>
-                    </div>
+                    </div> }
                   </div>
-                </Box>
+                </Box> */}
               </div>
-            </div> */}
+            </div> }
 
             {/* <div id="menu-dropdown">
               <Link to="/skincare"><div id="menu-title">Skin Care</div></Link>
