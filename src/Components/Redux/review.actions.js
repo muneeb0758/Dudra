@@ -6,19 +6,11 @@ export const FETCH_REVIEWS = 'FETCH_REVIEWS';
 export const REVIEWS_LOADING = 'REVIEWS_LOADING';
 export const REVIEWS_ERROR = 'REVIEWS_ERROR';
 
-export const addReview = (review) => async (dispatch) => {
-  try {
-    const docRef = await addDoc(collection(db, "reviews"), review);
-    dispatch({
-      type: ADD_REVIEW,
-      payload: { id: docRef.id, ...review },
-    });
-  } catch (error) {
-    dispatch({
-      type: REVIEWS_ERROR,
-      payload: error.message,
-    });
-  }
+export const addReview = (review) => {
+  return {
+    type: 'ADD_REVIEW',
+    payload: review,
+  };
 };
 
 export const fetchProductReviews = (productId) => async (dispatch) => {
@@ -39,3 +31,4 @@ export const fetchProductReviews = (productId) => async (dispatch) => {
     });
   }
 };
+
