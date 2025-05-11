@@ -8,7 +8,7 @@ export const allProducts = {
         brand: "Quaker",
         category: "Breakfast",
         price: "",
-        image_link: "https://placeholder.com/products/C02.jpg",
+        image_link: "https://i.imgur.com/Qb9EbVk.jpg",
         description: "Quick and easy instant oats breakfast cereal.",
         dietary: ["Vegan"],
         packageType: "Box"
@@ -21,7 +21,7 @@ export const allProducts = {
         brand: "Kelloggs",
         category: "Breakfast",
         price: "18.99",
-        image_link: "https://placeholder.com/products/C01.jpg",
+        image_link: "https://i.imgur.com/QErbzdq.jpg",
         description: "High fiber breakfast cereal with dried fruits in convenient portion packs.",
         dietary: ["Vegetarian"],
         packageType: "Case of portion packs"
@@ -34,7 +34,7 @@ export const allProducts = {
         brand: "Nature Valley",
         category: "Snacks",
         price: "26.99",
-        image_link: "https://placeholder.com/products/S01.jpg",
+        image_link: "https://i.imgur.com/li0BNj8.jpg",
         description: "Nature Valley protein and cereal bars, 42g each, case of 40.",
         dietary: ["Vegetarian"],
         packageType: "Multi-pack"
@@ -47,7 +47,7 @@ export const allProducts = {
         brand: "Nescafe",
         category: "Beverages",
         price: "19.99",
-        image_link: "https://placeholder.com/products/S18.jpg",
+        image_link: "https://i.imgur.com/deEcxAn.jpg",
         description: "Nescafe Original Sticks 1x200",
         dietary: ["Vegan"],
         packageType: "Sticks"
@@ -60,22 +60,12 @@ export const allProducts = {
         brand: "Tate & Lyle",
         category: "Baking",
         price: "19.99",
-        image_link: "https://placeholder.com/products/dd002.jpg",
+        image_link: "https://i.imgur.com/sQ00I0p.jpg",
         description: "Tate & Lyle white sugar in 1kg packs, case of 15.",
         dietary: ["Vegan"],
         packageType: "Multi-pack"
-      },
-      {
-        id: "dd003",
-        name: "Caster Sugar 10x1kg",
-        brand: "Tate & Lyle",
-        category: "Baking",
-        price: "15.99",
-        image_link: "https://placeholder.com/products/dd003.jpg",
-        description: "Fine caster sugar in 1kg packs, case of 10.",
-        dietary: ["Vegan"],
-        packageType: "Multi-pack"
       }
+      
     ],
     "Euro Collection London": [
       {
@@ -84,7 +74,7 @@ export const allProducts = {
         brand: "Euro Collection London",
         category: "Toiletries",
         price: "81.99",
-        image_link: "https://placeholder.com/products/T04.jpg",
+        image_link: "https://i.imgur.com/YQHkwx4.jpg",
         description: "Euro Collection London Bath & Shower Gel-10ml Sachets-500pk Euro.",
         dietary: [],
         packageType: "Sachets"
@@ -97,7 +87,7 @@ export const allProducts = {
         brand: "Country Range",
         category: "Condiments",
         price: "25.99",
-        image_link: "https://placeholder.com/products/C09.jpg",
+        image_link: "https://i.imgur.com/PwSoVLk.jpg",
         description: "Brand Country Range, Item weight 20 Grams, Package information Tub, Item dimensions L x W x H 24 x 20 x 11 centimetres, Package weight 2.06 Kilograms, Item form Liquid, Unit count 2000 gram",
         dietary: ["Vegetarian"],
         packageType: "Portion packs"
@@ -123,7 +113,7 @@ export const allProducts = {
         brand: "Fiesta Green",
         category: "Packaging",
         price: "22.99",
-        image_link: "https://placeholder.com/products/CS05.jpg",
+        image_link: "https://i.imgur.com/ULE5L7p.jpg",
         description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags), Colour: Brown, Recycled paper material is kinder to Earth's natural resources, Thick paper construction offers enough strength to carry heavy loads, Kraft colourway gives these bags an organic look, Rectangular base allows bags to stand upright for easy loading and transportation, Supplied flat-packed for space-saving storage, Ideal for carrying takeaway containers, groceries and food-to-go, Great alternative to single-use plastic carrier bags",
         dietary: [],
         packageType: "Bags"
@@ -136,7 +126,7 @@ export const allProducts = {
         brand: "Everyday",
         category: "Cleaning Supplies",
         price: "10.99",
-        image_link: "https://placeholder.com/products/CS011.jpg",
+        image_link: "https://i.imgur.com/6hF9VjW.jpg",
         description: "Centrefeed roll for easy paper access, Economical 1 ply roll, Absorbs liquid for wiping or drying hands and surfaces, Suitable for standard centrefeed dispensers, Dimensions: 300mx175mm, 60mm core, Supplied in a pack of 6, Colour: Blue",
         dietary: [],
         packageType: "Multi-pack"
@@ -261,7 +251,7 @@ export const allProducts = {
       brand: "Kelloggs",
       category: "Breakfast",
       price: "18.99",
-      image_link: "https://placeholder.com/products/C01.jpg",
+      image_link: "https://i.imgur.com/QErbzdq.jpg",
       description: "High fiber breakfast cereal with dried fruits in convenient portion packs.",
       dietary: ["Vegetarian"],
       packageType: "Case of portion packs"
@@ -272,7 +262,7 @@ export const allProducts = {
       brand: "Quaker",
       category: "Breakfast",
       price: "",
-      image_link: "https://placeholder.com/products/C02.jpg",
+      image_link: "https://i.imgur.com/Qb9EbVk.jpg",
       description: "Quick and easy instant oats breakfast cereal.",
       dietary: ["Vegan"],
       packageType: "Box"
@@ -355,7 +345,7 @@ export const allProducts = {
       brand: "Nature Valley",
       category: "Snacks",
       price: "26.99",
-      image_link: "https://placeholder.com/products/S01.jpg",
+      image_link: "https://i.imgur.com/li0BNj8.jpg",
       description: "Nature Valley protein and cereal bars, 42g each, case of 40.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
@@ -449,7 +439,7 @@ export const allProducts = {
       brand: "",
       category: "Personal Care",
       price: "21.99",
-      image_link: "https://placeholder.com/products/B02.jpg",
+      image_link: "https://i.imgur.com/VytiepW.jpg",
       description: "Sanitary pads in bulk packaging, 6 packs of 44 each.",
       dietary: [],
       packageType: "Multi-pack"
@@ -471,7 +461,7 @@ export const allProducts = {
       brand: "Euro Collection London",
       category: "Toiletries",
       price: "81.99",
-      image_link: "https://placeholder.com/products/T04.jpg",
+      image_link: "https://i.imgur.com/5v1k5Pj.jpg",
       description: "Euro Collection London Bath & Shower Gel-10ml Sachets-500pk Euro.",
       dietary: [],
       packageType: "Sachets"
@@ -482,7 +472,7 @@ export const allProducts = {
       brand: "",
       category: "Toiletries",
       price: "81.99",
-      image_link: "https://placeholder.com/products/T03.jpg",
+      image_link: "https://i.imgur.com/YQHkwx4.jpg",
       description: "Shower gel in convenient 10ml single-use sachets.",
       dietary: [],
       packageType: "Sachets"
@@ -702,24 +692,14 @@ export const allProducts = {
   ],
   
   "Packaging": [
-    {
-      id: "CS04",
-      name: "Brown paper Bags 10\"x10\"",
-      brand: "",
-      category: "Packaging",
-      price: "11.99",
-      image_link: "https://placeholder.com/products/CS04.jpg",
-      description: "Brown paper bags, 10 inches by 10 inches.",
-      dietary: [],
-      packageType: "Bags"
-    },
+    
     {
       id: "CS05",
       name: "Large Brown paper Bags with Handles",
       brand: "Fiesta Green",
       category: "Packaging",
       price: "22.99",
-      image_link: "https://placeholder.com/products/CS05.jpg",
+      image_link: "https://i.imgur.com/wdq5J7g.jpg",
       description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags), Colour: Brown, Recycled paper material is kinder to Earth's natural resources, Thick paper construction offers enough strength to carry heavy loads, Kraft colourway gives these bags an organic look, Rectangular base allows bags to stand upright for easy loading and transportation, Supplied flat-packed for space-saving storage, Ideal for carrying takeaway containers, groceries and food-to-go, Great alternative to single-use plastic carrier bags",
       dietary: [],
       packageType: "Bags"
@@ -744,7 +724,7 @@ export const allProducts = {
       brand: "La Madeliene",
       category: "Bakery",
       price: "14.50",
-      image_link: "https://asset.cloudinary.com/dd51vl9fe/a58db591d7c1dc44309cec7be3fd8a17",
+      image_link: "https://i.imgur.com/YTx74Y6.jpg",
       description: "Traditional Madeira cake, 590g each, pack of 6.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
