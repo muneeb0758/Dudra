@@ -8,7 +8,7 @@ const SingleProduct = (props) => {
 
     let rating = Math.ceil(Math.random() * 4);
     const addDefault = (e) => {
-        e.target.src = rating < 3 ? "https://www.dior.com/beauty/version-5.1432748111912/resize-image/ep/0/390/100/0/packshots%252FPDG_Y0715100.jpg" : "https://www.nyxcosmetics.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-cpd-nyxusa-master-catalog/default/dwa8106b14/ProductImages/Face/BB_Cream/800897822927_bbcream_natural_main.jpg?sw=390&sh=390&sm=fit"
+        e.target.src = rating < 3 ? "https://i.imgur.com/5EzYhOA.jpg" : "https://media.istockphoto.com/id/1206575314/vector/image-unavailable-icon.jpg?s=612x612&w=0&k=20&c=7aypXCTzJ42V0xRHJ08Nq1K6fPgY5IB_D4fXbWloX_w="
         e.target.error = null;
     }
 
@@ -21,7 +21,7 @@ const SingleProduct = (props) => {
             <Text mb="15px">{name}</Text>
 
             <Button color="gray.500" mb="15px" _hover={{ bgColor: "white" }} borderRadius="0px" padding="4px" border="1px solid #ba3d49" bgColor="white">
-                MSRP: $<Text as="del">{price * Math.ceil(Math.random() * 10)}</Text>
+                MSRP: £<Text as="del">{price * Math.ceil(Math.random() * 10)}</Text>
             </Button>
 
             <Box mb="15px">
@@ -35,7 +35,7 @@ const SingleProduct = (props) => {
                         />
                     ))}
             </Box>
-            <Heading mb="15px" size="md" fontWeight="bold">{`$${price}`}</Heading>
+            <Heading mb="15px" size="md" fontWeight="bold">{`£${price}`}</Heading>
             
             <Flex position="absolute" bottom="0px" w="100%" gap="2">
                 <Button 

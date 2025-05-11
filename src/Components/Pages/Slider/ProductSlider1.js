@@ -20,7 +20,7 @@ class ProductSlider1 extends Component {
 
         },
         {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          img: "https://asset.cloudinary.com/dd51vl9fe/a58db591d7c1dc44309cec7be3fd8a17",
           productdetail: "Quaker Oat So Simple",
           discountmessage: "Quick and instant oats",
           price: "Check Price"

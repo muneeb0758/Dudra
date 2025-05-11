@@ -31,7 +31,7 @@ const CartItem = ({ image_link, name, price, id, brand }) => {
                 <Text fontSize={"20px"} mb="20px">{name}</Text>
                 <Text fontSize={"15px"} mb="20px">{`Brand: ${brand}`}</Text>
 
-                <Heading size="md">{`$${price}`}</Heading>
+                <Heading size="md">{`£${price}`}</Heading>
             </Box>
             <Box>
                 <Circle as="button"

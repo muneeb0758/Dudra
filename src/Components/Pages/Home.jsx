@@ -48,6 +48,7 @@ const Home = () => {
       <Box mt={8} alignItems='center' w='85%' margin='auto'>
 
         <Box display={['grid', 'grid', 'flex']} justifyContent='space-between' gridTemplateColumns={'1fr 1fr'} >
+         
           <Link to= '/breakfast'>
             <Image w={395} src= {breakfast} alt="cat-1" />
           </Link>
@@ -225,7 +226,7 @@ const Home = () => {
       <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
         <CardBody>
           <Image
-            src='https://i.imgur.com/QLp1XeQ.jpg'
+            src='https://asset.cloudinary.com/dd51vl9fe/a58db591d7c1dc44309cec7be3fd8a17'
             alt='Nature Valley P&C 1x42g 40 count'
           />
           <Stack mt='6' spacing='3'>

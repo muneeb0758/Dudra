@@ -131,7 +131,7 @@ const Cart = () => {
                   p="15px"
                 >
                   <Text fontSize="15px">{`${cartItems.length} items in your cart `}</Text>
-                  <Text fontSize="15px">{`Cart Total: $${cartTotal.toFixed(2)}`}</Text>
+                  <Text fontSize="15px">{`Cart Total: £${cartTotal.toFixed(2)}`}</Text>
                 </Flex>
                 <Box>
                   {cartItems.map((c) => (

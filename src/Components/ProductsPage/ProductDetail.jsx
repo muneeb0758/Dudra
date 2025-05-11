@@ -20,10 +20,8 @@ const ProductDetail = () => {
   // Image error handler
   const handleImageError = (e) => {
     const rating = Math.ceil(Math.random() * 4);
-    e.target.src = rating < 3
-      ? "https://www.dior.com/beauty/version-5.1432748111912/resize-image/ep/0/390/100/0/packshots%252FPDG_Y0715100.jpg"
-      : "https://www.nyxcosmetics.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-cpd-nyxusa-master-catalog/default/dwa8106b14/ProductImages/Face/BB_Cream/800897822927_bbcream_natural_main.jpg?sw=390&sh=390&sm=fit";
-    e.target.error = null;
+           e.target.src = rating < 3 ? "https://i.imgur.com/5EzYhOA.jpg" : "https://media.istockphoto.com/id/1206575314/vector/image-unavailable-icon.jpg?s=612x612&w=0&k=20&c=7aypXCTzJ42V0xRHJ08Nq1K6fPgY5IB_D4fXbWloX_w="
+  e.target.error = null;
   };
   const handleAddToCart = () => {
     dispatch(addToCart({

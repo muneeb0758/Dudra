@@ -740,11 +740,11 @@ export const allProducts = {
     },
     {
       id: "S03",
-      name: "Madeira Cake 6x590g",
-      brand: "",
+      name: "D'Amor Cake",
+      brand: "La Madeliene",
       category: "Bakery",
       price: "14.50",
-      image_link: "https://placeholder.com/products/S03.jpg",
+      image_link: "https://asset.cloudinary.com/dd51vl9fe/a58db591d7c1dc44309cec7be3fd8a17",
       description: "Traditional Madeira cake, 590g each, pack of 6.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
