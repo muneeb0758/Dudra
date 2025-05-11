@@ -86,8 +86,8 @@ const Home = () => {
   <Box w={['100%', '100%', '30%']}>
     <Center>
       <Image 
-        src="https://i.imgur.com/L4env9T.jpg" 
-        w={'100%'} 
+        src="https://i.imgur.com/WZDyxzS.jpg" 
+        w={'60%'} 
         alt="Kelloggs Fruit N Fiber" 
       />
     </Center>
@@ -111,8 +111,8 @@ const Home = () => {
   <Box w={['100%', '100%', '30%']}>
     <Center>
       <Image 
-        src="https://i.imgur.com/L4env9T.jpg" 
-        w={'100%'} 
+        src="https://i.imgur.com/RBhPP1e.jpg" 
+        w={'60%'} 
         alt="Nature Valley Bars" 
       />
     </Center>
@@ -136,8 +136,8 @@ const Home = () => {
   <Box w={['100%', '100%', '30%']}>
     <Center>
       <Image 
-        src="https://i.imgur.com/L4env9T.jpg" 
-        w={'100%'} 
+        src="https://i.imgur.com/IK9aCX1.jpg" 
+        w={'60%'} 
         alt="Kesar Mango Pulp" 
       />
     </Center>
@@ -188,78 +188,23 @@ const Home = () => {
       </Box>
 
       {/* ********************************************************** What People Are Buying Right Now ************************************** */}
-      <Text fontSize={35} mt={"14px"} mb="14px" align="center">What People Are Buying Right Now</Text>
+     <Text fontSize={35} mt={"14px"} mb="14px" align="center">What People Are Buying Right Now</Text>
 
-      <Box>
+<Box>
   <Center>
     <Flex direction={['column', 'column', 'row']} w={"95%"} gap={4} m='auto' justifyContent={'space-between'} wrap="wrap">
 
-      {/* Card 1 - Kelloggs Fruit N Fiber */}
-      <Card w={['70%', '70%', '30%']} marginLeft={12} cursor='pointer' margin='auto'>
+      {/* Card 1 - Nescafe Original Sticks */}
+      <Card w={['70%', '70%', '22%']} marginLeft={12} cursor='pointer' margin='auto'>
         <CardBody>
           <Image
-            src='https://i.imgur.com/QLp1XeQ.jpg'
-            alt='Kelloggs Fruit N Fiber 40x45g'
+            src='https://i.imgur.com/deEcxAn.jpg'
+            alt='Nescafe Original Sticks'
+            borderRadius='lg'
           />
           <Stack mt='6' spacing='3'>
             <Text color={"gray"}>
-              Kelloggs Fruit N Fiber 40x45g - High fiber breakfast cereal with dried fruits
-            </Text>
-            <Text fontSize={23} textAlign="left">
-              £18.99
-            </Text>
-          </Stack>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <Box w="100%">
-            <Link to="/breakfast">
-              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                <BiShoppingBag color='white' fontSize={25} /> View More
-              </Button>
-            </Link>
-          </Box>
-        </CardFooter>
-      </Card>
-
-      {/* Card 2 - Nature Valley Protein Bars */}
-      <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
-        <CardBody>
-          <Image
-            src='https://asset.cloudinary.com/dd51vl9fe/a58db591d7c1dc44309cec7be3fd8a17'
-            alt='Nature Valley P&C 1x42g 40 count'
-          />
-          <Stack mt='6' spacing='3'>
-            <Text color={"gray"}>
-              Nature Valley Protein & Cereal Bars - 42g each, case of 40
-            </Text>
-            <Text fontSize={23} textAlign="left">
-              £26.99
-            </Text>
-          </Stack>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <Box w="100%">
-            <Link to="/snacks">
-              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                <BiShoppingBag color='white' fontSize={25} /> View More
-              </Button>
-            </Link>
-          </Box>
-        </CardFooter>
-      </Card>
-
-      {/* Card 3 - Kesar Mango Pulp */}
-      <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
-        <CardBody>
-          <Image
-            src='https://i.imgur.com/QLp1XeQ.jpg'
-            alt='Kesar Mango Pulp 6x850g'
-          />
-          <Stack mt='6' spacing='3'>
-            <Text color={"gray"}>
-              Kesar Mango Pulp - Premium mango in 850g cans, case of 6
+              Nescafe Original Sticks 1x200 - Instant coffee sachets for perfect single servings
             </Text>
             <Text fontSize={23} textAlign="left">
               £19.99
@@ -269,7 +214,7 @@ const Home = () => {
         <Divider />
         <CardFooter>
           <Box w="100%">
-            <Link to="/fruits">
+            <Link to="/coffee">
               <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
                 <BiShoppingBag color='white' fontSize={25} /> View More
               </Button>
@@ -278,26 +223,85 @@ const Home = () => {
         </CardFooter>
       </Card>
 
-      {/* Card 4 - Dettol Antibacterial Wipes */}
-      <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
+      {/* Card 2 - Country Range Honey Portions */}
+      <Card w={['70%', '70%', '22%']} cursor='pointer' margin='auto'>
         <CardBody>
           <Image
-            src='https://i.imgur.com/QLp1XeQ.jpg'
-            alt='Dettol Antibacterial Wipes'
+            src='https://i.imgur.com/PwSoVLk.jpg'
+            alt='Country Range Honey Portions'
+            borderRadius='lg'
           />
           <Stack mt='6' spacing='3'>
             <Text color={"gray"}>
-              Dettol Antibacterial Wipes - 10 packs of 30 wipes, kills 99.9% of bacteria
+              Country Range Honey Portions 100x20g - Pure honey in convenient individual servings
             </Text>
             <Text fontSize={23} textAlign="left">
-              £12.99
+              £25.99
             </Text>
           </Stack>
         </CardBody>
         <Divider />
         <CardFooter>
           <Box w="100%">
-            <Link to="/cleaning-supplies">
+            <Link to="/condiments">
+              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
+                <BiShoppingBag color='white' fontSize={25} /> View More
+              </Button>
+            </Link>
+          </Box>
+        </CardFooter>
+      </Card>
+
+      {/* Card 3 - Fiesta Green Paper Bags */}
+      <Card w={['70%', '70%', '22%']} cursor='pointer' margin='auto'>
+        <CardBody>
+          <Image
+            src='https://i.imgur.com/ULE5L7p.jpg'
+            alt='Fiesta Green Paper Bags'
+            borderRadius='lg'
+          />
+          <Stack mt='6' spacing='3'>
+            <Text color={"gray"}>
+              Large Brown Paper Bags with Handles - Eco-friendly recycled paper carriers (250pk)
+            </Text>
+            <Text fontSize={23} textAlign="left">
+              £22.99
+            </Text>
+          </Stack>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <Box w="100%">
+            <Link to="/packaging">
+              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
+                <BiShoppingBag color='white' fontSize={25} /> View More
+              </Button>
+            </Link>
+          </Box>
+        </CardFooter>
+      </Card>
+
+      {/* Card 4 - Snickers Chocolate Bars */}
+      <Card w={['70%', '70%', '22%']} cursor='pointer' margin='auto'>
+        <CardBody>
+          <Image
+            src='https://i.imgur.com/WVhhTBP.jpg'
+            alt='Snickers Chocolate Bars'
+            borderRadius='lg'
+          />
+          <Stack mt='6' spacing='3'>
+            <Text color={"gray"}>
+              Snickers Chocolate Bars 48x48g - Milk chocolate with caramel and peanuts
+            </Text>
+            <Text fontSize={23} textAlign="left">
+              £25.99
+            </Text>
+          </Stack>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <Box w="100%">
+            <Link to="/snacks">
               <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
                 <BiShoppingBag color='white' fontSize={25} /> View More
               </Button>

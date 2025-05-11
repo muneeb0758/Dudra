@@ -341,9 +341,9 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
 
 
             { <div id="menu-dropdown">
-              <Link to='/sale'> <div id="menu-title">Sales</div></Link>
+              <Link to='/sale'> <div id="menu-title">All Products</div></Link>
               <div className="menu-dropdown-content">
-                <Box display="flex" gap="50px" pt={5} padding="20px">
+                {/* <Box display="flex" gap="50px" pt={5} padding="20px">
                   <div style={{ display: "flex", gap: "20px" }}>
                     <div>
                       <div
@@ -357,7 +357,7 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                           borderRadius: "10px",
                         }}
                       >
-                        {/* <Flex gap={4} alignItems="center">
+                        { <Flex gap={4} alignItems="center">
                           <BiDollar size="1.5em" />
                           <Link to='/sale'> <p style={{ fontSize: "20px" }}>Sale</p></Link>
                         </Flex>
@@ -412,11 +412,11 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                         <Flex gap={4} alignItems="center">
                           <TbDiscount2 size="1.5em" />
                           <Link to='/sale'><p style={{ fontSize: "18px" }}>Fetures Offer</p></Link>
-                        </Flex> */}
+                        </Flex> }
                       </div>
                     </div>
 
-                    {/* <div>
+                    { <div>
                       <div
                         style={{
                           paddingTop: "20px",
@@ -452,9 +452,9 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                           <p style={{ fontSize: "18px" }}>Gift and Sets</p>
                         </Flex>
                       </div>
-                    </div> */}
+                    </div> }
                   </div>
-                </Box>
+                </Box> */}
               </div>
             </div> }
 

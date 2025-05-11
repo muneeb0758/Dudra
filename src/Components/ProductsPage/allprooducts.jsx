@@ -7,7 +7,7 @@ export const allProducts = {
         name: "Oat So Simple",
         brand: "Quaker",
         category: "Breakfast",
-        price: "",
+        price: "14.99",
         image_link: "https://i.imgur.com/Qb9EbVk.jpg",
         description: "Quick and easy instant oats breakfast cereal.",
         dietary: ["Vegan"],
@@ -51,6 +51,17 @@ export const allProducts = {
         description: "Nescafe Original Sticks 1x200",
         dietary: ["Vegan"],
         packageType: "Sticks"
+      },
+      {
+        id: "CF01",
+        name: "Al-Near Arabic Organic Instant Coffee",
+        brand: "Nescafe",
+        category: "Coffee",
+        price: "24.99",
+        image_link: "https://i.imgur.com/coffee1.jpg",
+        description: "Enjoy starting your morning with a cup of bold instant coffee.",
+        dietary: ["Vegan"],
+        packageType: "Jar"
       }
     ],
     "Tate & Lyle": [
@@ -65,7 +76,6 @@ export const allProducts = {
         dietary: ["Vegan"],
         packageType: "Multi-pack"
       }
-      
     ],
     "Euro Collection London": [
       {
@@ -78,6 +88,17 @@ export const allProducts = {
         description: "Euro Collection London Bath & Shower Gel-10ml Sachets-500pk Euro.",
         dietary: [],
         packageType: "Sachets"
+      },
+      {
+        id: "BB01",
+        name: "Elan's Chicken Lender Band & Shower Gas Lion",
+        brand: "Euro Collection London",
+        category: "Bathing Item",
+        price: "32.99",
+        image_link: "https://i.imgur.com/shower1.jpg",
+        description: "Euro Collection London Bath Range",
+        dietary: [],
+        packageType: "Bottle"
       }
     ],
     "Country Range": [
@@ -88,7 +109,29 @@ export const allProducts = {
         category: "Condiments",
         price: "25.99",
         image_link: "https://i.imgur.com/PwSoVLk.jpg",
-        description: "Brand Country Range, Item weight 20 Grams, Package information Tub, Item dimensions L x W x H 24 x 20 x 11 centimetres, Package weight 2.06 Kilograms, Item form Liquid, Unit count 2000 gram",
+        description: "Brand Country Range, Item weight 20 Grams, Package information Tub",
+        dietary: ["Vegetarian"],
+        packageType: "Portion packs"
+      },
+      {
+        id: "JR01",
+        name: "Country Rings Assorted Jam Perfects 100 x 20g - Mixed Deficient",
+        brand: "Country Range",
+        category: "Jams & Preserves",
+        price: "22.99",
+        image_link: "https://i.imgur.com/jam1.jpg",
+        description: "Assorted jam perfects in mixed flavors",
+        dietary: ["Vegetarian"],
+        packageType: "Portion packs"
+      },
+      {
+        id: "JR02",
+        name: "Barberie Spiced Eggo",
+        brand: "Country Range",
+        category: "Jams & Preserves",
+        price: "21.99",
+        image_link: "https://i.imgur.com/jam2.jpg",
+        description: "Spiced eggo jam",
         dietary: ["Vegetarian"],
         packageType: "Portion packs"
       }
@@ -114,7 +157,18 @@ export const allProducts = {
         category: "Packaging",
         price: "22.99",
         image_link: "https://i.imgur.com/ULE5L7p.jpg",
-        description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags), Colour: Brown, Recycled paper material is kinder to Earth's natural resources, Thick paper construction offers enough strength to carry heavy loads, Kraft colourway gives these bags an organic look, Rectangular base allows bags to stand upright for easy loading and transportation, Supplied flat-packed for space-saving storage, Ideal for carrying takeaway containers, groceries and food-to-go, Great alternative to single-use plastic carrier bags",
+        description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags)",
+        dietary: [],
+        packageType: "Bags"
+      },
+      {
+        id: "WB01",
+        name: "200x Brown Paper Carrot Bags with Twist Hardware",
+        brand: "Fiesta Green",
+        category: "Packaging",
+        price: "18.99",
+        image_link: "https://i.imgur.com/bags1.jpg",
+        description: "Brown paper carrot bags with twist hardware",
         dietary: [],
         packageType: "Bags"
       }
@@ -127,7 +181,18 @@ export const allProducts = {
         category: "Cleaning Supplies",
         price: "10.99",
         image_link: "https://i.imgur.com/6hF9VjW.jpg",
-        description: "Centrefeed roll for easy paper access, Economical 1 ply roll, Absorbs liquid for wiping or drying hands and surfaces, Suitable for standard centrefeed dispensers, Dimensions: 300mx175mm, 60mm core, Supplied in a pack of 6, Colour: Blue",
+        description: "Centrefeed roll for easy paper access, Economical 1 ply roll",
+        dietary: [],
+        packageType: "Multi-pack"
+      },
+      {
+        id: "WB02",
+        name: "Blue rolls 6 Pack Bits Roll Completed Blue Roll 2 Fly Enforced Blue Roll",
+        brand: "Everyday",
+        category: "Cleaning Supplies",
+        price: "15.99",
+        image_link: "https://i.imgur.com/rolls1.jpg",
+        description: "Blue rolls pack of 6",
         dietary: [],
         packageType: "Multi-pack"
       }
@@ -240,6 +305,32 @@ export const allProducts = {
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
       }
+    ],
+    "Al-Sadroed": [
+      {
+        id: "AP01",
+        name: "Al-Sadroed 2, 48 (1224 Packs)",
+        brand: "Al-Sadroed",
+        category: "Always Peds",
+        price: "45.99",
+        image_link: "https://i.imgur.com/pads1.jpg",
+        description: "Always Discover Intochicure Pads Wombs, Nymph, Sweeteners",
+        dietary: [],
+        packageType: "Packs"
+      }
+    ],
+    "La Madeleine": [
+      {
+        id: "BK01",
+        name: "Silver Chicken La Madeleine Salmon Pack of 18",
+        brand: "La Madeleine",
+        category: "Bakery",
+        price: "28.99",
+        image_link: "https://i.imgur.com/bakery1.jpg",
+        description: "Silver Chicken La Madeleine Salmon",
+        dietary: [],
+        packageType: "Pack"
+      }
     ]
   },
   
@@ -266,77 +357,20 @@ export const allProducts = {
       description: "Quick and easy instant oats breakfast cereal.",
       dietary: ["Vegan"],
       packageType: "Box"
+    },
+    {
+      id: "CF02",
+      name: "Refuggy Cereal Pretion-Pas Mixed Case (36x8g)",
+      brand: "",
+      category: "Breakfast",
+      price: "15.99",
+      image_link: "https://i.imgur.com/cereal1.jpg",
+      description: "Refuggy Cereal Pretion-Pas Mixed Case",
+      dietary: ["Vegetarian"],
+      packageType: "Case"
     }
   ],
   
-  "Dairy": [
-    {
-      id: "C03",
-      name: "UHT Milk 27x200ml",
-      brand: "",
-      category: "Dairy",
-      price: "15.99",
-      image_link: "https://placeholder.com/products/C03.jpg",
-      description: "UHT processed milk in convenient 200ml portions, case of 27.",
-      dietary: ["Dairy"],
-      packageType: "Multi-pack"
-    },
-    {
-      id: "C04",
-      name: "Fresh Milk 1x250ml 10X250ml",
-      brand: "",
-      category: "Dairy",
-      price: "5.99",
-      image_link: "https://placeholder.com/products/C04.jpg",
-      description: "Fresh milk in 250ml containers, case of 10.",
-      dietary: ["Dairy"],
-      packageType: "Multi-pack"
-    },
-    {
-      id: "C05",
-      name: "Fresh Milk 1x500ml",
-      brand: "",
-      category: "Dairy",
-      price: "",
-      image_link: "https://placeholder.com/products/C05.jpg",
-      description: "Fresh milk in convenient 500ml containers.",
-      dietary: ["Dairy"],
-      packageType: "Single unit"
-    },
-    {
-      id: "C06",
-      name: "Low Fat Yoghurt 20x100g",
-      brand: "",
-      category: "Dairy",
-      price: "8.99",
-      image_link: "https://placeholder.com/products/C06.jpg",
-      description: "Low fat yoghurt in individual portion pots, case of 20.",
-      dietary: ["Dairy", "Low Fat"],
-      packageType: "Multi-pack"
-    },
-    {
-      id: "C07",
-      name: "Butter Portion 1x200 7g",
-      brand: "",
-      category: "Dairy",
-      price: "16.99",
-      image_link: "https://placeholder.com/products/C07.jpg",
-      description: "Individual butter portions, 7g each, case of 200.",
-      dietary: ["Dairy"],
-      packageType: "Portion packs"
-    },
-    {
-      id: "C11",
-      name: "Medium Eggs -1x360",
-      brand: "",
-      category: "Dairy",
-      price: "74.99",
-      image_link: "https://placeholder.com/products/C11.jpg",
-      description: "Medium-sized eggs, bulk case of 360.",
-      dietary: ["Protein", "Vegetarian"],
-      packageType: "Bulk case"
-    }
-  ],
   
   "Snacks": [
     {
@@ -360,11 +394,33 @@ export const allProducts = {
       description: "Traditional Madeira cake, 590g each, pack of 6.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
+    },
+    {
+      id: "CF03",
+      name: "Fat 5 Light Chocolate Brin Chocolate Channel and Roasted Bars Ba Rice",
+      brand: "",
+      category: "Snacks",
+      price: "12.99",
+      image_link: "https://i.imgur.com/chocolate1.jpg",
+      description: "Light chocolate bars with roasted rice",
+      dietary: ["Vegetarian"],
+      packageType: "Bars"
+    },
+    {
+      id: "CF04",
+      name: "Fruitless Chocolate Bars, Milk Chocolate Channel",
+      brand: "",
+      category: "Snacks",
+      price: "11.99",
+      image_link: "https://i.imgur.com/chocolate2.jpg",
+      description: "Fruitless milk chocolate bars",
+      dietary: ["Vegetarian"],
+      packageType: "Bars"
     }
   ],
   
   "Fruits & Veg": [
-    {
+  {
       id: "S04",
       name: "Red Apples 1x12kg",
       brand: "",
@@ -407,11 +463,44 @@ export const allProducts = {
       description: "Kesar mango pulp in 850g cans, case of 6.",
       dietary: ["Vegan", "Fruit"],
       packageType: "Multi-pack"
-    } 
+    } ,
+        {
+      id: "CF05",
+      name: "Fruitpack Peach & Pearl in Juice Pets - 181x11.5g",
+      brand: "",
+      category: "Fruits & Veg",
+      price: "28.99",
+      image_link: "https://i.imgur.com/fruit1.jpg",
+      description: "Peach and pearl fruit in juice",
+      dietary: ["Vegan", "Fruit"],
+      packageType: "Packs"
+    },
+    {
+      id: "CF06",
+      name: "Fruitpack Mountain Segments in July Pots - 181x12kg",
+      brand: "",
+      category: "Fruits & Veg",
+      price: "32.99",
+      image_link: "https://i.imgur.com/fruit2.jpg",
+      description: "Mountain fruit segments in pots",
+      dietary: ["Vegan", "Fruit"],
+      packageType: "Pots"
+    },
+    {
+      id: "CF07",
+      name: "Fruitpack Pineapple in Juice Pets - 18 x 11.5g",
+      brand: "",
+      category: "Fruits & Veg",
+      price: "29.99",
+      image_link: "https://i.imgur.com/fruit3.jpg",
+      description: "Pineapple in juice",
+      dietary: ["Vegan", "Fruit"],
+      packageType: "Pets"
+    }
   ],
   
   "Bath & Body": [
-    {
+   {
       id: "B05",
       name: "Toothpaste 12x50g",
       brand: "",
@@ -498,11 +587,33 @@ export const allProducts = {
       description: "Standard toilet paper rolls in bulk packaging, case of 36.",
       dietary: [],
       packageType: "Multi-pack"
+    },
+        {
+      id: "NS01",
+      name: "Worpuckle Hair Hair Red Catering Kitchen Mole",
+      brand: "",
+      category: "National Safety",
+      price: "15.99",
+      image_link: "https://i.imgur.com/safety1.jpg",
+      description: "Worpuckle Hair Hair Red Catering Kitchen Mole",
+      dietary: [],
+      packageType: "Pcs"
+    },
+    {
+      id: "NS02",
+      name: "Doguc Beard Hair Dissective Nylon Beard Beard Pin",
+      brand: "",
+      category: "National Safety",
+      price: "12.99",
+      image_link: "https://i.imgur.com/safety2.jpg",
+      description: "DISPOSABLE BEARD MET (DOPK!). Blue Net",
+      dietary: [],
+      packageType: "Pcs"
     }
   ],
   
   "Spices": [
-    {
+  {
       id: "dd004",
       name: "Black Pepper Coarse 5kg",
       brand: "",
@@ -689,10 +800,9 @@ export const allProducts = {
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
     }
-  ],
+    ],
   
   "Packaging": [
-    
     {
       id: "CS05",
       name: "Large Brown paper Bags with Handles",
@@ -700,7 +810,51 @@ export const allProducts = {
       category: "Packaging",
       price: "22.99",
       image_link: "https://i.imgur.com/wdq5J7g.jpg",
-      description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags), Colour: Brown, Recycled paper material is kinder to Earth's natural resources, Thick paper construction offers enough strength to carry heavy loads, Kraft colourway gives these bags an organic look, Rectangular base allows bags to stand upright for easy loading and transportation, Supplied flat-packed for space-saving storage, Ideal for carrying takeaway containers, groceries and food-to-go, Great alternative to single-use plastic carrier bags",
+      description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags)",
+      dietary: [],
+      packageType: "Bags"
+    },
+    {
+      id: "WB03",
+      name: "200x Honey Grey Cleaner Fan Lines 18 x 22 x 28",
+      brand: "",
+      category: "Waste Bins & Dualities",
+      price: "24.99",
+      image_link: "https://i.imgur.com/bins1.jpg",
+      description: "200 x Medium Duty Green Backs 182x25px -Green",
+      dietary: [],
+      packageType: "Pcs"
+    },
+    {
+      id: "WB04",
+      name: "200x Wash Kinks Garbage Bags",
+      brand: "",
+      category: "Waste Bins & Dualities",
+      price: "19.99",
+      image_link: "https://i.imgur.com/bags2.jpg",
+      description: "Wash kinks garbage bags",
+      dietary: [],
+      packageType: "Bags"
+    },
+    {
+      id: "WB05",
+      name: "200x Insight And Dust Tilt 15 x 23 x 38 inch",
+      brand: "",
+      category: "Waste Bins & Dualities",
+      price: "21.99",
+      image_link: "https://i.imgur.com/bins2.jpg",
+      description: "Insight and dust tilt bags",
+      dietary: [],
+      packageType: "Pcs"
+    },
+    {
+      id: "WB06",
+      name: "White Barber Garbage Bags",
+      brand: "",
+      category: "Waste Bins & Dualities",
+      price: "17.99",
+      image_link: "https://i.imgur.com/bags3.jpg",
+      description: "White barber garbage bags",
       dietary: [],
       packageType: "Bags"
     }
@@ -728,5 +882,150 @@ export const allProducts = {
       description: "Traditional Madeira cake, 590g each, pack of 6.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
+    },
+    {
+      id: "CF08",
+      name: "A-Peamula de 4 Sky Double Bars",
+      brand: "",
+      category: "Bakery",
+      price: "8.99",
+      image_link: "https://i.imgur.com/bakery2.jpg",
+      description: "Sky double bars",
+      dietary: ["Vegetarian"],
+      packageType: "Bars"
     }
-  ],}
+  ],
+  
+  // New Categories
+  "Coffee": [
+    {
+      id: "CF01",
+      name: "Al-Near Arabic Organic Instant Coffee",
+      brand: "Nescafe",
+      category: "Coffee",
+      price: "24.99",
+      image_link: "https://i.imgur.com/coffee1.jpg",
+      description: "Enjoy starting your morning with a cup of bold instant coffee.",
+      dietary: ["Vegan"],
+      packageType: "Jar"
+    }
+  ],
+  
+  "Tea & Intrafoies": [
+    {
+      id: "CF09",
+      name: "Premium Black Tea, Alliance Combed",
+      brand: "",
+      category: "Tea & Intrafoies",
+      price: "15.99",
+      image_link: "https://i.imgur.com/tea1.jpg",
+      description: "One Cup Tea Bake, a premium 100% black tea",
+      dietary: ["Vegan"],
+      packageType: "Bags"
+    },
+    {
+      id: "CF10",
+      name: "Cheryl Luster 1100 Furniture Premium Black Tea, Tea Bags 2.5kg,325kgl",
+      brand: "",
+      category: "Tea & Intrafoies",
+      price: "42.99",
+      image_link: "https://i.imgur.com/tea2.jpg",
+      description: "Premium black tea bags in bulk",
+      dietary: ["Vegan"],
+      packageType: "Bulk"
+    }
+  ],
+  
+  "Jams & Preserves": [
+    {
+      id: "JR01",
+      name: "Country Rings Assorted Jam Perfects 100 x 20g - Mixed Deficient",
+      brand: "Country Range",
+      category: "Jams & Preserves",
+      price: "22.99",
+      image_link: "https://i.imgur.com/jam1.jpg",
+      description: "Assorted jam perfects in mixed flavors",
+      dietary: ["Vegetarian"],
+      packageType: "Portion packs"
+    },
+    {
+      id: "JR02",
+      name: "Barberie Spiced Eggo",
+      brand: "Country Range",
+      category: "Jams & Preserves",
+      price: "21.99",
+      image_link: "https://i.imgur.com/jam2.jpg",
+      description: "Spiced eggo jam",
+      dietary: ["Vegetarian"],
+      packageType: "Portion packs"
+    }
+  ],
+  
+  "Waste Bins & Dualities": [
+    {
+      id: "WB03",
+      name: "200x Honey Grey Cleaner Fan Lines 18 x 22 x 28",
+      brand: "",
+      category: "Waste Bins & Dualities",
+      price: "24.99",
+      image_link: "https://i.imgur.com/bins1.jpg",
+      description: "200 x Medium Duty Green Backs 182x25px -Green",
+      dietary: [],
+      packageType: "Pcs"
+    },
+    // ... (other waste bin products)
+  ],
+  
+  "National Safety": [
+    {
+      id: "NS01",
+      name: "Worpuckle Hair Hair Red Catering Kitchen Mole",
+      brand: "",
+      category: "National Safety",
+      price: "15.99",
+      image_link: "https://i.imgur.com/safety1.jpg",
+      description: "Worpuckle Hair Hair Red Catering Kitchen Mole",
+      dietary: [],
+      packageType: "Pcs"
+    },
+    {
+      id: "NS02",
+      name: "Doguc Beard Hair Dissective Nylon Beard Beard Pin",
+      brand: "",
+      category: "National Safety",
+      price: "12.99",
+      image_link: "https://i.imgur.com/safety2.jpg",
+      description: "DISPOSABLE BEARD MET (DOPK!). Blue Net",
+      dietary: [],
+      packageType: "Pcs"
+    }
+  ],
+  
+  "Bathing Item": [
+    {
+      id: "BB01",
+      name: "Elan's Chicken Lender Band & Shower Gas Lion",
+      brand: "Euro Collection London",
+      category: "Bathing Item",
+      price: "32.99",
+      image_link: "https://i.imgur.com/shower1.jpg",
+      description: "Euro Collection London Bath Range",
+      dietary: [],
+      packageType: "Bottle"
+    }
+  ],
+  
+  "Always Peds": [
+    {
+      id: "AP01",
+      name: "Al-Sadroed 2, 48 (1224 Packs)",
+      brand: "Al-Sadroed",
+      category: "Always Peds",
+      price: "45.99",
+      image_link: "https://i.imgur.com/pads1.jpg",
+      description: "Always Discover Intochicure Pads Wombs, Nymph, Sweeteners",
+      dietary: [],
+      packageType: "Packs"
+    }
+  ]
+};

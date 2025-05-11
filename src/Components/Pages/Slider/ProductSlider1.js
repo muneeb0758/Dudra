@@ -13,62 +13,58 @@ class ProductSlider1 extends Component {
     this.state = {
         slides: [
         {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          img: "https://i.imgur.com/WZDyxzS.jpg",
           productdetail: "Kelloggs Fruit N Fiber 40x45g",
           discountmessage: "High fiber breakfast cereal",
           price: "£18.99"
 
         },
         {
-          img: "https://asset.cloudinary.com/dd51vl9fe/a58db591d7c1dc44309cec7be3fd8a17",
+          img: "https://i.imgur.com/Qb9EbVk.jpg",
           productdetail: "Quaker Oat So Simple",
           discountmessage: "Quick and instant oats",
-          price: "Check Price"
+          price: "£14.99"
         },
         {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          img: "https://i.imgur.com/li0BNj8.jpg",
           productdetail: "Nature Valley P&C 40 count",
           discountmessage: "Protein and cereal bars",
           price: "£26.99"
         },
         {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          img: "https://i.imgur.com/deEcxAn.jpg",
           productdetail: "Nescafe Original Sticks 1x200",
           discountmessage: "Instant coffee sticks",
           price: "£19.99"
         },
         {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          img: "https://i.imgur.com/sQ00I0p.jpg",
           productdetail: "Tate & Lyle Sugar 15x1kg",
           discountmessage: "White sugar multi-pack",
           price: "£19.99"
         },
         {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          img: "https://i.imgur.com/IK9aCX1.jpg",
           productdetail: "Kesar Mango Pulp 6x850g",
           discountmessage: "Premium mango pulp",
           price: "£19.99"
         },
         {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          img: "https://i.imgur.com/gnPKlAU.jpg",
           productdetail: "Laila Basmati Rice 1x20kg",
           discountmessage: "Premium basmati rice",
           price: "£34.99"
         },
         {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          img: "https://i.imgur.com/9BlTjNO.png",
           productdetail: "Rajah Black Ground Pepper 10x100g",
           discountmessage: "Ground black pepper",
           price: "£25.99"
         },
+        
+      
         {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
-          productdetail: "Sapna Ginger & Garlic Paste 6x1kg",
-          discountmessage: "Ready-to-use paste",
-          price: "£18.99"
-        },
-        {
-          img: "https://i.imgur.com/UdfQqVJ.jpg",
+          img: "https://i.imgur.com/VFPMSfi.jpg",
           productdetail: "Country Range Honey Portions 100x20g",
           discountmessage: "Convenient honey portions",
           price: "£25.99"
