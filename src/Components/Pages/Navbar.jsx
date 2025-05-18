@@ -921,23 +921,23 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
         >
           <Box display="flex" alignItems="center" gap="10px">
             <FaShippingFast size="1.5em" />
-            <p>FREE US Sheeping Over $49</p>
+            <p>FREE UK Sheeping Over £49</p>
           </Box>
 
           <Box display="flex" alignItems="center" gap="10px">
             <RiCoinsFill size="1.5em" />
-            <p> Refer a Friend, Get $15</p>
+            <p> Refer a Friend, Get £15</p>
           </Box>
 
           <Box display="flex" alignItems="center" gap="10px">
             <RiBattery2ChargeFill size="1.5em" />
             <p> New Customers Save 20% - Use Code NEWBIE</p>
           </Box>
-
+{/* 
           <Box display="flex" alignItems="center" gap="10px">
             <MdOutlineSmartphone size="1.5em" />
             <p>Download Our App</p>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
 

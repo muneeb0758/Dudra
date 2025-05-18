@@ -116,101 +116,101 @@ const Home = () => {
       </Box>
 
       {/* **********************************************************Missed Black Friday************************************** */}
-      <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
-        Missed Black Friday?
-      </Text>
-      <Box mt={8}><ProductSlider1 /></Box>
+     <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
+    Missed Black Friday?
+</Text>
+<Box mt={8}><ProductSlider1 /></Box>
 
-      {/* **********************************************************Trending Offers************************************** */}
-      <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
-        Trending Offers
-      </Text>
-      <Box>
-        <Center>
-          <Flex direction={['column', 'column', 'row']} gap={6} justify="center">
+{/* **********************************************************Trending Offers************************************** */}
+<Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
+    Trending Offers
+</Text>
+<Box>
+    <Center>
+        <Flex direction={['column', 'column', 'row']} gap={6} justify="center" w="95%">
             {/* Product 1 - Kelloggs Breakfast Cereal */}
-            <Box w={['100%', '100%', '30%']} borderWidth="1px" borderRadius="lg" p={4} bg="white">
-              <Center>
-                <Image src="https://i.imgur.com/WZDyxzS.jpg" w={'60%'} alt="Kelloggs Fruit N Fiber" />
-              </Center>
-              <Heading fontSize={20} mt={4} color={COLORS.text}>Kelloggs Fruit N Fiber</Heading>
-              <Text fontSize={13} mt={2} color={COLORS.lightText}>
-                High fiber breakfast cereal with dried fruits - 40x45g portion packs
-              </Text>
-              <Flex align="baseline" mt={2}>
-                <Heading size="md" color={COLORS.price} mr={2}>£18.99</Heading>
-                <Text as="del" color={COLORS.lightText} fontSize="sm">£24.99</Text>
-              </Flex>
-              <Link to="/breakfast">
-                <Button 
-                  bg={COLORS.button} 
-                  color="white"
-                  _hover={{ bg: COLORS.buttonHover }}
-                  _active={{ bg: COLORS.primary }}
-                  mt={4}
-                  w="100%"
-                >
-                  SHOP NOW
-                </Button>
-              </Link>
+            <Box w={['100%', '100%', '30%']} borderWidth="1px" borderRadius="lg" p={4} bg="white" h="100%">
+                <Center h="180px">
+                    <Image src="https://i.imgur.com/WZDyxzS.jpg" w={'60%'} maxH="180px" objectFit="contain" alt="Kelloggs Fruit N Fiber" />
+                </Center>
+                <Heading fontSize={20} mt={4} color={COLORS.text} minH="60px" display="flex" alignItems="center">Kelloggs Fruit N Fiber</Heading>
+                <Text fontSize={13} mt={2} color={COLORS.lightText} minH="60px">
+                    High fiber breakfast cereal with dried fruits - 40x45g portion packs
+                </Text>
+                <Flex align="baseline" mt={2} minH="32px">
+                    <Heading size="md" color={COLORS.price} mr={2}>£18.99</Heading>
+                    <Text as="del" color={COLORS.lightText} fontSize="sm">£24.99</Text>
+                </Flex>
+                <Link to="/breakfast">
+                    <Button 
+                        bg={COLORS.button} 
+                        color="white"
+                        _hover={{ bg: COLORS.buttonHover }}
+                        _active={{ bg: COLORS.primary }}
+                        mt={4}
+                        w="100%"
+                    >
+                        SHOP NOW
+                    </Button>
+                </Link>
             </Box>
 
             {/* Product 2 - Nature Valley Snack Bars */}
-            <Box w={['100%', '100%', '30%']} borderWidth="1px" borderRadius="lg" p={4} bg="white">
-              <Center>
-                <Image src="https://i.imgur.com/RBhPP1e.jpg" w={'60%'} alt="Nature Valley Bars" />
-              </Center>
-              <Heading fontSize={20} mt={4} color={COLORS.text}>Nature Valley Protein Bars</Heading>
-              <Text fontSize={13} mt={2} color={COLORS.lightText}>
-                Protein and cereal bars, 42g each - case of 40
-              </Text>
-              <Flex align="baseline" mt={2}>
-                <Heading size="md" color={COLORS.price} mr={2}>£26.99</Heading>
-                <Text as="del" color={COLORS.lightText} fontSize="sm">£32.99</Text>
-              </Flex>
-              <Link to="/snacks">
-                <Button 
-                  bg={COLORS.button} 
-                  color="white"
-                  _hover={{ bg: COLORS.buttonHover }}
-                  _active={{ bg: COLORS.primary }}
-                  mt={4}
-                  w="100%"
-                >
-                  SHOP NOW
-                </Button>
-              </Link>
+            <Box w={['100%', '100%', '30%']} borderWidth="1px" borderRadius="lg" p={4} bg="white" h="100%">
+                <Center h="180px">
+                    <Image src="https://i.imgur.com/RBhPP1e.jpg" w={'60%'} maxH="180px" objectFit="contain" alt="Nature Valley Bars" />
+                </Center>
+                <Heading fontSize={20} mt={4} color={COLORS.text} minH="60px" display="flex" alignItems="center">Nature Valley Protein Bars</Heading>
+                <Text fontSize={13} mt={2} color={COLORS.lightText} minH="60px">
+                    Protein and cereal bars, 42g each - case of 40
+                </Text>
+                <Flex align="baseline" mt={2} minH="32px">
+                    <Heading size="md" color={COLORS.price} mr={2}>£26.99</Heading>
+                    <Text as="del" color={COLORS.lightText} fontSize="sm">£32.99</Text>
+                </Flex>
+                <Link to="/snacks">
+                    <Button 
+                        bg={COLORS.button} 
+                        color="white"
+                        _hover={{ bg: COLORS.buttonHover }}
+                        _active={{ bg: COLORS.primary }}
+                        mt={4}
+                        w="100%"
+                    >
+                        SHOP NOW
+                    </Button>
+                </Link>
             </Box>
 
             {/* Product 3 - Kesar Mango Pulp */}
-            <Box w={['100%', '100%', '30%']} borderWidth="1px" borderRadius="lg" p={4} bg="white">
-              <Center>
-                <Image src="https://i.imgur.com/IK9aCX1.jpg" w={'60%'} alt="Kesar Mango Pulp" />
-              </Center>
-              <Heading fontSize={20} mt={4} color={COLORS.text}>Kesar Mango Pulp</Heading>
-              <Text fontSize={13} mt={2} color={COLORS.lightText}>
-                Premium mango pulp in 850g cans - case of 6
-              </Text>
-              <Flex align="baseline" mt={2}>
-                <Heading size="md" color={COLORS.price} mr={2}>£19.99</Heading>
-                <Text as="del" color={COLORS.lightText} fontSize="sm">£25.99</Text>
-              </Flex>
-              <Link to="/fruits">
-                <Button 
-                  bg={COLORS.button} 
-                  color="white"
-                  _hover={{ bg: COLORS.buttonHover }}
-                  _active={{ bg: COLORS.primary }}
-                  mt={4}
-                  w="100%"
-                >
-                  SHOP NOW
-                </Button>
-              </Link>
+            <Box w={['100%', '100%', '30%']} borderWidth="1px" borderRadius="lg" p={4} bg="white" h="100%">
+                <Center h="180px">
+                    <Image src="https://i.imgur.com/IK9aCX1.jpg" w={'60%'} maxH="180px" objectFit="contain" alt="Kesar Mango Pulp" />
+                </Center>
+                <Heading fontSize={20} mt={4} color={COLORS.text} minH="60px" display="flex" alignItems="center">Kesar Mango Pulp</Heading>
+                <Text fontSize={13} mt={2} color={COLORS.lightText} minH="60px">
+                    Premium mango pulp in 850g cans - case of 6
+                </Text>
+                <Flex align="baseline" mt={2} minH="32px">
+                    <Heading size="md" color={COLORS.price} mr={2}>£19.99</Heading>
+                    <Text as="del" color={COLORS.lightText} fontSize="sm">£25.99</Text>
+                </Flex>
+                <Link to="/fruits">
+                    <Button 
+                        bg={COLORS.button} 
+                        color="white"
+                        _hover={{ bg: COLORS.buttonHover }}
+                        _active={{ bg: COLORS.primary }}
+                        mt={4}
+                        w="100%"
+                    >
+                        SHOP NOW
+                    </Button>
+                </Link>
             </Box>
-          </Flex>
-        </Center>
-      </Box>
+        </Flex>
+    </Center>
+</Box>
 
       {/* **********************************************************Logos************************************** */}
       <Box mt={12}>
@@ -228,127 +228,129 @@ const Home = () => {
       </Box>
 
       {/* **********************************************************What People Are Buying Right Now************************************** */}
-      <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
+    
+        <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
         What People Are Buying Right Now
-      </Text>
+    </Text>
 
-      <Box>
+    <Box>
         <Center>
-          <Flex direction={['column', 'column', 'row']} w={"95%"} gap={4} m='auto' justifyContent={'space-between'} wrap="wrap">
-            {/* Card 1 - Nescafe Original Sticks */}
-            <Card w={['70%', '70%', '22%']} margin='auto' borderWidth="1px" borderColor="gray.100">
-              <CardBody>
-                <Image src='https://i.imgur.com/deEcxAn.jpg' alt='Nescafe Original Sticks' borderRadius='lg' />
-                <Stack mt='6' spacing='3'>
-                  <Text color={COLORS.lightText}>
-                    Nescafe Original Sticks 1x200 - Instant coffee sachets
-                  </Text>
-                  <Flex align="center">
-                    <Heading size="md" color={COLORS.price}>£19.99</Heading>
-                    <Badge ml={2} bg={COLORS.badge} color="white">SAVE 20%</Badge>
-                  </Flex>
-                </Stack>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Button 
-                  w="100%" 
-                  bg={COLORS.button} 
-                  color="white"
-                  _hover={{ bg: COLORS.buttonHover }}
-                  leftIcon={<BiShoppingBag />}
-                >
-                  Add to Cart
-                </Button>
-              </CardFooter>
-            </Card>
+            <Flex direction={['column', 'column', 'row']} w={"95%"} gap={4} m='auto' justifyContent={'space-between'} wrap="wrap">
+                {/* Card 1 - Nescafe Original Sticks */}
+                <Card w={['70%', '70%', '22%']} h="100%" margin='auto' borderWidth="1px" borderColor="gray.100">
+                    <CardBody>
+                        <Image src='https://i.imgur.com/deEcxAn.jpg' alt='Nescafe Original Sticks' borderRadius='lg' h="180px" objectFit="contain" />
+                        <Stack mt='6' spacing='3'>
+                            <Text color={COLORS.lightText} minH="60px" display="flex" alignItems="center">
+                                Nescafe Original Sticks 1x200 - Instant coffee sachets
+                            </Text>
+                            <Flex align="center" minH="32px">
+                                <Heading size="md" color={COLORS.price}>£19.99</Heading>
+                                <Badge ml={2} bg={COLORS.badge} color="white">SAVE 20%</Badge>
+                            </Flex>
+                        </Stack>
+                    </CardBody>
+                    <Divider />
+                    <CardFooter>
+                        <Button 
+                            w="100%" 
+                            bg={COLORS.button} 
+                            color="white"
+                            _hover={{ bg: COLORS.buttonHover }}
+                            leftIcon={<BiShoppingBag />}
+                        >
+                            Add to Cart
+                        </Button>
+                    </CardFooter>
+                </Card>
 
-            {/* Card 2 - Country Range Honey Portions */}
-            <Card w={['70%', '70%', '22%']} margin='auto' borderWidth="1px" borderColor="gray.100">
-              <CardBody>
-                <Image src='https://i.imgur.com/PwSoVLk.jpg' alt='Country Range Honey Portions' borderRadius='lg' />
-                <Stack mt='6' spacing='3'>
-                  <Text color={COLORS.lightText}>
-                    Country Range Honey Portions 100x20g - Pure honey
-                  </Text>
-                  <Flex align="center">
-                    <Heading size="md" color={COLORS.price}>£25.99</Heading>
-                    <Badge ml={2} bg={COLORS.badge} color="white">SAVE 15%</Badge>
-                  </Flex>
-                </Stack>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Button 
-                  w="100%" 
-                  bg={COLORS.button} 
-                  color="white"
-                  _hover={{ bg: COLORS.buttonHover }}
-                  leftIcon={<BiShoppingBag />}
-                >
-                  Add to Cart
-                </Button>
-              </CardFooter>
-            </Card>
+                {/* Card 2 - Country Range Honey Portions */}
+                <Card w={['70%', '70%', '22%']} h="100%" margin='auto' borderWidth="1px" borderColor="gray.100">
+                    <CardBody>
+                        <Image src='https://i.imgur.com/PwSoVLk.jpg' alt='Country Range Honey Portions' borderRadius='lg' h="180px" objectFit="contain" />
+                        <Stack mt='6' spacing='3'>
+                            <Text color={COLORS.lightText} minH="60px" display="flex" alignItems="center">
+                                Country Range Honey Portions 100x20g - Pure honey
+                            </Text>
+                            <Flex align="center" minH="32px">
+                                <Heading size="md" color={COLORS.price}>£25.99</Heading>
+                                <Badge ml={2} bg={COLORS.badge} color="white">SAVE 15%</Badge>
+                            </Flex>
+                        </Stack>
+                    </CardBody>
+                    <Divider />
+                    <CardFooter>
+                        <Button 
+                            w="100%" 
+                            bg={COLORS.button} 
+                            color="white"
+                            _hover={{ bg: COLORS.buttonHover }}
+                            leftIcon={<BiShoppingBag />}
+                        >
+                            Add to Cart
+                        </Button>
+                    </CardFooter>
+                </Card>
 
-            {/* Card 3 - Fiesta Green Paper Bags */}
-            <Card w={['70%', '70%', '22%']} margin='auto' borderWidth="1px" borderColor="gray.100">
-              <CardBody>
-                <Image src='https://i.imgur.com/ULE5L7p.jpg' alt='Fiesta Green Paper Bags' borderRadius='lg' />
-                <Stack mt='6' spacing='3'>
-                  <Text color={COLORS.lightText}>
-                    Large Brown Paper Bags with Handles (250pk)
-                  </Text>
-                  <Flex align="center">
-                    <Heading size="md" color={COLORS.price}>£22.99</Heading>
-                    <Badge ml={2} bg={COLORS.accent} color="white">ECO</Badge>
-                  </Flex>
-                </Stack>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Button 
-                  w="100%" 
-                  bg={COLORS.button} 
-                  color="white"
-                  _hover={{ bg: COLORS.buttonHover }}
-                  leftIcon={<BiShoppingBag />}
-                >
-                  Add to Cart
-                </Button>
-              </CardFooter>
-            </Card>
+                {/* Card 3 - Fiesta Green Paper Bags */}
+                <Card w={['70%', '70%', '22%']} h="100%" margin='auto' borderWidth="1px" borderColor="gray.100">
+                    <CardBody>
+                        <Image src='https://i.imgur.com/ULE5L7p.jpg' alt='Fiesta Green Paper Bags' borderRadius='lg' h="180px" objectFit="contain" />
+                        <Stack mt='6' spacing='3'>
+                            <Text color={COLORS.lightText} minH="60px" display="flex" alignItems="center">
+                                Large Brown Paper Bags with Handles (250pk)
+                            </Text>
+                            <Flex align="center" minH="32px">
+                                <Heading size="md" color={COLORS.price}>£22.99</Heading>
+                                <Badge ml={2} bg={COLORS.accent} color="white">ECO</Badge>
+                            </Flex>
+                        </Stack>
+                    </CardBody>
+                    <Divider />
+                    <CardFooter>
+                        <Button 
+                            w="100%" 
+                            bg={COLORS.button} 
+                            color="white"
+                            _hover={{ bg: COLORS.buttonHover }}
+                            leftIcon={<BiShoppingBag />}
+                        >
+                            Add to Cart
+                        </Button>
+                    </CardFooter>
+                </Card>
 
-            {/* Card 4 - Snickers Chocolate Bars */}
-            <Card w={['70%', '70%', '22%']} margin='auto' borderWidth="1px" borderColor="gray.100">
-              <CardBody>
-                <Image src='https://i.imgur.com/WVhhTBP.jpg' alt='Snickers Chocolate Bars' borderRadius='lg' />
-                <Stack mt='6' spacing='3'>
-                  <Text color={COLORS.lightText}>
-                    Snickers Chocolate Bars 48x48g - Milk chocolate
-                  </Text>
-                  <Flex align="center">
-                    <Heading size="md" color={COLORS.price}>£25.99</Heading>
-                    <Badge ml={2} bg={COLORS.badge} color="white">BESTSELLER</Badge>
-                  </Flex>
-                </Stack>
-              </CardBody>
-              <Divider />
-              <CardFooter>
-                <Button 
-                  w="100%" 
-                  bg={COLORS.button} 
-                  color="white"
-                  _hover={{ bg: COLORS.buttonHover }}
-                  leftIcon={<BiShoppingBag />}
-                >
-                  Add to Cart
-                </Button>
-              </CardFooter>
-            </Card>
-          </Flex>
+                {/* Card 4 - Snickers Chocolate Bars */}
+                <Card w={['70%', '70%', '22%']} h="100%" margin='auto' borderWidth="1px" borderColor="gray.100">
+                    <CardBody>
+                        <Image src='https://i.imgur.com/WVhhTBP.jpg' alt='Snickers Chocolate Bars' borderRadius='lg' h="180px" objectFit="contain" />
+                        <Stack mt='6' spacing='3'>
+                            <Text color={COLORS.lightText} minH="60px" display="flex" alignItems="center">
+                                Snickers Chocolate Bars 48x48g - Milk chocolate
+                            </Text>
+                            <Flex align="center" minH="32px">
+                                <Heading size="md" color={COLORS.price}>£25.99</Heading>
+                                <Badge ml={2} bg={COLORS.badge} color="white">BESTSELLER</Badge>
+                            </Flex>
+                        </Stack>
+                    </CardBody>
+                    <Divider />
+                    <CardFooter>
+                        <Button 
+                            w="100%" 
+                            bg={COLORS.button} 
+                            color="white"
+                            _hover={{ bg: COLORS.buttonHover }}
+                            leftIcon={<BiShoppingBag />}
+                        >
+                            Add to Cart
+                        </Button>
+                    </CardFooter>
+                </Card>
+            </Flex>
         </Center>
-      </Box>
+    </Box>
+
 
       {/* **********************************************************Brand of the Month************************************** */}
       <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>

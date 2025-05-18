@@ -285,7 +285,7 @@ const Shop = ({ categoryFilter, searchTerm }) => {
                 ))}
             </SimpleGrid>
           ) : (
-            <SimpleGrid w="100%" columns={[2, 2, 4]} spacing="40px" pt="10">
+            <SimpleGrid w="100%" columns={[2, 2, 6]} spacing="40px" pt="10">
               {products.map((p, i) => {
                 if (i < 25) {
                   return (
