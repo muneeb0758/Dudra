@@ -12,7 +12,6 @@ export const USER_SIGNUP_FAILURE = 'USER_SIGNUP_FAILURE';
 export const USER_LOGIN_REQUEST = 'USER_LOGIN_REQUEST';
 export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS';
 export const USER_LOGIN_FAILURE = 'USER_LOGIN_FAILURE';
-export const USER_LOGOUT = 'USER_LOGOUT';
 export const ADMIN_LOGIN = 'ADMIN_LOGIN';
 
 // Action Creators
@@ -127,12 +126,8 @@ export const adminLogin = (email, password) => async (dispatch) => {
   }
 };
 
-export const userLogout = () => async (dispatch) => {
-  try {
-    await signOut(auth);
-    dispatch({ type: USER_LOGOUT });
-    return { success: true };
-  } catch (error) {
-    return { success: false, error: error.message };
-  }
-};
+export const USER_LOGOUT = 'USER_LOGOUT';
+
+export const userLogout = () => ({
+  type: USER_LOGOUT,
+});
