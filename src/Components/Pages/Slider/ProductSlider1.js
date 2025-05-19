@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import ProductCard1 from "./ProductCard1";
-
+import { Box, Button, Card, CardBody, CardFooter, Divider, Image, Stack, Text } from '@chakra-ui/react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./ProductSlider.css";
 import breakfast from "../images/breakfast.jpeg";
+import { connect } from 'react-redux';
+import { addToCart } from "C:/Users/alpha/OneDrive/Desktop/Dudra Draft Website/ProjectSkinStore-main/src/Components/Redux/cart/cart.actions.js"
 
 class ProductSlider1 extends Component {
   constructor() {
@@ -15,7 +17,7 @@ class ProductSlider1 extends Component {
         {
           img: "https://i.imgur.com/WZDyxzS.jpg",
           productdetail: "Kelloggs Fruit N Fiber 40x45g",
-          discountmessage: "High fiber breakfast cereal",
+          discountmessage: "Breakfast cereal",
           price: "£18.99"
 
         },
@@ -72,14 +74,30 @@ class ProductSlider1 extends Component {
       ]
     };
   };
+
+  handleAddToCart = (product) => {
+    this.props.dispatch(addToCart({
+      id: product.id || Math.random().toString(36).substr(2, 9), // Generate ID if missing
+      name: product.productdetail,
+      price: parseFloat(product.price.replace('£', '')),
+      image: product.img,
+      quantity: 1
+    }));
+  };
+
+  
   render() {
     var settings = {
       dots: false,
       infinite: false,
       speed: 500,
-      slidesToShow: 4,
+      slidesToShow: 6,
       slidesToScroll: 4,
       initialSlide: 0,
+      swipeToSlide: true,
+      draggable: true,
+      mouseWheel: true, // Enable mouse wheel
+      touchThreshold: 10,
       responsive: [
         {
           breakpoint: 1024,
@@ -107,21 +125,24 @@ class ProductSlider1 extends Component {
         }
       ]
     };
-    return (
-      <div>
-        <Slider {...settings}>
-          {this.state.slides.map((slide, index) => {
-            return (
-              <div key={index}>
-                <ProductCard1 imgSrc={slide.img} productdetail={slide.productdetail} discountmessage={slide.discountmessage} price={slide.price}/>
-                {/* <img src={slide.img} alt={`slide${index}`} /> */}
-              </div>
-            );
-          })}
-        </Slider>
-      </div>
+      return (
+      <Slider {...settings}>
+        {this.state.slides.map((slide, index) => (
+          <div key={index}>
+            <ProductCard1 
+              imgSrc={slide.img}
+              productdetail={slide.productdetail}
+              discountmessage={slide.discountmessage}
+              price={slide.price}
+              onAddToCart={() => this.handleAddToCart(slide)}
+            />
+          </div>
+        ))}
+      </Slider>
     );
   }
 }
 
-export default ProductSlider1;
+export default connect()(ProductSlider1);
+  
+

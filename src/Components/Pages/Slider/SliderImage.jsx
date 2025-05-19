@@ -7,10 +7,10 @@ import dudracar from '../images/dudracar.png'
 
 const SliderImage = () => {
     const slides = [
-        { url: banner , title: "dudrabanner" },
-        { url: dudracar, title: "boat" },
-        { url: "https://static.thcdn.com/images/xlarge/webp/widgets/121-us/55/Shot6-1180x450-095455.jpeg", title: "forest" },
-        { url: "https://static.thcdn.com/images/xlarge/webp/widgets/121-us/03/1207-STDCRE-44662-SS-MH-Beauty-Bag-Amend-1180x450-V1-050203.jpg", title: "city" },
+      { url: "https://i.imgur.com/n7UPT01.png", title: "city" },
+        { url: "https://i.imgur.com/tB4DOPs.jpg" , title: "dudrabanner" },
+        { url: "https://i.imgur.com/fLovcfe.jpg", title: "boat" },
+        { url: "https://i.imgur.com/5YnP6z2.png", title: "forest" },
       
       ];
       const containerStyles = {

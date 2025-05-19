@@ -8,6 +8,9 @@ import banner from './images/banner.png';
 import ProductSlider1 from './Slider/ProductSlider1';
 import BrandSlider from './Slider/BrandSlider';
 import Footer from './Footer';
+import { allProducts } from '../ProductsPage/allprooducts';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Redux/cart/cart.actions';
 
 // Green color scheme constants
 const COLORS = {
@@ -22,7 +25,25 @@ const COLORS = {
   lightText: "#718096"      // Light gray for secondary text
 };
 
+const getRandomProducts = (count) => {
+  // Flatten all products from all brands
+  const allProductsArray = Object.values(allProducts.Brands).flat();
+  
+  // If we have fewer products than requested, return all
+  if (allProductsArray.length <= count) return allProductsArray;
+  
+  // Get random products without duplicates
+  const shuffled = [...allProductsArray].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
+
+
+
+
 const Home = () => {
+
+    const dispatch = useDispatch();
+
   return (
     <div>
       {/* **********************************************************Slider************************************** */}
@@ -122,235 +143,171 @@ const Home = () => {
 <Box mt={8}><ProductSlider1 /></Box>
 
 {/* **********************************************************Trending Offers************************************** */}
-<Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
-    Trending Offers
-</Text>
-<Box>
-    <Center>
-        <Flex direction={['column', 'column', 'row']} gap={6} justify="center" w="95%">
-            {/* Product 1 - Kelloggs Breakfast Cereal */}
-            <Box w={['100%', '100%', '30%']} borderWidth="1px" borderRadius="lg" p={4} bg="white" h="100%">
-                <Center h="180px">
-                    <Image src="https://i.imgur.com/WZDyxzS.jpg" w={'60%'} maxH="180px" objectFit="contain" alt="Kelloggs Fruit N Fiber" />
-                </Center>
-                <Heading fontSize={20} mt={4} color={COLORS.text} minH="60px" display="flex" alignItems="center">Kelloggs Fruit N Fiber</Heading>
-                <Text fontSize={13} mt={2} color={COLORS.lightText} minH="60px">
-                    High fiber breakfast cereal with dried fruits - 40x45g portion packs
-                </Text>
-                <Flex align="baseline" mt={2} minH="32px">
-                    <Heading size="md" color={COLORS.price} mr={2}>£18.99</Heading>
-                    <Text as="del" color={COLORS.lightText} fontSize="sm">£24.99</Text>
-                </Flex>
-                <Link to="/breakfast">
-                    <Button 
-                        bg={COLORS.button} 
-                        color="white"
-                        _hover={{ bg: COLORS.buttonHover }}
-                        _active={{ bg: COLORS.primary }}
-                        mt={4}
-                        w="100%"
-                    >
-                        SHOP NOW
-                    </Button>
-                </Link>
-            </Box>
 
-            {/* Product 2 - Nature Valley Snack Bars */}
-            <Box w={['100%', '100%', '30%']} borderWidth="1px" borderRadius="lg" p={4} bg="white" h="100%">
-                <Center h="180px">
-                    <Image src="https://i.imgur.com/RBhPP1e.jpg" w={'60%'} maxH="180px" objectFit="contain" alt="Nature Valley Bars" />
-                </Center>
-                <Heading fontSize={20} mt={4} color={COLORS.text} minH="60px" display="flex" alignItems="center">Nature Valley Protein Bars</Heading>
-                <Text fontSize={13} mt={2} color={COLORS.lightText} minH="60px">
-                    Protein and cereal bars, 42g each - case of 40
-                </Text>
-                <Flex align="baseline" mt={2} minH="32px">
-                    <Heading size="md" color={COLORS.price} mr={2}>£26.99</Heading>
-                    <Text as="del" color={COLORS.lightText} fontSize="sm">£32.99</Text>
-                </Flex>
-                <Link to="/snacks">
-                    <Button 
-                        bg={COLORS.button} 
-                        color="white"
-                        _hover={{ bg: COLORS.buttonHover }}
-                        _active={{ bg: COLORS.primary }}
-                        mt={4}
-                        w="100%"
-                    >
-                        SHOP NOW
-                    </Button>
-                </Link>
-            </Box>
-
-            {/* Product 3 - Kesar Mango Pulp */}
-            <Box w={['100%', '100%', '30%']} borderWidth="1px" borderRadius="lg" p={4} bg="white" h="100%">
-                <Center h="180px">
-                    <Image src="https://i.imgur.com/IK9aCX1.jpg" w={'60%'} maxH="180px" objectFit="contain" alt="Kesar Mango Pulp" />
-                </Center>
-                <Heading fontSize={20} mt={4} color={COLORS.text} minH="60px" display="flex" alignItems="center">Kesar Mango Pulp</Heading>
-                <Text fontSize={13} mt={2} color={COLORS.lightText} minH="60px">
-                    Premium mango pulp in 850g cans - case of 6
-                </Text>
-                <Flex align="baseline" mt={2} minH="32px">
-                    <Heading size="md" color={COLORS.price} mr={2}>£19.99</Heading>
-                    <Text as="del" color={COLORS.lightText} fontSize="sm">£25.99</Text>
-                </Flex>
-                <Link to="/fruits">
-                    <Button 
-                        bg={COLORS.button} 
-                        color="white"
-                        _hover={{ bg: COLORS.buttonHover }}
-                        _active={{ bg: COLORS.primary }}
-                        mt={4}
-                        w="100%"
-                    >
-                        SHOP NOW
-                    </Button>
-                </Link>
-            </Box>
-        </Flex>
-    </Center>
-</Box>
 
       {/* **********************************************************Logos************************************** */}
-      <Box mt={12}>
-        <Center>
-          <Box display={['grid', 'grid', 'flex']} gap={8} justifyContent='center' gridTemplateColumns={'1fr 1fr'}>
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <Link to="/skin" key={item}>
-                <Box p={2} borderWidth="1px" borderRadius="md" _hover={{ borderColor: COLORS.accent }}>
-                  <Image w={205} src={`https://i.imgur.com/qAY79TV.jpg`} alt={`brand-${item}`} />
-                </Box>
-              </Link>
-            ))}
-          </Box>
-        </Center>
-      </Box>
+ {/* Brand Logos Section - Full Width, No Padding */}
+<Box mt={12} mb={8} width="100%" overflow="hidden">
+  <Flex 
+    width="100%"
+    height="120px" // Fixed height for all logos
+  >
+    {/* Logo 1 - Dudra Van */}
+    <Box flex={1} height="100%" position="relative" borderRight="1px solid #f0f0f0">
+      <Image
+        src="https://i.imgur.com/eutfBfy.jpg"
+        alt="Dudra Van"
+        width="100%"
+        height="100%"
+        objectFit="cover" // Changed to cover for full width stretch
+        objectPosition="center"
+      />
+    </Box>
+
+    {/* Logo 2 */}
+    <Box flex={1} height="100%" position="relative" borderRight="1px solid #f0f0f0">
+      <Image
+        src="https://i.imgur.com/jp47hHY.jpg"
+        alt="Brand 2"
+        width="100%"
+        height="100%"
+        objectFit="cover"
+        objectPosition="center"
+      />
+    </Box>
+
+    {/* Logo 3 */}
+    <Box flex={1} height="100%" position="relative">
+      <Image
+        src="https://i.imgur.com/5YnP6z2.png"
+        alt="Brand 3"
+        width="100%"
+        height="100%"
+        objectFit="cover"
+        objectPosition="center"
+      />
+    </Box>
+  </Flex>
+</Box>
 
       {/* **********************************************************What People Are Buying Right Now************************************** */}
     
-        <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
-        What People Are Buying Right Now
-    </Text>
+<Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
+  What People Are Buying Right Now
+</Text>
 
-    <Box>
-        <Center>
-            <Flex direction={['column', 'column', 'row']} w={"95%"} gap={4} m='auto' justifyContent={'space-between'} wrap="wrap">
-                {/* Card 1 - Nescafe Original Sticks */}
-                <Card w={['70%', '70%', '22%']} h="100%" margin='auto' borderWidth="1px" borderColor="gray.100">
-                    <CardBody>
-                        <Image src='https://i.imgur.com/deEcxAn.jpg' alt='Nescafe Original Sticks' borderRadius='lg' h="180px" objectFit="contain" />
-                        <Stack mt='6' spacing='3'>
-                            <Text color={COLORS.lightText} minH="60px" display="flex" alignItems="center">
-                                Nescafe Original Sticks 1x200 - Instant coffee sachets
-                            </Text>
-                            <Flex align="center" minH="32px">
-                                <Heading size="md" color={COLORS.price}>£19.99</Heading>
-                                <Badge ml={2} bg={COLORS.badge} color="white">SAVE 20%</Badge>
-                            </Flex>
-                        </Stack>
-                    </CardBody>
-                    <Divider />
-                    <CardFooter>
-                        <Button 
-                            w="100%" 
-                            bg={COLORS.button} 
-                            color="white"
-                            _hover={{ bg: COLORS.buttonHover }}
-                            leftIcon={<BiShoppingBag />}
-                        >
-                            Add to Cart
-                        </Button>
-                    </CardFooter>
-                </Card>
-
-                {/* Card 2 - Country Range Honey Portions */}
-                <Card w={['70%', '70%', '22%']} h="100%" margin='auto' borderWidth="1px" borderColor="gray.100">
-                    <CardBody>
-                        <Image src='https://i.imgur.com/PwSoVLk.jpg' alt='Country Range Honey Portions' borderRadius='lg' h="180px" objectFit="contain" />
-                        <Stack mt='6' spacing='3'>
-                            <Text color={COLORS.lightText} minH="60px" display="flex" alignItems="center">
-                                Country Range Honey Portions 100x20g - Pure honey
-                            </Text>
-                            <Flex align="center" minH="32px">
-                                <Heading size="md" color={COLORS.price}>£25.99</Heading>
-                                <Badge ml={2} bg={COLORS.badge} color="white">SAVE 15%</Badge>
-                            </Flex>
-                        </Stack>
-                    </CardBody>
-                    <Divider />
-                    <CardFooter>
-                        <Button 
-                            w="100%" 
-                            bg={COLORS.button} 
-                            color="white"
-                            _hover={{ bg: COLORS.buttonHover }}
-                            leftIcon={<BiShoppingBag />}
-                        >
-                            Add to Cart
-                        </Button>
-                    </CardFooter>
-                </Card>
-
-                {/* Card 3 - Fiesta Green Paper Bags */}
-                <Card w={['70%', '70%', '22%']} h="100%" margin='auto' borderWidth="1px" borderColor="gray.100">
-                    <CardBody>
-                        <Image src='https://i.imgur.com/ULE5L7p.jpg' alt='Fiesta Green Paper Bags' borderRadius='lg' h="180px" objectFit="contain" />
-                        <Stack mt='6' spacing='3'>
-                            <Text color={COLORS.lightText} minH="60px" display="flex" alignItems="center">
-                                Large Brown Paper Bags with Handles (250pk)
-                            </Text>
-                            <Flex align="center" minH="32px">
-                                <Heading size="md" color={COLORS.price}>£22.99</Heading>
-                                <Badge ml={2} bg={COLORS.accent} color="white">ECO</Badge>
-                            </Flex>
-                        </Stack>
-                    </CardBody>
-                    <Divider />
-                    <CardFooter>
-                        <Button 
-                            w="100%" 
-                            bg={COLORS.button} 
-                            color="white"
-                            _hover={{ bg: COLORS.buttonHover }}
-                            leftIcon={<BiShoppingBag />}
-                        >
-                            Add to Cart
-                        </Button>
-                    </CardFooter>
-                </Card>
-
-                {/* Card 4 - Snickers Chocolate Bars */}
-                <Card w={['70%', '70%', '22%']} h="100%" margin='auto' borderWidth="1px" borderColor="gray.100">
-                    <CardBody>
-                        <Image src='https://i.imgur.com/WVhhTBP.jpg' alt='Snickers Chocolate Bars' borderRadius='lg' h="180px" objectFit="contain" />
-                        <Stack mt='6' spacing='3'>
-                            <Text color={COLORS.lightText} minH="60px" display="flex" alignItems="center">
-                                Snickers Chocolate Bars 48x48g - Milk chocolate
-                            </Text>
-                            <Flex align="center" minH="32px">
-                                <Heading size="md" color={COLORS.price}>£25.99</Heading>
-                                <Badge ml={2} bg={COLORS.badge} color="white">BESTSELLER</Badge>
-                            </Flex>
-                        </Stack>
-                    </CardBody>
-                    <Divider />
-                    <CardFooter>
-                        <Button 
-                            w="100%" 
-                            bg={COLORS.button} 
-                            color="white"
-                            _hover={{ bg: COLORS.buttonHover }}
-                            leftIcon={<BiShoppingBag />}
-                        >
-                            Add to Cart
-                        </Button>
-                    </CardFooter>
-                </Card>
-            </Flex>
-        </Center>
-    </Box>
-
+<Box px={[4, 6, 8, 12]} maxW="1800px" mx="auto">
+  {/* Create rows with 6 products each */}
+  {[...Array(Math.ceil(30 / 6))].map((_, rowIndex) => {
+    const rowProducts = getRandomProducts(30).slice(rowIndex * 6, (rowIndex + 1) * 6);
+    
+    return (
+      <Flex 
+        key={rowIndex}
+        direction="row" 
+        wrap="wrap"
+        justify={["center", "center", "space-between"]}
+        mb={8}
+        gap={[4, 4, 4, 4]} // Adjusted gap values
+      >
+        {rowProducts.map((product) => (
+          <Card 
+            key={product.id} 
+            w={['45%', '45%', '30%', '15.5%']} // Key change here for desktop
+            minH="380px" // Slightly reduced height
+            borderWidth="1px" 
+            borderColor="gray.100"
+            display="flex"
+            flexDirection="column"
+            flexShrink={0}
+          >
+            <CardBody flex={1} display="flex" flexDirection="column">
+              {/* Image Container */}
+              <Box 
+                flexShrink={0}
+                h="160px" // Slightly reduced height
+                w="100%"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                mb={3} // Reduced margin
+              >
+                <Image 
+                  src={product.image_link} 
+                  alt={product.name} 
+                  maxH="100%"
+                  maxW="100%"
+                  objectFit="contain"
+                  fallbackSrc="https://via.placeholder.com/160"
+                />
+              </Box>
+              
+              {/* Product Info */}
+              <Stack spacing={2} flex={1} px={1}> {/* Reduced spacing and padding */}
+                <Text 
+                  color={COLORS.lightText} 
+                  minH="50px" // Reduced height
+                  display="flex" 
+                  alignItems="center"
+                  textAlign="center"
+                  justifyContent="center"
+                  fontSize="sm" // Smaller font
+                  lineHeight="tight"
+                >
+                  {product.name}
+                </Text>
+                
+                <Flex 
+                  align="center" 
+                  justify="center"
+                  minH="28px" // Reduced height
+                  wrap="wrap"
+                  gap={1} // Reduced gap
+                >
+                  <Heading size="sm" color={COLORS.price} textAlign="center"> {/* Smaller heading */}
+                    £{product.price || 'Price not available'}
+                  </Heading>
+                  {product.price && (
+                    <Badge 
+                      bg={COLORS.badge} 
+                      color="white" 
+                      whiteSpace="nowrap"
+                      fontSize="xs" // Smaller badge
+                    >
+                      {Math.random() > 0.5 ? 'SAVE 20%' : 'BESTSELLER'}
+                    </Badge>
+                  )}
+                </Flex>
+              </Stack>
+            </CardBody>
+            
+            <Divider />
+            
+            {/* Footer */}
+            <CardFooter p={0}>
+              <Button 
+                w="100%"
+                borderRadius={0}
+                bg={COLORS.button} 
+                color="white"
+                _hover={{ bg: COLORS.buttonHover }}
+                leftIcon={<BiShoppingBag size="16px" />} // Smaller icon
+                py={4} // Reduced padding
+                fontSize="sm" // Smaller font
+               onClick={() => dispatch(addToCart({
+                      ...product,
+                      quantity: 1
+                    }))}
+                  >
+                Add to Cart
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </Flex>
+    );
+  })}
+</Box>
 
       {/* **********************************************************Brand of the Month************************************** */}
       <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
