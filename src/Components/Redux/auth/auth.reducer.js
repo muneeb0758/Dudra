@@ -4,6 +4,16 @@ import {
   AUTH_LOGOUT,
   AUTH_SIGN_UP,
 } from "./auth.action.types";
+import {
+  USER_SIGNUP_SUCCESS,
+  USER_SIGNUP_FAILURE,
+  USER_SIGNUP_REQUEST,
+  USER_LOGIN_SUCCESS,
+  USER_LOGIN_FAILURE,
+  USER_LOGIN_REQUEST,
+  USER_LOGOUT,
+  ADMIN_LOGIN
+} from './auth.actions';
 const int = {
   email: "",
   password: "",
@@ -32,6 +42,23 @@ export const authReducer = (state = initialState, { type, payload }) => {
       localStorage.setItem("adminIsAuth", true);
       return { ...state, adminIsAuth: true };
     }
+    case USER_SIGNUP_SUCCESS:
+      return {
+
+        uid: 'abc123',
+        email: 'user@example.com',
+        username: 'testuser'
+
+      }
+    case USER_LOGIN_SUCCESS:
+      return {
+        ...state,
+        user: type.payload,
+        loading: false,
+        error: null
+      };
+
+
     default: {
       return state;
     }
