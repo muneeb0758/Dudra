@@ -1,6 +1,21 @@
 import "./App.css";
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Pages/Navbar.jsx";
+=======
+import React, { useState } from "react";
+import Footer from "./Components/Pages/Footer";
+import Navbar from "./Components/Pages/Navbar";
+import Shop from "./Components/ProductsPage/ProductPage";
+import AllRoutes from "./Components/Roouters/AllRoutes";
+import { USER_LOGIN_SUCCESS } from '../src/Components/Redux/auth/auth.actions';
+import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { auth } from './Components/firebase'; // Adjust path if necessary
+
+
+>>>>>>> 236723fcb021bbefdad43471ac646e25e4855221
 
 import AllRoutes from "./Components/Roouters/AllRoutes.jsx";
 import { useDispatch } from 'react-redux';
@@ -13,6 +28,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+<<<<<<< HEAD
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         dispatch(loginSuccess({
@@ -25,6 +41,23 @@ function App() {
 
     return () => unsubscribe();
   }, [dispatch]);
+=======
+  const unsubscribe = onAuthStateChanged(auth, (user) => {
+    if (user) {
+      dispatch({
+        type: USER_LOGIN_SUCCESS,
+        payload: {
+          uid: user.uid,
+          email: user.email,
+          username: user.displayName || '', // if using displayName
+        }
+      });
+    }
+  });
+
+  return () => unsubscribe();
+}, []);
+>>>>>>> 236723fcb021bbefdad43471ac646e25e4855221
 
   return (
     <div className="App">
