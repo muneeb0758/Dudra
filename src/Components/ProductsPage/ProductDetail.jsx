@@ -94,7 +94,7 @@ const ProductDetail = () => {
               w="100%"
               onError={handleImageError}
               alt={product.name}
-              as={Link}
+              
             />
           </Box>
           

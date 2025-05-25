@@ -1,14 +1,15 @@
-import { Box, Button, Flex, Text, FormControl, FormLabel, Heading, Input, useToast } from '@chakra-ui/react';
 import React, { useState } from 'react';
+import { Box, Button, Flex, Text, FormControl, FormLabel, Heading, Input, useToast } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { userLogin, userLogout } from '../Redux/auth/auth.actions';
-import { CheckCircleIcon, WarningIcon } from '@chakra-ui/icons';
+import { userLogin, userGoogleLogin } from '../Redux/auth/auth.actions';
+import { CheckCircleIcon, WarningIcon } from '@chakra-ui/icons'; // Added imports
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
   const [data, setData] = useState({
-    email: "",
-    password: ""
+    email: '',
+    password: ''
   });
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
@@ -19,71 +20,58 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
-    try {
-      const result = await dispatch(userLogin(data.email, data.password));
-
-      if (result.success) {
-        toast({
-          position: 'top-left',
-          render: () => (
-            <Flex color='white' border="4px solid white" p={"10px"} bgColor='green.400'>
-              <CheckCircleIcon w={30} h={30} />
-              <Text size="lg" ml="15px">Signed In Successfully!</Text>
-            </Flex>
-          ),
-        });
-        navigate("/");
-      } else {
-        toast({
-          position: 'top-left',
-          render: () => (
-            <Flex color='white' border="4px solid white" p={"10px"} bgColor='red'>
-              <WarningIcon w={30} h={30} />
-              <Text size="lg" ml="15px">{result.error}</Text>
-            </Flex>
-          ),
-        });
-      }
-    } catch (error) {
-      toast({
-        position: 'top-left',
-        render: () => (
-          <Flex color='white' border="4px solid white" p={"10px"} bgColor='red'>
-            <WarningIcon w={30} h={30} />
-            <Text size="lg" ml="15px">An unexpected error occurred</Text>
-          </Flex>
-        ),
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-
-  const handleLogout = async () => {
-    try {
-      await dispatch(userLogout());
+    const result = await dispatch(userLogin(data.email, data.password));
+    if (result.success) {
       toast({
         position: 'top-left',
         render: () => (
           <Flex color='white' border="4px solid white" p={"10px"} bgColor='green.400'>
             <CheckCircleIcon w={30} h={30} />
-            <Text size="lg" ml="15px">Signed Out Successfully!</Text>
+            <Text size="lg" ml="15px">Signed In Successfully!</Text>
           </Flex>
         ),
       });
-    } catch (error) {
+      navigate('/');
+    } else {
       toast({
         position: 'top-left',
         render: () => (
           <Flex color='white' border="4px solid white" p={"10px"} bgColor='red'>
             <WarningIcon w={30} h={30} />
-            <Text size="lg" ml="15px">Logout failed</Text>
+            <Text size="lg" ml="15px">{result.error}</Text>
           </Flex>
         ),
       });
     }
+    setLoading(false);
+  };
+
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    const result = await dispatch(userGoogleLogin());
+    if (result.success) {
+      toast({
+        position: 'top-left',
+        render: () => (
+          <Flex color='white' border="4px solid white" p={"10px"} bgColor='green.400'>
+            <CheckCircleIcon w={30} h={30} />
+            <Text size="lg" ml="15px">Signed In with Google!</Text>
+          </Flex>
+        ),
+      });
+      navigate('/');
+    } else {
+      toast({
+        position: 'top-left',
+        render: () => (
+          <Flex color='white' border="4px solid white" p={"10px"} bgColor='red'>
+            <WarningIcon w={30} h={30} />
+            <Text size="lg" ml="15px">{result.error}</Text>
+          </Flex>
+        ),
+      });
+    }
+    setLoading(false);
   };
 
   return (
@@ -126,6 +114,21 @@ const Login = () => {
             >
               SIGN IN
             </Button>
+            <Button
+              w="100%"
+              color="black"
+              mt="20px"
+              borderRadius="0px"
+              border="1px solid black"
+              bgColor="white"
+              _hover={{ bgColor: "#28bdb7", color: "black" }}
+              leftIcon={<FcGoogle />}
+              onClick={handleGoogleLogin}
+              isLoading={loading}
+              loadingText="Signing In with Google..."
+            >
+              Sign in with Google
+            </Button>
           </form>
         </Box>
 
@@ -144,20 +147,6 @@ const Login = () => {
               REGISTER
             </Button>
           </Link>
-          {isAuth && (
-            <Button
-              w="100%"
-              onClick={handleLogout}
-              color="black"
-              mt="20px"
-              borderRadius="0px"
-              border="2px solid #28bdb7"
-              bgColor="white"
-              _hover={{ bgColor: "red", color: "white" }}
-            >
-              SIGN OUT
-            </Button>
-          )}
         </Box>
       </Flex>
     </Box>

@@ -54,11 +54,11 @@ export const allProducts = {
       },
       {
         id: "CF01",
-        name: "Al-Near Arabic Organic Instant Coffee",
+        name: "Al-Khair Arabic Organic Instant Coffee",
         brand: "Nescafe",
         category: "Coffee",
         price: "24.99",
-        image_link: "https://i.imgur.com/coffee1.jpg",
+        image_link: "https://i.imgur.com/UdfQqVJ.jpg",
         description: "Enjoy starting your morning with a cup of bold instant coffee.",
         dietary: ["Vegan"],
         packageType: "Jar"
@@ -143,7 +143,7 @@ export const allProducts = {
         brand: "Dettol",
         category: "Cleaning Supplies",
         price: "12.99",
-        image_link: "https://placeholder.com/products/CS12.jpg",
+        image_link: "https://i.imgur.com/DPHjtQh.png",
         description: "Dettol antibacterial surface cleaning wipes, 10 packs of 30 wipes.",
         dietary: [],
         packageType: "Multi-pack"
@@ -204,7 +204,7 @@ export const allProducts = {
         brand: "Kesar",
         category: "Fruits",
         price: "19.99",
-        image_link: "https://placeholder.com/products/dd013.jpg",
+        image_link: "https://i.imgur.com/nmhk4VP.jpg",
         description: "Kesar mango pulp in 850g cans, case of 6.",
         dietary: ["Vegan", "Fruit"],
         packageType: "Multi-pack"
@@ -217,7 +217,7 @@ export const allProducts = {
         brand: "Laila",
         category: "Rice",
         price: "34.99",
-        image_link: "https://placeholder.com/products/dd020.jpg",
+        image_link: "https://i.imgur.com/ynq7mEQ.png",
         description: "Premium basmati rice in bulk 20kg bag.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Bulk bag"
@@ -230,21 +230,21 @@ export const allProducts = {
         brand: "MDH",
         category: "Spices",
         price: "39.99",
-        image_link: "https://placeholder.com/products/dd021.jpg",
+        image_link: "https://i.imgur.com/bltyPh2.png",
         description: "MDH Deggi Mirch (red chili powder blend) in 500g packs, case of 4.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
       }
     ],
-    "Rajah": [
+    "Country Range": [
       {
         id: "dd022",
-        name: "Black Ground Pepper 10x100g",
-        brand: "Rajah",
+        name: "Black Ground Pepper 1000x10g",
+        brand: "Country Range",
         category: "Spices",
         price: "25.99",
-        image_link: "https://placeholder.com/products/dd022.jpg",
-        description: "Rajah ground black pepper in 100g packs, case of 10.",
+        image_link: "https://i.imgur.com/ccZULrH.png",
+        description: "Rajah ground black pepper in 10g packs, case of 1000.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
       },
@@ -254,7 +254,7 @@ export const allProducts = {
         brand: "Rajah",
         category: "Spices",
         price: "44.99",
-        image_link: "https://placeholder.com/products/dd023.jpg",
+        image_link: "https://i.imgur.com/rRlGLM5.png",
         description: "Rajah whole green cardamom pods in 50g packs, case of 10.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
@@ -265,7 +265,7 @@ export const allProducts = {
         brand: "Rajah",
         category: "Spices",
         price: "29.99",
-        image_link: "https://placeholder.com/products/dd024.jpg",
+        image_link: "https://i.imgur.com/oUBim4w.png",
         description: "Rajah ground white pepper in 100g packs, case of 10.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
@@ -276,7 +276,7 @@ export const allProducts = {
         brand: "Rajah",
         category: "Spices",
         price: "16.99",
-        image_link: "https://placeholder.com/products/dd025.jpg",
+        image_link: "https://i.imgur.com/X2Jrq57.png",
         description: "Rajah ground cumin (zeera) powder in 100g packs, case of 10.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
@@ -287,7 +287,7 @@ export const allProducts = {
         brand: "Rajah",
         category: "Spices",
         price: "53.99",
-        image_link: "https://placeholder.com/products/dd026.jpg",
+        image_link: "https://i.imgur.com/t9oJCP4.png",
         description: "Rajah whole cumin (zeera) seeds in 400g packs, case of 9.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
@@ -300,7 +300,7 @@ export const allProducts = {
         brand: "Sapna",
         category: "Cooking Essentials",
         price: "18.99",
-        image_link: "https://placeholder.com/products/dd027.jpg",
+        image_link: "https://i.imgur.com/R2JXHri.png",
         description: "Sapna ready-to-use ginger and garlic paste in 1kg jars",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
@@ -342,7 +342,7 @@ export const allProducts = {
       brand: "Kelloggs",
       category: "Breakfast",
       price: "18.99",
-      image_link: "https://i.imgur.com/QErbzdq.jpg",
+      image_link: "https://i.imgur.com/WZDyxzS.jpg",
       description: "High fiber breakfast cereal with dried fruits in convenient portion packs.",
       dietary: ["Vegetarian"],
       packageType: "Case of portion packs"
@@ -364,7 +364,7 @@ export const allProducts = {
       brand: "",
       category: "Breakfast",
       price: "15.99",
-      image_link: "https://i.imgur.com/cereal1.jpg",
+      image_link: "https://i.imgur.com/uZPBMsr.jpg",
       description: "Refuggy Cereal Pretion-Pas Mixed Case",
       dietary: ["Vegetarian"],
       packageType: "Case"
@@ -390,7 +390,7 @@ export const allProducts = {
       brand: "",
       category: "Bakery",
       price: "14.50",
-      image_link: "https://placeholder.com/products/S03.jpg",
+      image_link: "https://i.imgur.com/oQx9WN9.jpg",
       description: "Traditional Madeira cake, 590g each, pack of 6.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
@@ -426,7 +426,7 @@ export const allProducts = {
       brand: "",
       category: "Fresh Produce",
       price: "22.99",
-      image_link: "https://placeholder.com/products/S04.jpg",
+      image_link: "https://i.imgur.com/VuUXe8O.png",
       description: "Fresh red apples, bulk case of approximately 12kg.",
       dietary: ["Vegan", "Fruit"],
       packageType: "Bulk case"
@@ -437,7 +437,7 @@ export const allProducts = {
       brand: "",
       category: "Fresh Produce",
       price: "25.99",
-      image_link: "https://placeholder.com/products/S05.jpg",
+      image_link: "https://i.imgur.com/jr8ksyj.png",
       description: "Fresh bananas, bulk case of approximately 18kg.",
       dietary: ["Vegan", "Fruit"],
       packageType: "Bulk case"
@@ -448,7 +448,7 @@ export const allProducts = {
       brand: "",
       category: "Fresh Produce",
       price: "20.99",
-      image_link: "https://placeholder.com/products/S06.jpg",
+      image_link: "https://i.imgur.com/4W0s1oT.png",
       description: "Fresh Mandarin / Oranges 1x10kg",
       dietary: ["Vegan", "Fruit"],
       packageType: "Bulk case"
@@ -459,7 +459,7 @@ export const allProducts = {
       brand: "Kesar",
       category: "Fruits",
       price: "19.99",
-      image_link: "https://placeholder.com/products/dd013.jpg",
+      image_link: "https://i.imgur.com/nmhk4VP.jpg",
       description: "Kesar mango pulp in 850g cans, case of 6.",
       dietary: ["Vegan", "Fruit"],
       packageType: "Multi-pack"
@@ -506,7 +506,7 @@ export const allProducts = {
       brand: "",
       category: "Personal Care",
       price: "",
-      image_link: "https://placeholder.com/products/B05.jpg",
+      image_link: "https://i.imgur.com/bhA89w8.png",
       description: "Standard toothpaste in 50g tubes, case of 12.",
       dietary: [],
       packageType: "Multi-pack"
@@ -517,7 +517,7 @@ export const allProducts = {
       brand: "",
       category: "Personal Care",
       price: "5.99",
-      image_link: "https://placeholder.com/products/B04.jpg",
+      image_link: "https://i.imgur.com/ITuf1CS.png",
       description: "Medium bristle adult toothbrushes, pack of 12.",
       dietary: [],
       packageType: "Multi-pack"
@@ -539,7 +539,7 @@ export const allProducts = {
       brand: "",
       category: "Personal Care",
       price: "29.99",
-      image_link: "https://placeholder.com/products/B01.jpg",
+      image_link: "https://i.imgur.com/BP2wN0D.png",
       description: "Twin blade disposable razors in blue color, bulk pack of 120.",
       dietary: [],
       packageType: "Bulk pack"
@@ -558,10 +558,10 @@ export const allProducts = {
     {
       id: "T03",
       name: "Shower Gel Sachets 10ml",
-      brand: "",
+      brand: "Country Range",
       category: "Toiletries",
       price: "81.99",
-      image_link: "https://i.imgur.com/YQHkwx4.jpg",
+      image_link: "https://i.imgur.com/wks6yWI.png",
       description: "Shower gel in convenient 10ml single-use sachets.",
       dietary: [],
       packageType: "Sachets"
@@ -569,10 +569,10 @@ export const allProducts = {
     {
       id: "T02",
       name: "Pleated Soap 16g",
-      brand: "",
+      brand: "Country Range",
       category: "Toiletries",
-      price: "",
-      image_link: "https://placeholder.com/products/T02.jpg",
+      price: "20",
+      image_link: "https://i.imgur.com/oLXHvKQ.png",
       description: "Individually wrapped pleated soap bars, 16g each.",
       dietary: [],
       packageType: "Individual"
@@ -583,7 +583,7 @@ export const allProducts = {
       brand: "",
       category: "Toiletries",
       price: "9.49",
-      image_link: "https://placeholder.com/products/T01.jpg",
+      image_link: "https://i.imgur.com/n2dMsIV.png",
       description: "Standard toilet paper rolls in bulk packaging, case of 36.",
       dietary: [],
       packageType: "Multi-pack"
@@ -619,29 +619,19 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "79.99",
-      image_link: "https://placeholder.com/products/dd004.jpg",
+      image_link: "https://i.imgur.com/ElQ9jPs.png",
       description: "Coarse ground black pepper in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
     },
-    {
-      id: "dd004.5",
-      name: "Black Pepper Whole 5kg",
-      brand: "",
-      category: "Spices",
-      price: "69.99",
-      image_link: "https://placeholder.com/products/dd004.5.jpg",
-      description: "Whole black peppercorns in bulk 5kg container.",
-      dietary: ["Vegan", "Gluten-Free"],
-      packageType: "Bulk container"
-    },
+    
     {
       id: "dd005",
       name: "Cardamom Black Whole 1kg",
       brand: "",
       category: "Spices",
       price: "29.99",
-      image_link: "https://placeholder.com/products/dd005.jpg",
+      image_link: "https://i.imgur.com/bbAITLO.png",
       description: "Whole black cardamom pods, 1kg bulk pack.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk pack"
@@ -652,7 +642,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "35.99",
-      image_link: "https://placeholder.com/products/dd007.jpg",
+      image_link: "https://i.imgur.com/vYhNSgh.png",
       description: "Ground red chili powder in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -663,7 +653,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "24.99",
-      image_link: "https://placeholder.com/products/dd008.jpg",
+      image_link: "https://i.imgur.com/P4pSY0h.png",
       description: "Crushed red chili flakes in bulk 3kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -674,7 +664,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "39.99",
-      image_link: "https://placeholder.com/products/dd010.jpg",
+      image_link: "https://i.imgur.com/uEv9GZE.png",
       description: "Ground garam masala spice blend in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -685,7 +675,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "6.99",
-      image_link: "https://placeholder.com/products/SI011.jpg",
+      image_link: "https://i.imgur.com/XpmQQB1.png",
       description: "Dried ground garlic powder in 1kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Container"
@@ -696,7 +686,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "22.99",
-      image_link: "https://placeholder.com/products/dd014.jpg",
+      image_link: "https://i.imgur.com/BQv3nqG.png",
       description: "Madras curry powder blend in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -707,7 +697,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "31.99",
-      image_link: "https://placeholder.com/products/dd015.jpg",
+      image_link: "https://i.imgur.com/6hSFZM6.png",
       description: "Ground paprika powder in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -718,7 +708,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "34.99",
-      image_link: "https://placeholder.com/products/dd017.jpg",
+      image_link: "https://i.imgur.com/pvpYL8j.png",
       description: "Tandoori masala spice blend in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -729,7 +719,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "14.99",
-      image_link: "https://placeholder.com/products/dd019.jpg",
+      image_link: "https://i.imgur.com/iAwFWvm.png",
       description: "Whole coriander seeds in bulk 3.5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -740,7 +730,7 @@ export const allProducts = {
       brand: "MDH",
       category: "Spices",
       price: "39.99",
-      image_link: "https://placeholder.com/products/dd021.jpg",
+      image_link: "https://i.imgur.com/bltyPh2.png",
       description: "MDH Deggi Mirch (red chili powder blend) in 500g packs, case of 4.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
@@ -751,7 +741,7 @@ export const allProducts = {
       brand: "Rajah",
       category: "Spices",
       price: "25.99",
-      image_link: "https://placeholder.com/products/dd022.jpg",
+      image_link: "https://i.imgur.com/oUBim4w.png",
       description: "Rajah ground black pepper in 100g packs, case of 10.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
@@ -762,7 +752,7 @@ export const allProducts = {
       brand: "Rajah",
       category: "Spices",
       price: "44.99",
-      image_link: "https://placeholder.com/products/dd023.jpg",
+      image_link: "https://i.imgur.com/bbAITLO.png",
       description: "Rajah whole green cardamom pods in 50g packs, case of 10.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
@@ -773,29 +763,19 @@ export const allProducts = {
       brand: "Rajah",
       category: "Spices",
       price: "29.99",
-      image_link: "https://placeholder.com/products/dd024.jpg",
+      image_link: "https://i.imgur.com/oUBim4w.png",
       description: "Rajah ground white pepper in 100g packs, case of 10.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
     },
-    {
-      id: "dd025",
-      name: "Zeera Powder 10x100g",
-      brand: "Rajah",
-      category: "Spices",
-      price: "16.99",
-      image_link: "https://placeholder.com/products/dd025.jpg",
-      description: "Rajah ground cumin (zeera) powder in 100g packs, case of 10.",
-      dietary: ["Vegan", "Gluten-Free"],
-      packageType: "Multi-pack"
-    },
+  
     {
       id: "dd026",
       name: "Zeera Whole 9x400g",
       brand: "Rajah",
       category: "Spices",
       price: "53.99",
-      image_link: "https://placeholder.com/products/dd026.jpg",
+      image_link: "https://i.imgur.com/t9oJCP4.png",
       description: "Rajah whole cumin (zeera) seeds in 400g packs, case of 9.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
@@ -900,11 +880,11 @@ export const allProducts = {
   "Coffee": [
     {
       id: "CF01",
-      name: "Al-Near Arabic Organic Instant Coffee",
+      name: "Al-Khair Arabic Organic Instant Coffee",
       brand: "Nescafe",
       category: "Coffee",
       price: "24.99",
-      image_link: "https://i.imgur.com/coffee1.jpg",
+      image_link: "https://i.imgur.com/UdfQqVJ.jpg",
       description: "Enjoy starting your morning with a cup of bold instant coffee.",
       dietary: ["Vegan"],
       packageType: "Jar"

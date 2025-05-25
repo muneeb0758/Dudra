@@ -28,73 +28,82 @@ const SingleProduct = (props) => {
     return (
         <Box 
             borderWidth="1px" 
+            borderColor="gray.200"
             borderRadius="lg" 
-            p={[3, 4]} // Responsive padding
-            _hover={{ shadow: 'md' }}
+            p={[3, 4]}
             position="relative"
             bg="white"
             w="100%"
-            maxW={["160px", "200px", "240px", "280px"]} // Responsive max width
-            minW={["160px", "180px"]} // Minimum widths for small screens
-            mx="auto" // Center on mobile
-            as={Link}
+            maxW={["160px", "200px", "240px", "280px"]}
+            minW={["160px", "180px"]}
+            mx="auto"
+            transition="all 0.2s ease"
+            _hover={{ 
+                shadow: 'lg',
+                transform: 'translateY(-5px)',
+                borderColor: accentColor
+            }}
         >
-              <Box position="relative" onClick={(e) => {
-                // Prevent card click when clicking interactive elements
-                if (e.target.closest('button, a')) {
-                    e.preventDefault();
-                }
-            }}></Box>
-            {/* Premium Badge */}
-            <Badge 
-                position="absolute" 
-                top={2} 
-                left={2} 
-                bg={badgeColor} 
-                color="white" 
-                px={2} 
-                py={1}
-                fontSize="xs"
-            >
-                Premium
-            </Badge>
+            <Link to={`/products/${id}`} style={{ textDecoration: "none" }}>
+                {/* Premium Badge */}
+                <Badge 
+                    position="absolute" 
+                    top={2} 
+                    left={2} 
+                    bg={badgeColor} 
+                    color="white" 
+                    px={2} 
+                    py={1}
+                    fontSize="xs"
+                    borderRadius="md"
+                    zIndex="1"
+                >
+                    Premium
+                </Badge>
 
-            {/* Product Image - Responsive sizing */}
-            <Box 
-                w="100%" 
-                h={["120px", "150px", "180px", "200px"]} // Responsive heights
-                mb={[2, 3]} // Responsive margin
-                display="flex" 
-                alignItems="center" 
-                justifyContent="center"
-            >
-                <Image 
-                    src={image_link} 
-                    maxH="100%" 
-                    maxW="100%" 
-                    objectFit="contain"
-                    onError={addDefault}
-                />
-            </Box>
+                {/* Product Image */}
+                <Box 
+                    w="100%" 
+                    h={["120px", "150px", "180px", "200px"]}
+                    mb={[2, 3]}
+                    display="flex" 
+                    alignItems="center" 
+                    justifyContent="center"
+                    overflow="hidden"
+                    borderRadius="md"
+                >
+                    <Image 
+                        src={image_link} 
+                        maxH="100%" 
+                        maxW="100%" 
+                        objectFit="contain"
+                        onError={addDefault}
+                        transition="transform 0.3s ease"
+                        _hover={{
+                            transform: 'scale(1.05)'
+                        }}
+                    />
+                </Box>
 
-            {/* Product Title - Responsive text */}
-            <Text 
-                as={Link} 
-                to={`/products/${id}`} 
-                fontWeight="semibold" 
-                noOfLines={2} 
-                mb={2}
-                minH={["40px", "48px"]} // Responsive min height
-                fontSize={["xs", "sm", "md"]} // Responsive font size
-                display="flex"
-                alignItems="center"
-                _hover={{ color: accentColor, textDecoration: 'none' }}
-            >
-                {name}
-            </Text>
+                {/* Product Title */}
+                <Text 
+                    fontWeight="semibold" 
+                    noOfLines={2} 
+                    mb={2}
+                    minH={["40px", "48px"]}
+                    fontSize={["xs", "sm", "md"]}
+                    color="gray.800"
+                    _hover={{ 
+                        color: accentColor,
+                        textDecoration: 'none' 
+                    }}
+                >
+                    {name}
+                </Text>
+            </Link>
 
-            {/* Rating Section - Adjusted for mobile */}
-            <Flex align="center" mb={2} wrap="wrap">
+            {/* Rating Section */}
+            <Flex align="center" mb={2}>
                 {Array(5)
                     .fill("")
                     .map((_, i) => (
@@ -102,10 +111,9 @@ const SingleProduct = (props) => {
                             as={AiFillStar}
                             key={i}
                             color={i <= rating ? "#FFC107" : "gray.300"}
-                            w={3} // Smaller on mobile
+                            w={3}
                             h={3}
-                            display={i > 2 ? ["none", "block"] : "block"} // Hide some stars on mobile
-                            
+                            mr={0.5}
                         />
                     ))}
                 <Text fontSize={["xs", "sm"]} color="gray.600" ml={1}>
@@ -113,12 +121,12 @@ const SingleProduct = (props) => {
                 </Text>
             </Flex>
 
-            {/* Price Section - Stacked on mobile */}
+            {/* Price Section */}
             <Flex 
-                direction={["column", "row"]} // Column on mobile, row on desktop
+                direction={["column", "row"]}
                 align={["flex-start", "baseline"]}
                 mb={2}
-                gap={[0, 2]} // No gap on mobile
+                gap={[0, 2]}
             >
                 <Heading size={["sm", "md", "lg"]} color={priceColor}>
                     £{price}
@@ -128,31 +136,30 @@ const SingleProduct = (props) => {
                 </Text>
             </Flex>
 
-            {/* Savings - Smaller on mobile */}
-            <Text color={priceColor} fontSize={["xs", "sm"]} mb={[1, 2, 3]} noOfLines={1}>
+            {/* Savings */}
+            <Text color={priceColor} fontSize={["xs", "sm"]} mb={[1, 2, 3]}>
                 Save £{saveAmount} (30%)
             </Text>
 
-            {/* Delivery Info - Simplified on mobile */}
+            {/* Delivery Info */}
             <Flex 
                 align="center" 
                 fontSize={["xs", "sm"]} 
                 color={primaryColor} 
-                mb={[1, 2, 3]} 
-                flexWrap="wrap"
+                mb={[1, 2, 3]}
             >
                 <Icon viewBox="0 0 24 24" w={3} h={3} mr={1}>
                     <path fill="currentColor" d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-9-1a2 2 0 0 1 4 0v1h-4V6zm9 12H5V9h3v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h3v8z"/>
                 </Icon>
-                <Text noOfLines={1}>
+                <Text>
                     FREE <Text as="span" display={["none", "inline"]}>delivery </Text>
                     <Text as="span" fontWeight="bold">Tomorrow</Text>
                 </Text>
             </Flex>
 
-            {/* Buttons - Stacked on mobile */}
+            {/* Buttons */}
             <Flex 
-                direction={["column", "row"]} // Column on mobile
+                direction={["column", "row"]}
                 gap={2} 
                 mb={2}
             >
@@ -161,38 +168,51 @@ const SingleProduct = (props) => {
                     borderRadius="md" 
                     bg={buttonColor} 
                     color="white"
-                    _hover={{ bg: buttonHover }}
+                    _hover={{ 
+                        bg: buttonHover,
+                        transform: 'translateY(-2px)'
+                    }}
                     _active={{ bg: primaryColor }}
-                    onClick={() => handleModal(props)}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        handleModal(props);
+                    }}
                     fontSize={["xs", "sm"]}
                     px={2}
                     whiteSpace="nowrap"
-                    minW={["100%", "100px"]} // Full width on mobile
-                    h={["30px", "40px"]} // Smaller height on mobile
+                    minW={["100%", "100px"]}
+                    h={["30px", "40px"]}
+                    transition="all 0.2s ease"
                 >
                     Add to Cart
                 </Button>
                 <Button 
-                    as={Link} 
-                    to={`/products/${id}`} 
+                    as={Link}
+                    to={`/products/${id}`}
                     flex="1" 
                     borderRadius="md" 
                     bg={lightAccent} 
                     color={primaryColor}
                     border={`1px solid ${primaryColor}`}
-                    _hover={{ bg: "white", color: accentColor }}
+                    _hover={{ 
+                        bg: "white", 
+                        color: accentColor,
+                        borderColor: accentColor,
+                        transform: 'translateY(-2px)'
+                    }}
                     fontSize={["xs", "sm"]}
                     px={2}
                     whiteSpace="nowrap"
-                    minW={["100%", "80px"]} // Full width on mobile
-                    h={["30px", "40px"]} // Smaller height on mobile
+                    minW={["100%", "80px"]}
+                    h={["30px", "40px"]}
+                    transition="all 0.2s ease"
                 >
                     Buy Now
                 </Button>
             </Flex>
 
-            {/* Additional Info - Smaller on mobile */}
-            <Text fontSize={["10px", "xs"]} color={primaryColor} noOfLines={1}>
+            {/* Additional Info */}
+            <Text fontSize={["10px", "xs"]} color={primaryColor}>
                 <Icon viewBox="0 0 24 24" w={3} h={3} mr={1} verticalAlign="middle">
                     <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
                 </Icon>

@@ -3,7 +3,8 @@ import {
   Box, Button, Flex, Text, Heading, 
   Image, Grid, GridItem, NumberInput,
   NumberInputField, NumberInputStepper,
-  NumberIncrementStepper, NumberDecrementStepper
+  NumberIncrementStepper, NumberDecrementStepper,
+  SimpleGrid, Link as ChakraLink
 } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
 import Footer from "./Footer";
@@ -11,6 +12,9 @@ import { useSelector, useDispatch } from "react-redux";
 import EmptyCart from "../Optional/EmptyCart";
 import { Link } from "react-router-dom";
 import { deleteToCart, updateQuantity } from "../Redux/cart/cart.actions";
+import { allProducts } from "../ProductsPage/allprooducts";
+import { addToCart } from "../Redux/cart/cart.actions";
+
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -19,24 +23,42 @@ const CartItem = ({ item }) => {
     dispatch(updateQuantity({ id: item.id, quantity: value }));
   };
 
+  // Find the full product details from allProducts
+  const getProductDetails = (id) => {
+    for (const brand in allProducts.Brands) {
+      const product = allProducts.Brands[brand].find(p => p.id === id);
+      if (product) return product;
+    }
+    return null;
+  };
+
+  const product = getProductDetails(item.id) || item;
+
   return (
     <Flex borderBottom="1px solid #ddd" py={4} px={2}>
       <Box w="120px" flexShrink={0}>
-        <Image
-          src={item.image_link}
-          alt={item.name}
-          objectFit="contain"
-          boxSize="120px"
-        />
+        <Link to={`/products/${product.id}`}>
+          <Image
+            src={product.image_link}
+            alt={product.name}
+            objectFit="contain"
+            boxSize="120px"
+            cursor="pointer"
+          />
+        </Link>
       </Box>
       
       <Box flex={1} ml={4}>
-        <Heading size="md" mb={2}>{item.name}</Heading>
+        <Link to={`/products/${product.id}`}>
+          <Heading size="md" mb={2} _hover={{ color: "blue.500" }}>
+            {product.name}
+          </Heading>
+        </Link>
         <Text fontSize="sm" color="gray.600" mb={2}>
-          Sold by: {item.brand || "Dudra UK"}
+          Sold by: {product.brand || "Dudra UK"}
         </Text>
         <Text fontSize="lg" fontWeight="bold" mb={4}>
-          £{item.price}
+          £{(product.price * (item.quantity || 1)).toFixed(2)}
         </Text>
         
         <Flex align="center">
@@ -74,9 +96,16 @@ const Cart = () => {
   const dispatch = useDispatch();
   
   const subtotal = cartItems.reduce((acc, item) => 
-    acc + (item.price * (item.quantity || 1)), 0);
-  const vat = subtotal * 0.2; // 20% VAT
-  const total = subtotal + vat;
+    acc + (parseFloat(item.price) * (item.quantity || 1)), 0);
+
+  // Get 4 random products as frequently bought together items
+  const getRandomProducts = () => {
+    const allBrandsProducts = Object.values(allProducts.Brands).flat();
+    const shuffled = [...allBrandsProducts].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 4);
+  };
+
+  const frequentlyBoughtTogether = getRandomProducts();
 
   return (
     <Box maxW="1200px" mx="auto" px={4} py={8}>
@@ -102,19 +131,9 @@ const Cart = () => {
                 Order Summary
               </Heading>
               
-              <Flex justify="space-between" mb={2}>
-                <Text>Subtotal ({cartItems.length} items):</Text>
-                <Text fontWeight="bold">£{subtotal.toFixed(2)}</Text>
-              </Flex>
-              
-              <Flex justify="space-between" mb={4}>
-                <Text>VAT (20%):</Text>
-                <Text>£{vat.toFixed(2)}</Text>
-              </Flex>
-              
               <Flex justify="space-between" mb={6} borderTop="1px solid #ddd" pt={4}>
                 <Text fontSize="lg" fontWeight="bold">Order Total:</Text>
-                <Text fontSize="lg" fontWeight="bold">£{total.toFixed(2)}</Text>
+                <Text fontSize="lg" fontWeight="bold">£{subtotal.toFixed(2)}</Text>
               </Flex>
 
               <Link to="/checkout">
@@ -138,6 +157,53 @@ const Cart = () => {
           </GridItem>
         </Grid>
       )}
+
+      {/* Frequently Bought Together Section */}
+      {cartItems.length > 0 && (
+        <Box mt={12}>
+          <Heading size="lg" mb={6}>Frequently Bought Together</Heading>
+          <SimpleGrid columns={[1, 2, 4]} spacing={6}>
+            {frequentlyBoughtTogether.map((product) => (
+              <Box 
+                key={product.id} 
+                borderWidth="1px" 
+                borderRadius="md" 
+                p={4}
+                _hover={{ shadow: 'md' }}
+              >
+                <Link to={`/products/${product.id}`}>
+                  <Image 
+                    src={product.image_link} 
+                    alt={product.name}
+                    objectFit="contain"
+                    h="150px"
+                    w="100%"
+                    mb={4}
+                    cursor="pointer"
+                  />
+                </Link>
+                <Link to={`/products/${product.id}`}>
+                  <Text fontWeight="semibold" mb={2} _hover={{ color: "blue.500" }}>
+                    {product.name}
+                  </Text>
+                </Link>
+                <Text color="blue.600" fontWeight="bold" mb={4}>
+                  £{product.price}
+                </Text>
+                <Button 
+                  colorScheme="blue" 
+                  size="sm" 
+                  w="100%"
+                  onClick={() => dispatch(addToCart({...product, quantity: 1}))}
+                >
+                  Add to Cart
+                </Button>
+              </Box>
+            ))}
+          </SimpleGrid>
+        </Box>
+      )}
+
       <Footer />
     </Box>
   );
