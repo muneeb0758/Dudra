@@ -1,10 +1,7 @@
 const initialState = {
   reviews: [],
-<<<<<<< HEAD
   loading: false,
   error: null
-=======
->>>>>>> 236723fcb021bbefdad43471ac646e25e4855221
 };
 
 export const reviewsReducer = (state = initialState, action) => {
@@ -12,7 +9,6 @@ export const reviewsReducer = (state = initialState, action) => {
     case 'ADD_REVIEW':
       return {
         ...state,
-<<<<<<< HEAD
         reviews: [...state.reviews, action.payload]
       };
     case 'REVIEWS_LOADING':
@@ -33,9 +29,6 @@ export const reviewsReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         error: action.payload
-=======
-        reviews: [...state.reviews, action.payload], // Add new review to the reviews array
->>>>>>> 236723fcb021bbefdad43471ac646e25e4855221
       };
     default:
       return state;

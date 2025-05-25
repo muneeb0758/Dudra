@@ -20,7 +20,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-<<<<<<< HEAD
     const result = await dispatch(userLogin(data.email, data.password));
     if (result.success) {
       toast({
@@ -34,45 +33,12 @@ const Login = () => {
       });
       navigate('/');
     } else {
-=======
-
-    try {
-      const result = await dispatch(userLogin(data.email, data.password));
-
-      if (result.success) {
-        toast({
-          position: 'top-left',
-          render: () => (
-            <Flex color='white' border="4px solid white" p={"10px"} bgColor='green.400'>
-              <CheckCircleIcon w={30} h={30} />
-              <Text size="lg" ml="15px">Signed In Successfully!</Text>
-            </Flex>
-          ),
-        });
-        navigate("/");
-      } else {
-        toast({
-          position: 'top-left',
-          render: () => (
-            <Flex color='white' border="4px solid white" p={"10px"} bgColor='red'>
-              <WarningIcon w={30} h={30} />
-              <Text size="lg" ml="15px">{result.error}</Text>
-            </Flex>
-          ),
-        });
-      }
-    } catch (error) {
->>>>>>> 236723fcb021bbefdad43471ac646e25e4855221
       toast({
         position: 'top-left',
         render: () => (
           <Flex color='white' border="4px solid white" p={"10px"} bgColor='red'>
             <WarningIcon w={30} h={30} />
-<<<<<<< HEAD
             <Text size="lg" ml="15px">{result.error}</Text>
-=======
-            <Text size="lg" ml="15px">An unexpected error occurred</Text>
->>>>>>> 236723fcb021bbefdad43471ac646e25e4855221
           </Flex>
         ),
       });
@@ -80,17 +46,10 @@ const Login = () => {
     setLoading(false);
   };
 
-<<<<<<< HEAD
   const handleGoogleLogin = async () => {
     setLoading(true);
     const result = await dispatch(userGoogleLogin());
     if (result.success) {
-=======
-
-  const handleLogout = async () => {
-    try {
-      await dispatch(userLogout());
->>>>>>> 236723fcb021bbefdad43471ac646e25e4855221
       toast({
         position: 'top-left',
         render: () => (
@@ -188,23 +147,6 @@ const Login = () => {
               REGISTER
             </Button>
           </Link>
-<<<<<<< HEAD
-=======
-          {isAuth && (
-            <Button
-              w="100%"
-              onClick={handleLogout}
-              color="black"
-              mt="20px"
-              borderRadius="0px"
-              border="2px solid #28bdb7"
-              bgColor="white"
-              _hover={{ bgColor: "red", color: "white" }}
-            >
-              SIGN OUT
-            </Button>
-          )}
->>>>>>> 236723fcb021bbefdad43471ac646e25e4855221
         </Box>
       </Flex>
     </Box>
