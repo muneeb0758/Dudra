@@ -157,18 +157,7 @@ export const allProducts = {
         category: "Packaging",
         price: "22.99",
         image_link: "https://i.imgur.com/ULE5L7p.jpg",
-        description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags)",
-        dietary: [],
-        packageType: "Bags"
-      },
-      {
-        id: "WB01",
-        name: "200x Brown Paper Carrot Bags with Twist Hardware",
-        brand: "Fiesta Green",
-        category: "Packaging",
-        price: "18.99",
-        image_link: "https://i.imgur.com/bags1.jpg",
-        description: "Brown paper carrot bags with twist hardware",
+        description: "Material: Paper, Quantity: 200. (1 item contains 250 Brown Paper Bags)",
         dietary: [],
         packageType: "Bags"
       }
@@ -182,17 +171,6 @@ export const allProducts = {
         price: "10.99",
         image_link: "https://i.imgur.com/6hF9VjW.jpg",
         description: "Centrefeed roll for easy paper access, Economical 1 ply roll",
-        dietary: [],
-        packageType: "Multi-pack"
-      },
-      {
-        id: "WB02",
-        name: "Blue rolls 6 Pack Bits Roll Completed Blue Roll 2 Fly Enforced Blue Roll",
-        brand: "Everyday",
-        category: "Cleaning Supplies",
-        price: "15.99",
-        image_link: "https://i.imgur.com/rolls1.jpg",
-        description: "Blue rolls pack of 6",
         dietary: [],
         packageType: "Multi-pack"
       }
@@ -306,28 +284,15 @@ export const allProducts = {
         packageType: "Multi-pack"
       }
     ],
-    "Al-Sadroed": [
-      {
-        id: "AP01",
-        name: "Al-Sadroed 2, 48 (1224 Packs)",
-        brand: "Al-Sadroed",
-        category: "Always Peds",
-        price: "45.99",
-        image_link: "https://i.imgur.com/pads1.jpg",
-        description: "Always Discover Intochicure Pads Wombs, Nymph, Sweeteners",
-        dietary: [],
-        packageType: "Packs"
-      }
-    ],
     "La Madeleine": [
       {
         id: "BK01",
-        name: "Silver Chicken La Madeleine Salmon Pack of 18",
+        name: "La Madeleine D'Armor All Butter Fresh French 18 Cakes Packs",
         brand: "La Madeleine",
         category: "Bakery",
         price: "28.99",
-        image_link: "https://i.imgur.com/bakery1.jpg",
-        description: "Silver Chicken La Madeleine Salmon",
+        image_link: "https://i.imgur.com/YTx74Y6.jpg",
+        description: "La Madeleine D'Armor All Butter Fresh French Breakfast 18 Cakes Packs Bite 600g",
         dietary: [],
         packageType: "Pack"
       }
@@ -394,28 +359,6 @@ export const allProducts = {
       description: "Traditional Madeira cake, 590g each, pack of 6.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
-    },
-    {
-      id: "CF03",
-      name: "Fat 5 Light Chocolate Brin Chocolate Channel and Roasted Bars Ba Rice",
-      brand: "",
-      category: "Snacks",
-      price: "12.99",
-      image_link: "https://i.imgur.com/chocolate1.jpg",
-      description: "Light chocolate bars with roasted rice",
-      dietary: ["Vegetarian"],
-      packageType: "Bars"
-    },
-    {
-      id: "CF04",
-      name: "Fruitless Chocolate Bars, Milk Chocolate Channel",
-      brand: "",
-      category: "Snacks",
-      price: "11.99",
-      image_link: "https://i.imgur.com/chocolate2.jpg",
-      description: "Fruitless milk chocolate bars",
-      dietary: ["Vegetarian"],
-      packageType: "Bars"
     }
   ],
   

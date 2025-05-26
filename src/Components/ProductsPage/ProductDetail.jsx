@@ -24,9 +24,18 @@ const ProductDetail = () => {
 
   // Find product
   let product = null;
-  for (const brand in allProducts.Brands) {
+ for (const brand in allProducts.Brands) {
     product = allProducts.Brands[brand].find(p => p.id === id);
     if (product) break;
+  }
+  // If not found in Brands, search in Categories
+  if (!product) {
+    for (const category in allProducts) {
+      if (Array.isArray(allProducts[category])) {
+        product = allProducts[category].find(p => p.id === id);
+        if (product) break;
+      }
+    }
   }
 
   // Image handling
@@ -38,7 +47,7 @@ const ProductDetail = () => {
   ];
 
   const handleImageError = (e) => {
-    e.target.src = "https://media.istockphoto.com/id/1206575314/vector/image-unavailable-icon.jpg?s=612x612&w=0&k=20&c=7aypXCTzJ42V0xRHJ08Nq1K6fPgY5IB_D4fXbWloX_w=";
+    e.target.src = "https://i.imgur.com/CPuiVu0.png";
   };
 
   const handleAddToCart = () => {

@@ -285,19 +285,30 @@ const Shop = ({ categoryFilter, searchTerm }) => {
                 ))}
             </SimpleGrid>
           ) : (
+            // <SimpleGrid w="100%" columns={[2, 2, 6]} spacing="40px" pt="10">
+            //   {products.map((p, i) => {
+            //     if (i < 25) {
+            //       return (
+            //         <SingleProduct
+            //           {...p}
+            //           handleModal={handleModal}
+            //           key={p.id}
+            //         />
+            //       );
+            //     }
+            //   })}
+            // </SimpleGrid>
+
             <SimpleGrid w="100%" columns={[2, 2, 6]} spacing="40px" pt="10">
-              {products.map((p, i) => {
-                if (i < 25) {
-                  return (
-                    <SingleProduct
-                      {...p}
-                      handleModal={handleModal}
-                      key={p.id}
-                    />
-                  );
-                }
-              })}
-            </SimpleGrid>
+  {products.map((p) => (
+    <SingleProduct
+      {...p}
+      handleModal={handleModal}
+      key={p.id}
+    />
+  ))}
+</SimpleGrid>
+
           )}
         </Box>
         
