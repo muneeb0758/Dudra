@@ -56,7 +56,7 @@ const Footer = () => {
                 <h2>
                   <AccordionButton>
                     <Box as="span" fontSize="14px" flex='1' textAlign='left'>
-                      About SkinStore
+                      About Dudra
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>

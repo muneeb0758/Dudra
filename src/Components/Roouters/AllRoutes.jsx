@@ -22,6 +22,7 @@ import Home from '../Pages/Home';
 import Shop from '../ProductsPage/ProductPage';
 import PrivateRoute from './PrivateRoute';
 import FruitsVeg from '../Pages/All_Products_Pages/Fruitsveg';
+import OrderConfirmation from "../Orderconfirmation";
 
 const AllRoutes = ({ searchTerm }) => {
   return (
@@ -35,18 +36,19 @@ const AllRoutes = ({ searchTerm }) => {
         <Route path="/bathbeauty" element={<BathBeauty />} />
         <Route path="/breakfast" element={<Breakfast />} />
         <Route path="/brands" element={<Brands />} />
-        <Route path="/building" element={<BuildingRoute />} />
+        {/* <Route path="/building" element={<BuildingRoute />} /> */}
         <Route path="/packaging" element={<Packaging />} />
-        <Route path="/hair" element={<HairPages />} />
-        <Route path="/holiday" element={<Holiday />} />
+        {/* <Route path="/hair" element={<HairPages />} /> */}
+        {/* <Route path="/holiday" element={<Holiday />} /> */}
         <Route path="/fruits" element={<FruitsVeg />} />
         <Route path="/news" element={<NewsTrending />} />
         <Route path="/sale" element={<Sale />} />
         <Route path="/spices" element={<Spices />} />
         <Route path="/tools" element={<Tools />} />
         <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
-        <Route path="/skincare" element={<SkinPage />} />
+        {/* <Route path="/skincare" element={<SkinPage />} /> */}
         <Route path="/products/:id" element={<ProductDetail />} />
+      <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
       </Routes>
     </div>
   );

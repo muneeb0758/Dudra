@@ -26,3 +26,7 @@ export const resetCart = () => (dispatch) => {
 export const updateQuantity = (id, quantity) => (dispatch) => {
   dispatch({ type: UPDATE_QUANTITY, payload: { id, quantity } });
 };
+
+export const clearCart = () => ({
+  type: "CLEAR_CART",
+});
