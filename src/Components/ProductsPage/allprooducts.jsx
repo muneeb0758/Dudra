@@ -7,8 +7,8 @@ export const allProducts = {
         name: "Oat So Simple",
         brand: "Quaker",
         category: "Breakfast",
-        price: "",
-        image_link: "https://placeholder.com/products/C02.jpg",
+        price: "14.99",
+        image_link: "https://i.imgur.com/Qb9EbVk.jpg",
         description: "Quick and easy instant oats breakfast cereal.",
         dietary: ["Vegan"],
         packageType: "Box"
@@ -21,7 +21,7 @@ export const allProducts = {
         brand: "Kelloggs",
         category: "Breakfast",
         price: "18.99",
-        image_link: "https://placeholder.com/products/C01.jpg",
+        image_link: "https://i.imgur.com/QErbzdq.jpg",
         description: "High fiber breakfast cereal with dried fruits in convenient portion packs.",
         dietary: ["Vegetarian"],
         packageType: "Case of portion packs"
@@ -34,7 +34,7 @@ export const allProducts = {
         brand: "Nature Valley",
         category: "Snacks",
         price: "26.99",
-        image_link: "https://placeholder.com/products/S01.jpg",
+        image_link: "https://i.imgur.com/li0BNj8.jpg",
         description: "Nature Valley protein and cereal bars, 42g each, case of 40.",
         dietary: ["Vegetarian"],
         packageType: "Multi-pack"
@@ -47,10 +47,21 @@ export const allProducts = {
         brand: "Nescafe",
         category: "Beverages",
         price: "19.99",
-        image_link: "https://placeholder.com/products/S18.jpg",
+        image_link: "https://i.imgur.com/deEcxAn.jpg",
         description: "Nescafe Original Sticks 1x200",
         dietary: ["Vegan"],
         packageType: "Sticks"
+      },
+      {
+        id: "CF01",
+        name: "Al-Khair Arabic Organic Instant Coffee",
+        brand: "Nescafe",
+        category: "Coffee",
+        price: "24.99",
+        image_link: "https://i.imgur.com/UdfQqVJ.jpg",
+        description: "Enjoy starting your morning with a cup of bold instant coffee.",
+        dietary: ["Vegan"],
+        packageType: "Jar"
       }
     ],
     "Tate & Lyle": [
@@ -60,19 +71,8 @@ export const allProducts = {
         brand: "Tate & Lyle",
         category: "Baking",
         price: "19.99",
-        image_link: "https://placeholder.com/products/dd002.jpg",
+        image_link: "https://i.imgur.com/sQ00I0p.jpg",
         description: "Tate & Lyle white sugar in 1kg packs, case of 15.",
-        dietary: ["Vegan"],
-        packageType: "Multi-pack"
-      },
-      {
-        id: "dd003",
-        name: "Caster Sugar 10x1kg",
-        brand: "Tate & Lyle",
-        category: "Baking",
-        price: "15.99",
-        image_link: "https://placeholder.com/products/dd003.jpg",
-        description: "Fine caster sugar in 1kg packs, case of 10.",
         dietary: ["Vegan"],
         packageType: "Multi-pack"
       }
@@ -84,10 +84,21 @@ export const allProducts = {
         brand: "Euro Collection London",
         category: "Toiletries",
         price: "81.99",
-        image_link: "https://placeholder.com/products/T04.jpg",
+        image_link: "https://i.imgur.com/YQHkwx4.jpg",
         description: "Euro Collection London Bath & Shower Gel-10ml Sachets-500pk Euro.",
         dietary: [],
         packageType: "Sachets"
+      },
+      {
+        id: "BB01",
+        name: "Elan's Chicken Lender Band & Shower Gas Lion",
+        brand: "Euro Collection London",
+        category: "Bathing Item",
+        price: "32.99",
+        image_link: "https://i.imgur.com/shower1.jpg",
+        description: "Euro Collection London Bath Range",
+        dietary: [],
+        packageType: "Bottle"
       }
     ],
     "Country Range": [
@@ -97,8 +108,30 @@ export const allProducts = {
         brand: "Country Range",
         category: "Condiments",
         price: "25.99",
-        image_link: "https://placeholder.com/products/C09.jpg",
-        description: "Brand Country Range, Item weight 20 Grams, Package information Tub, Item dimensions L x W x H 24 x 20 x 11 centimetres, Package weight 2.06 Kilograms, Item form Liquid, Unit count 2000 gram",
+        image_link: "https://i.imgur.com/PwSoVLk.jpg",
+        description: "Brand Country Range, Item weight 20 Grams, Package information Tub",
+        dietary: ["Vegetarian"],
+        packageType: "Portion packs"
+      },
+      {
+        id: "JR01",
+        name: "Country Rings Assorted Jam Perfects 100 x 20g - Mixed Deficient",
+        brand: "Country Range",
+        category: "Jams & Preserves",
+        price: "22.99",
+        image_link: "https://i.imgur.com/jam1.jpg",
+        description: "Assorted jam perfects in mixed flavors",
+        dietary: ["Vegetarian"],
+        packageType: "Portion packs"
+      },
+      {
+        id: "JR02",
+        name: "Barberie Spiced Eggo",
+        brand: "Country Range",
+        category: "Jams & Preserves",
+        price: "21.99",
+        image_link: "https://i.imgur.com/vkaT2sI.png",
+        description: "Spiced eggo jam",
         dietary: ["Vegetarian"],
         packageType: "Portion packs"
       }
@@ -110,7 +143,7 @@ export const allProducts = {
         brand: "Dettol",
         category: "Cleaning Supplies",
         price: "12.99",
-        image_link: "https://placeholder.com/products/CS12.jpg",
+        image_link: "https://i.imgur.com/DPHjtQh.png",
         description: "Dettol antibacterial surface cleaning wipes, 10 packs of 30 wipes.",
         dietary: [],
         packageType: "Multi-pack"
@@ -123,8 +156,8 @@ export const allProducts = {
         brand: "Fiesta Green",
         category: "Packaging",
         price: "22.99",
-        image_link: "https://placeholder.com/products/CS05.jpg",
-        description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags), Colour: Brown, Recycled paper material is kinder to Earth's natural resources, Thick paper construction offers enough strength to carry heavy loads, Kraft colourway gives these bags an organic look, Rectangular base allows bags to stand upright for easy loading and transportation, Supplied flat-packed for space-saving storage, Ideal for carrying takeaway containers, groceries and food-to-go, Great alternative to single-use plastic carrier bags",
+        image_link: "https://i.imgur.com/ULE5L7p.jpg",
+        description: "Material: Paper, Quantity: 200. (1 item contains 250 Brown Paper Bags)",
         dietary: [],
         packageType: "Bags"
       }
@@ -136,8 +169,8 @@ export const allProducts = {
         brand: "Everyday",
         category: "Cleaning Supplies",
         price: "10.99",
-        image_link: "https://placeholder.com/products/CS011.jpg",
-        description: "Centrefeed roll for easy paper access, Economical 1 ply roll, Absorbs liquid for wiping or drying hands and surfaces, Suitable for standard centrefeed dispensers, Dimensions: 300mx175mm, 60mm core, Supplied in a pack of 6, Colour: Blue",
+        image_link: "https://i.imgur.com/6hF9VjW.jpg",
+        description: "Centrefeed roll for easy paper access, Economical 1 ply roll",
         dietary: [],
         packageType: "Multi-pack"
       }
@@ -149,7 +182,7 @@ export const allProducts = {
         brand: "Kesar",
         category: "Fruits",
         price: "19.99",
-        image_link: "https://placeholder.com/products/dd013.jpg",
+        image_link: "https://i.imgur.com/nmhk4VP.jpg",
         description: "Kesar mango pulp in 850g cans, case of 6.",
         dietary: ["Vegan", "Fruit"],
         packageType: "Multi-pack"
@@ -162,7 +195,7 @@ export const allProducts = {
         brand: "Laila",
         category: "Rice",
         price: "34.99",
-        image_link: "https://placeholder.com/products/dd020.jpg",
+        image_link: "https://i.imgur.com/ynq7mEQ.png",
         description: "Premium basmati rice in bulk 20kg bag.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Bulk bag"
@@ -175,21 +208,21 @@ export const allProducts = {
         brand: "MDH",
         category: "Spices",
         price: "39.99",
-        image_link: "https://placeholder.com/products/dd021.jpg",
+        image_link: "https://i.imgur.com/bltyPh2.png",
         description: "MDH Deggi Mirch (red chili powder blend) in 500g packs, case of 4.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
       }
     ],
-    "Rajah": [
+    "Country Range": [
       {
         id: "dd022",
-        name: "Black Ground Pepper 10x100g",
-        brand: "Rajah",
+        name: "Black Ground Pepper 1000x10g",
+        brand: "Country Range",
         category: "Spices",
         price: "25.99",
-        image_link: "https://placeholder.com/products/dd022.jpg",
-        description: "Rajah ground black pepper in 100g packs, case of 10.",
+        image_link: "https://i.imgur.com/ccZULrH.png",
+        description: "Rajah ground black pepper in 10g packs, case of 1000.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
       },
@@ -199,7 +232,7 @@ export const allProducts = {
         brand: "Rajah",
         category: "Spices",
         price: "44.99",
-        image_link: "https://placeholder.com/products/dd023.jpg",
+        image_link: "https://i.imgur.com/rRlGLM5.png",
         description: "Rajah whole green cardamom pods in 50g packs, case of 10.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
@@ -210,7 +243,7 @@ export const allProducts = {
         brand: "Rajah",
         category: "Spices",
         price: "29.99",
-        image_link: "https://placeholder.com/products/dd024.jpg",
+        image_link: "https://i.imgur.com/oUBim4w.png",
         description: "Rajah ground white pepper in 100g packs, case of 10.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
@@ -221,7 +254,7 @@ export const allProducts = {
         brand: "Rajah",
         category: "Spices",
         price: "16.99",
-        image_link: "https://placeholder.com/products/dd025.jpg",
+        image_link: "https://i.imgur.com/X2Jrq57.png",
         description: "Rajah ground cumin (zeera) powder in 100g packs, case of 10.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
@@ -232,7 +265,7 @@ export const allProducts = {
         brand: "Rajah",
         category: "Spices",
         price: "53.99",
-        image_link: "https://placeholder.com/products/dd026.jpg",
+        image_link: "https://i.imgur.com/t9oJCP4.png",
         description: "Rajah whole cumin (zeera) seeds in 400g packs, case of 9.",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
@@ -245,10 +278,23 @@ export const allProducts = {
         brand: "Sapna",
         category: "Cooking Essentials",
         price: "18.99",
-        image_link: "https://placeholder.com/products/dd027.jpg",
+        image_link: "https://i.imgur.com/R2JXHri.png",
         description: "Sapna ready-to-use ginger and garlic paste in 1kg jars",
         dietary: ["Vegan", "Gluten-Free"],
         packageType: "Multi-pack"
+      }
+    ],
+    "La Madeleine": [
+      {
+        id: "BK01",
+        name: "La Madeleine D'Armor All Butter Fresh French 18 Cakes Packs",
+        brand: "La Madeleine",
+        category: "Bakery",
+        price: "28.99",
+        image_link: "https://i.imgur.com/YTx74Y6.jpg",
+        description: "La Madeleine D'Armor All Butter Fresh French Breakfast 18 Cakes Packs Bite 600g",
+        dietary: [],
+        packageType: "Pack"
       }
     ]
   },
@@ -261,7 +307,7 @@ export const allProducts = {
       brand: "Kelloggs",
       category: "Breakfast",
       price: "18.99",
-      image_link: "https://placeholder.com/products/C01.jpg",
+      image_link: "https://i.imgur.com/WZDyxzS.jpg",
       description: "High fiber breakfast cereal with dried fruits in convenient portion packs.",
       dietary: ["Vegetarian"],
       packageType: "Case of portion packs"
@@ -271,82 +317,25 @@ export const allProducts = {
       name: "Oat So Simple",
       brand: "Quaker",
       category: "Breakfast",
-      price: "",
-      image_link: "https://placeholder.com/products/C02.jpg",
+      price: "14.99",
+      image_link: "https://i.imgur.com/Qb9EbVk.jpg",
       description: "Quick and easy instant oats breakfast cereal.",
       dietary: ["Vegan"],
       packageType: "Box"
+    },
+    {
+      id: "CF02",
+      name: "Refuggy Cereal Pretion-Pas Mixed Case (36x8g)",
+      brand: "",
+      category: "Breakfast",
+      price: "15.99",
+      image_link: "https://i.imgur.com/uZPBMsr.jpg",
+      description: "Refuggy Cereal Pretion-Pas Mixed Case",
+      dietary: ["Vegetarian"],
+      packageType: "Case"
     }
   ],
   
-  "Dairy": [
-    {
-      id: "C03",
-      name: "UHT Milk 27x200ml",
-      brand: "",
-      category: "Dairy",
-      price: "15.99",
-      image_link: "https://placeholder.com/products/C03.jpg",
-      description: "UHT processed milk in convenient 200ml portions, case of 27.",
-      dietary: ["Dairy"],
-      packageType: "Multi-pack"
-    },
-    {
-      id: "C04",
-      name: "Fresh Milk 1x250ml 10X250ml",
-      brand: "",
-      category: "Dairy",
-      price: "5.99",
-      image_link: "https://placeholder.com/products/C04.jpg",
-      description: "Fresh milk in 250ml containers, case of 10.",
-      dietary: ["Dairy"],
-      packageType: "Multi-pack"
-    },
-    {
-      id: "C05",
-      name: "Fresh Milk 1x500ml",
-      brand: "",
-      category: "Dairy",
-      price: "",
-      image_link: "https://placeholder.com/products/C05.jpg",
-      description: "Fresh milk in convenient 500ml containers.",
-      dietary: ["Dairy"],
-      packageType: "Single unit"
-    },
-    {
-      id: "C06",
-      name: "Low Fat Yoghurt 20x100g",
-      brand: "",
-      category: "Dairy",
-      price: "8.99",
-      image_link: "https://placeholder.com/products/C06.jpg",
-      description: "Low fat yoghurt in individual portion pots, case of 20.",
-      dietary: ["Dairy", "Low Fat"],
-      packageType: "Multi-pack"
-    },
-    {
-      id: "C07",
-      name: "Butter Portion 1x200 7g",
-      brand: "",
-      category: "Dairy",
-      price: "16.99",
-      image_link: "https://placeholder.com/products/C07.jpg",
-      description: "Individual butter portions, 7g each, case of 200.",
-      dietary: ["Dairy"],
-      packageType: "Portion packs"
-    },
-    {
-      id: "C11",
-      name: "Medium Eggs -1x360",
-      brand: "",
-      category: "Dairy",
-      price: "74.99",
-      image_link: "https://placeholder.com/products/C11.jpg",
-      description: "Medium-sized eggs, bulk case of 360.",
-      dietary: ["Protein", "Vegetarian"],
-      packageType: "Bulk case"
-    }
-  ],
   
   "Snacks": [
     {
@@ -355,7 +344,7 @@ export const allProducts = {
       brand: "Nature Valley",
       category: "Snacks",
       price: "26.99",
-      image_link: "https://placeholder.com/products/S01.jpg",
+      image_link: "https://i.imgur.com/li0BNj8.jpg",
       description: "Nature Valley protein and cereal bars, 42g each, case of 40.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
@@ -366,7 +355,7 @@ export const allProducts = {
       brand: "",
       category: "Bakery",
       price: "14.50",
-      image_link: "https://placeholder.com/products/S03.jpg",
+      image_link: "https://i.imgur.com/oQx9WN9.jpg",
       description: "Traditional Madeira cake, 590g each, pack of 6.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
@@ -374,13 +363,13 @@ export const allProducts = {
   ],
   
   "Fruits & Veg": [
-    {
+  {
       id: "S04",
       name: "Red Apples 1x12kg",
       brand: "",
       category: "Fresh Produce",
       price: "22.99",
-      image_link: "https://placeholder.com/products/S04.jpg",
+      image_link: "https://i.imgur.com/VuUXe8O.png",
       description: "Fresh red apples, bulk case of approximately 12kg.",
       dietary: ["Vegan", "Fruit"],
       packageType: "Bulk case"
@@ -391,7 +380,7 @@ export const allProducts = {
       brand: "",
       category: "Fresh Produce",
       price: "25.99",
-      image_link: "https://placeholder.com/products/S05.jpg",
+      image_link: "https://i.imgur.com/jr8ksyj.png",
       description: "Fresh bananas, bulk case of approximately 18kg.",
       dietary: ["Vegan", "Fruit"],
       packageType: "Bulk case"
@@ -402,7 +391,7 @@ export const allProducts = {
       brand: "",
       category: "Fresh Produce",
       price: "20.99",
-      image_link: "https://placeholder.com/products/S06.jpg",
+      image_link: "https://i.imgur.com/4W0s1oT.png",
       description: "Fresh Mandarin / Oranges 1x10kg",
       dietary: ["Vegan", "Fruit"],
       packageType: "Bulk case"
@@ -413,21 +402,51 @@ export const allProducts = {
       brand: "Kesar",
       category: "Fruits",
       price: "19.99",
-      image_link: "https://placeholder.com/products/dd013.jpg",
+      image_link: "https://i.imgur.com/nmhk4VP.jpg",
       description: "Kesar mango pulp in 850g cans, case of 6.",
       dietary: ["Vegan", "Fruit"],
       packageType: "Multi-pack"
-    } 
+    } ,
+        {
+      id: "CF05",
+      name: "Fruitypot Peach & Pear in Juice Pets - 181x11.5g",
+      brand: "",
+      category: "Fruits & Veg",
+      price: "28.99",
+      image_link: "https://i.imgur.com/Q9MQJvY.jpg",
+      description: "Peach and pear fruit in juice",
+      dietary: ["Vegan", "Fruit"],
+      packageType: "Packs"
+    },
+    {
+      id: "CF06",
+      name: "Fruitypot Orange Mountain Segments in July Pots - 181x12kg",
+      brand: "",
+      category: "Fruits & Veg",
+      price: "32.99",
+      image_link: "https://i.imgur.com/o38AQvq.jpg",
+      description: "Mountain fruit segments in pots",
+      dietary: ["Vegan", "Fruit"],
+      packageType: "Pots"
+    },
+    {
+      id: "CF07",
+      name: "Fruitypot Pineapple in Juice Pets - 18 x 11.5g",
+      brand: "",
+      category: "Fruits & Veg",
+      price: "29.99",
+      image_link: "https://i.imgur.com/YfNMNTc.jpg"
+    }
   ],
   
   "Bath & Body": [
-    {
+   {
       id: "B05",
       name: "Toothpaste 12x50g",
       brand: "",
       category: "Personal Care",
       price: "",
-      image_link: "https://placeholder.com/products/B05.jpg",
+      image_link: "https://i.imgur.com/bhA89w8.png",
       description: "Standard toothpaste in 50g tubes, case of 12.",
       dietary: [],
       packageType: "Multi-pack"
@@ -438,7 +457,7 @@ export const allProducts = {
       brand: "",
       category: "Personal Care",
       price: "5.99",
-      image_link: "https://placeholder.com/products/B04.jpg",
+      image_link: "https://i.imgur.com/ITuf1CS.png",
       description: "Medium bristle adult toothbrushes, pack of 12.",
       dietary: [],
       packageType: "Multi-pack"
@@ -449,7 +468,7 @@ export const allProducts = {
       brand: "",
       category: "Personal Care",
       price: "21.99",
-      image_link: "https://placeholder.com/products/B02.jpg",
+      image_link: "https://i.imgur.com/VytiepW.jpg",
       description: "Sanitary pads in bulk packaging, 6 packs of 44 each.",
       dietary: [],
       packageType: "Multi-pack"
@@ -460,7 +479,7 @@ export const allProducts = {
       brand: "",
       category: "Personal Care",
       price: "29.99",
-      image_link: "https://placeholder.com/products/B01.jpg",
+      image_link: "https://i.imgur.com/BP2wN0D.png",
       description: "Twin blade disposable razors in blue color, bulk pack of 120.",
       dietary: [],
       packageType: "Bulk pack"
@@ -471,7 +490,7 @@ export const allProducts = {
       brand: "Euro Collection London",
       category: "Toiletries",
       price: "81.99",
-      image_link: "https://placeholder.com/products/T04.jpg",
+      image_link: "https://i.imgur.com/5v1k5Pj.jpg",
       description: "Euro Collection London Bath & Shower Gel-10ml Sachets-500pk Euro.",
       dietary: [],
       packageType: "Sachets"
@@ -479,10 +498,10 @@ export const allProducts = {
     {
       id: "T03",
       name: "Shower Gel Sachets 10ml",
-      brand: "",
+      brand: "Country Range",
       category: "Toiletries",
       price: "81.99",
-      image_link: "https://placeholder.com/products/T03.jpg",
+      image_link: "https://i.imgur.com/wks6yWI.png",
       description: "Shower gel in convenient 10ml single-use sachets.",
       dietary: [],
       packageType: "Sachets"
@@ -490,10 +509,10 @@ export const allProducts = {
     {
       id: "T02",
       name: "Pleated Soap 16g",
-      brand: "",
+      brand: "Country Range",
       category: "Toiletries",
-      price: "",
-      image_link: "https://placeholder.com/products/T02.jpg",
+      price: "20",
+      image_link: "https://i.imgur.com/oLXHvKQ.png",
       description: "Individually wrapped pleated soap bars, 16g each.",
       dietary: [],
       packageType: "Individual"
@@ -504,43 +523,55 @@ export const allProducts = {
       brand: "",
       category: "Toiletries",
       price: "9.49",
-      image_link: "https://placeholder.com/products/T01.jpg",
+      image_link: "https://i.imgur.com/n2dMsIV.png",
       description: "Standard toilet paper rolls in bulk packaging, case of 36.",
       dietary: [],
       packageType: "Multi-pack"
+    },
+        {
+      id: "NS01",
+      name: "Hairnet Catering Kitchen Mole",
+      brand: "",
+      category: "National Safety",
+      price: "15.99",
+      image_link: "https://i.imgur.com/qAY79TV.jpg",
+      description: "Worpuckle  Hair Red Catering Kitchen Mole",
+      dietary: [],
+      packageType: "Pcs"
+    },
+    {
+      id: "NS02",
+      name: "Doguc Beard Hair Dissective Nylon Beard Beard Pin",
+      brand: "",
+      category: "National Safety",
+      price: "12.99",
+      image_link: "https://i.imgur.com/3If16uC.jpg",
+      description: "DISPOSABLE BEARD MET (DOPK!). Blue Net",
+      dietary: [],
+      packageType: "Pcs"
     }
   ],
   
   "Spices": [
-    {
+  {
       id: "dd004",
       name: "Black Pepper Coarse 5kg",
       brand: "",
       category: "Spices",
       price: "79.99",
-      image_link: "https://placeholder.com/products/dd004.jpg",
+      image_link: "https://i.imgur.com/ElQ9jPs.png",
       description: "Coarse ground black pepper in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
     },
-    {
-      id: "dd004.5",
-      name: "Black Pepper Whole 5kg",
-      brand: "",
-      category: "Spices",
-      price: "69.99",
-      image_link: "https://placeholder.com/products/dd004.5.jpg",
-      description: "Whole black peppercorns in bulk 5kg container.",
-      dietary: ["Vegan", "Gluten-Free"],
-      packageType: "Bulk container"
-    },
+    
     {
       id: "dd005",
       name: "Cardamom Black Whole 1kg",
       brand: "",
       category: "Spices",
       price: "29.99",
-      image_link: "https://placeholder.com/products/dd005.jpg",
+      image_link: "https://i.imgur.com/bbAITLO.png",
       description: "Whole black cardamom pods, 1kg bulk pack.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk pack"
@@ -551,7 +582,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "35.99",
-      image_link: "https://placeholder.com/products/dd007.jpg",
+      image_link: "https://i.imgur.com/vYhNSgh.png",
       description: "Ground red chili powder in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -562,7 +593,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "24.99",
-      image_link: "https://placeholder.com/products/dd008.jpg",
+      image_link: "https://i.imgur.com/P4pSY0h.png",
       description: "Crushed red chili flakes in bulk 3kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -573,7 +604,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "39.99",
-      image_link: "https://placeholder.com/products/dd010.jpg",
+      image_link: "https://i.imgur.com/uEv9GZE.png",
       description: "Ground garam masala spice blend in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -584,7 +615,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "6.99",
-      image_link: "https://placeholder.com/products/SI011.jpg",
+      image_link: "https://i.imgur.com/XpmQQB1.png",
       description: "Dried ground garlic powder in 1kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Container"
@@ -595,7 +626,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "22.99",
-      image_link: "https://placeholder.com/products/dd014.jpg",
+      image_link: "https://i.imgur.com/BQv3nqG.png",
       description: "Madras curry powder blend in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -606,7 +637,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "31.99",
-      image_link: "https://placeholder.com/products/dd015.jpg",
+      image_link: "https://i.imgur.com/6hSFZM6.png",
       description: "Ground paprika powder in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -617,7 +648,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "34.99",
-      image_link: "https://placeholder.com/products/dd017.jpg",
+      image_link: "https://i.imgur.com/pvpYL8j.png",
       description: "Tandoori masala spice blend in bulk 5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -628,7 +659,7 @@ export const allProducts = {
       brand: "",
       category: "Spices",
       price: "14.99",
-      image_link: "https://placeholder.com/products/dd019.jpg",
+      image_link: "https://i.imgur.com/iAwFWvm.png",
       description: "Whole coriander seeds in bulk 3.5kg container.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Bulk container"
@@ -639,7 +670,7 @@ export const allProducts = {
       brand: "MDH",
       category: "Spices",
       price: "39.99",
-      image_link: "https://placeholder.com/products/dd021.jpg",
+      image_link: "https://i.imgur.com/bltyPh2.png",
       description: "MDH Deggi Mirch (red chili powder blend) in 500g packs, case of 4.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
@@ -650,7 +681,7 @@ export const allProducts = {
       brand: "Rajah",
       category: "Spices",
       price: "25.99",
-      image_link: "https://placeholder.com/products/dd022.jpg",
+      image_link: "https://i.imgur.com/oUBim4w.png",
       description: "Rajah ground black pepper in 100g packs, case of 10.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
@@ -661,7 +692,7 @@ export const allProducts = {
       brand: "Rajah",
       category: "Spices",
       price: "44.99",
-      image_link: "https://placeholder.com/products/dd023.jpg",
+      image_link: "https://i.imgur.com/bbAITLO.png",
       description: "Rajah whole green cardamom pods in 50g packs, case of 10.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
@@ -672,58 +703,70 @@ export const allProducts = {
       brand: "Rajah",
       category: "Spices",
       price: "29.99",
-      image_link: "https://placeholder.com/products/dd024.jpg",
+      image_link: "https://i.imgur.com/oUBim4w.png",
       description: "Rajah ground white pepper in 100g packs, case of 10.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
     },
-    {
-      id: "dd025",
-      name: "Zeera Powder 10x100g",
-      brand: "Rajah",
-      category: "Spices",
-      price: "16.99",
-      image_link: "https://placeholder.com/products/dd025.jpg",
-      description: "Rajah ground cumin (zeera) powder in 100g packs, case of 10.",
-      dietary: ["Vegan", "Gluten-Free"],
-      packageType: "Multi-pack"
-    },
+  
     {
       id: "dd026",
       name: "Zeera Whole 9x400g",
       brand: "Rajah",
       category: "Spices",
       price: "53.99",
-      image_link: "https://placeholder.com/products/dd026.jpg",
+      image_link: "https://i.imgur.com/t9oJCP4.png",
       description: "Rajah whole cumin (zeera) seeds in 400g packs, case of 9.",
       dietary: ["Vegan", "Gluten-Free"],
       packageType: "Multi-pack"
     }
-  ],
+    ],
   
   "Packaging": [
-    {
-      id: "CS04",
-      name: "Brown paper Bags 10\"x10\"",
-      brand: "",
-      category: "Packaging",
-      price: "11.99",
-      image_link: "https://placeholder.com/products/CS04.jpg",
-      description: "Brown paper bags, 10 inches by 10 inches.",
-      dietary: [],
-      packageType: "Bags"
-    },
     {
       id: "CS05",
       name: "Large Brown paper Bags with Handles",
       brand: "Fiesta Green",
       category: "Packaging",
       price: "22.99",
-      image_link: "https://placeholder.com/products/CS05.jpg",
-      description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags), Colour: Brown, Recycled paper material is kinder to Earth's natural resources, Thick paper construction offers enough strength to carry heavy loads, Kraft colourway gives these bags an organic look, Rectangular base allows bags to stand upright for easy loading and transportation, Supplied flat-packed for space-saving storage, Ideal for carrying takeaway containers, groceries and food-to-go, Great alternative to single-use plastic carrier bags",
+      image_link: "https://i.imgur.com/wdq5J7g.jpg",
+      description: "Material: Paper, Quantity: 250. (1 item contains 250 Brown Paper Bags)",
       dietary: [],
       packageType: "Bags"
-    }
+    },
+    {
+      id: "WB03",
+      name: "200x Green Bags",
+      brand: "",
+      category: "Waste Bins & Dualities",
+      price: "24.99",
+      image_link: "https://i.imgur.com/TKFsqz9.jpg",
+      description: "200 x Medium Duty Green Backs 182x25px -Green",
+      dietary: [],
+      packageType: "Pcs"
+    },
+    {
+      id: "WB04",
+      name: "200x Black Garbage Bags",
+      brand: "",
+      category: "Waste Bins & Dualities",
+      price: "19.99",
+      image_link: "https://i.imgur.com/FA4Bem1.jpg",
+      description: "Wash kinks garbage bags",
+      dietary: [],
+      packageType: "Bags"
+    },
+    {
+      id: "WB05",
+      name: "200x Red Bags 15 x 23 x 38 inch",
+      brand: "",
+      category: "Waste Bins & Dualities",
+      price: "21.99",
+      image_link: "https://i.imgur.com/EdxDGio.jpg",
+      description: "Insight and dust tilt bags",
+      dietary: [],
+      packageType: "Pcs"
+    },
   ],
   
   "Bakery": [
@@ -740,13 +783,158 @@ export const allProducts = {
     },
     {
       id: "S03",
-      name: "Madeira Cake 6x590g",
-      brand: "",
+      name: "D'Amor Cake",
+      brand: "La Madeliene",
       category: "Bakery",
       price: "14.50",
-      image_link: "https://placeholder.com/products/S03.jpg",
+      image_link: "https://i.imgur.com/YTx74Y6.jpg",
       description: "Traditional Madeira cake, 590g each, pack of 6.",
       dietary: ["Vegetarian"],
       packageType: "Multi-pack"
+    },
+    {
+      id: "CF08",
+      name: "A-Peamula de 4 Sky Double Bars",
+      brand: "",
+      category: "Bakery",
+      price: "8.99",
+      image_link: "https://i.imgur.com/bakery2.jpg",
+      description: "Sky double bars",
+      dietary: ["Vegetarian"],
+      packageType: "Bars"
     }
-  ],}
+  ],
+  
+  // New Categories
+  "Coffee": [
+    {
+      id: "CF01",
+      name: "Al-Khair Arabic Organic Instant Coffee",
+      brand: "Nescafe",
+      category: "Coffee",
+      price: "24.99",
+      image_link: "https://i.imgur.com/UdfQqVJ.jpg",
+      description: "Enjoy starting your morning with a cup of bold instant coffee.",
+      dietary: ["Vegan"],
+      packageType: "Jar"
+    }
+  ],
+  
+  "Tea & Intrafoies": [
+    {
+      id: "CF09",
+      name: "Premium Black Tea, Alliance Combed",
+      brand: "",
+      category: "Tea & Intrafoies",
+      price: "15.99",
+      image_link: "https://i.imgur.com/tea1.jpg",
+      description: "One Cup Tea Bake, a premium 100% black tea",
+      dietary: ["Vegan"],
+      packageType: "Bags"
+    },
+    {
+      id: "CF10",
+      name: "Cheryl Luster 1100 Furniture Premium Black Tea, Tea Bags 2.5kg,325kgl",
+      brand: "",
+      category: "Tea & Intrafoies",
+      price: "42.99",
+      image_link: "https://i.imgur.com/tea2.jpg",
+      description: "Premium black tea bags in bulk",
+      dietary: ["Vegan"],
+      packageType: "Bulk"
+    }
+  ],
+  
+  "Jams & Preserves": [
+    {
+      id: "JR01",
+      name: "Country Range Assorted Jam Perfects 100 x 20g - Mixed Deficient",
+      brand: "Country Range",
+      category: "Jams & Preserves",
+      price: "22.99",
+      image_link: "https://i.imgur.com/vC1RTT7.jpg",
+      description: "Assorted jam perfects in mixed flavors",
+      dietary: ["Vegetarian"],
+      packageType: "Portion packs"
+    },
+    {
+      id: "JR02",
+      name: "Barberie Spiced Eggo",
+      brand: "Country Range",
+      category: "Jams & Preserves",
+      price: "21.99",
+      image_link: "https://i.imgur.com/vkaT2sI.png",
+      description: "Spiced eggo jam",
+      dietary: ["Vegetarian"],
+      packageType: "Portion packs"
+    }
+  ],
+  
+  "Waste Bins & Dualities": [
+    {
+      id: "WB03",
+      name: "200x Honey Grey Cleaner Fan Lines 18 x 22 x 28",
+      brand: "",
+      category: "Waste Bins & Dualities",
+      price: "24.99",
+      image_link: "https://i.imgur.com/bins1.jpg",
+      description: "200 x Medium Duty Green Backs 182x25px -Green",
+      dietary: [],
+      packageType: "Pcs"
+    },
+    // ... (other waste bin products)
+  ],
+  
+  "National Safety": [
+    {
+      id: "NS01",
+      name: "Hairnet Catering Kitchen Mole",
+      brand: "",
+      category: "National Safety",
+      price: "15.99",
+      image_link: "https://i.imgur.com/qAY79TV.jpg",
+      description: "Hair Red Catering Kitchen Mole",
+      dietary: [],
+      packageType: "Pcs"
+    },
+    {
+      id: "NS02",
+      name: "Doguc Beard Hair Dissective Nylon Beard Beard Pin",
+      brand: "",
+      category: "National Safety",
+      price: "12.99",
+      image_link: "https://i.imgur.com/3If16uC.jpg",
+      description: "DISPOSABLE BEARD MET (DOPK!). Blue Net",
+      dietary: [],
+      packageType: "Pcs"
+    }
+  ],
+  
+  "Bathing Item": [
+    {
+      id: "BB01",
+      name: "Elan's Chicken Lender Band & Shower Gas Lion",
+      brand: "Euro Collection London",
+      category: "Bathing Item",
+      price: "32.99",
+      image_link: "https://i.imgur.com/shower1.jpg",
+      description: "Euro Collection London Bath Range",
+      dietary: [],
+      packageType: "Bottle"
+    }
+  ],
+  
+  "Always Peds": [
+    {
+      id: "AP01",
+      name: "Al-Sadroed 2, 48 (1224 Packs)",
+      brand: "Al-Sadroed",
+      category: "Always Peds",
+      price: "45.99",
+      image_link: "https://i.imgur.com/pads1.jpg",
+      description: "Always Discover Intochicure Pads Wombs, Nymph, Sweeteners",
+      dietary: [],
+      packageType: "Packs"
+    }
+  ]
+};

@@ -42,44 +42,6 @@ import { addToCart } from "../Redux/cart/cart.actions";
 
 import SingleProduct from "./SingleProduct";
 
-const filters = {
-  brands: [
-    "111SKIN (5) ",
-    "3LAB (8) ",
-    "Aesop (10) ",
-    "African Botanics (1) ",
-    "AHAVA (7) ",
-    "Alchimie Forever (5) ",
-    "ALGENIST (1) ",
-    "Alo (1) ",
-  ],
-  skinCare: [
-    "Moisturisers (1118) ",
-    "Serums (127) ",
-    "Cleansers (31) ",
-    "Neck & Décolletage (21) ",
-    "Toners (21) ",
-  ],
-  format: [
-    "Cream (458) ",
-    "Fluid (104) ",
-    "Gel (60) ",
-    "Serum (58) ",
-    "Clay (18) ",
-  ],
-  skintype: [
-    "All (381) ",
-    "Combination (405) ",
-    "Dry (492) ",
-    "Mature (344) ",
-    "Normal (563) ",
-    "Sensitive (390) ",
-    "Oily (349) ",
-  ],
-  gender: ["Boys (5) ", "Girls (200)", "Men (101) ", "Women (300) "],
-  review: ["2-3 (8) ", "3-4 (41) ", "4+ (402) "],
-};
-
 const brands = [
   "Quaker",
   "Kelloggs",
@@ -98,9 +60,8 @@ const brands = [
   "Sapna"
 ];
 
-
 const categories = [
- "Brands",         // This is the special key containing all brands
+  "Brands",         // This is the special key containing all brands
   "Breakfast",
   "Dairy",
   "Snacks",
@@ -118,10 +79,10 @@ const categories = [
   "Fruits",         // From Kesar Mango Pulp
   "Rice",           // From Laila Basmati Rice
   "Cooking Essentials", // From Sapna Ginger & Garlic Paste
-  "Beverages" 
+  "Beverages"
 ];
 
-const Shop = ({categoryFilter}) => {
+const Shop = ({ categoryFilter, searchTerm }) => {
   const [products, setProducts] = useState([]);
   let [loading, setLoading] = useState(false);
   let [price, setPrice] = useState(20);
@@ -131,7 +92,6 @@ const Shop = ({categoryFilter}) => {
   const [modalProps, setModalProps] = useState({});
   const toast = useToast();
   const cartProducts = useSelector((state) => state.cartManager.products);
-
 
   let cartTotal = cartProducts.reduce((acc, p) => {
     return acc + Number(p.price);
@@ -154,10 +114,12 @@ const Shop = ({categoryFilter}) => {
       setCategory(value);
     }
   };
+  
   const handleModal = (data) => {
     setModalProps(data);
     onOpen();
   };
+  
   const handleAdd = (data) => {
     toast({
       position: "top-left",
@@ -181,8 +143,6 @@ const Shop = ({categoryFilter}) => {
     onClose();
   };
 
-
-
   const mockProducts = {
     Dudra: [
       { id: 1, name: "Dudra Olives", price: 49, image_link: 'https://i.imgur.com/W0CIqnJ.png' },
@@ -194,262 +154,84 @@ const Shop = ({categoryFilter}) => {
     // Add other brands...
   };
 
+  useEffect(() => {
+    setLoading(true);
 
+    // Get all products from allProducts.jsx
+    let filteredProducts = [];
 
-  // ... rest of your state declarations
+    // Special handling for Fruits & Veg category
+    if (category === "Fruits & Veg" || categoryFilter === "Fruits & Veg") {
+      // Get all fruit and vegetable products from different categories
+      filteredProducts = [
+        // From Fruits & Veg category
+        ...(allProducts['Fruits & Veg'] || []),
 
-  // In your Shop component, modify the useEffect hook:
-useEffect(() => {
-  setLoading(true);
-  
-  // Get all products from allProducts.jsx
-  let filteredProducts = [];
-  
-  // Special handling for Fruits & Veg category
-  if (category === "Fruits & Veg" || categoryFilter === "Fruits & Veg") {
-    // Get all fruit and vegetable products from different categories
-    filteredProducts = [
-      // From Fruits & Veg category
-      ...(allProducts['Fruits & Veg'] || []),
-      
-      // From Fruits category
-      ...(allProducts['Fruits'] || []),
-      
-      // From other categories where fruits/veg might appear
-      ...(allProducts['Breakfast'] || []).filter(p => 
-        p.dietary?.includes('Fruit') || 
-        p.name.toLowerCase().includes('fruit') ||
-        p.name.toLowerCase().includes('veg')
-      ),
-      ...(allProducts['Snacks'] || []).filter(p => 
-        p.dietary?.includes('Fruit') || 
-        p.name.toLowerCase().includes('fruit') ||
-        p.name.toLowerCase().includes('veg')
-      ),
-    ].filter((product, index, self) =>
-      index === self.findIndex((p) => p.id === product.id)
-    );
-  } 
-  else if (brand) {
-    // Filter by brand
-    if (allProducts.Brands[brand]) {
-      filteredProducts = allProducts.Brands[brand];
+        // From Fruits category
+        ...(allProducts['Fruits'] || []),
+
+        // From other categories where fruits/veg might appear
+        ...(allProducts['Breakfast'] || []).filter(p =>
+          p.dietary?.includes('Fruit') ||
+          p.name.toLowerCase().includes('fruit') ||
+          p.name.toLowerCase().includes('veg')
+        ),
+        ...(allProducts['Snacks'] || []).filter(p =>
+          p.dietary?.includes('Fruit') ||
+          p.name.toLowerCase().includes('fruit') ||
+          p.name.toLowerCase().includes('veg')
+        ),
+      ].filter((product, index, self) =>
+        index === self.findIndex((p) => p.id === product.id)
+      );
     }
-  } 
-  else if (category || categoryFilter) {
-    // Filter by other categories
-    const activeCategory = category || categoryFilter;
-    if (activeCategory === "Brands") {
-      // Special case: show all brands
-      filteredProducts = Object.values(allProducts.Brands).flat();
-    } 
-    else if (allProducts[activeCategory]) {
-      filteredProducts = allProducts[activeCategory];
+    else if (brand) {
+      // Filter by brand
+      if (allProducts.Brands[brand]) {
+        filteredProducts = allProducts.Brands[brand];
+      }
     }
-  } 
-  else {
-    // Default view: show all products
-    filteredProducts = [
-      ...Object.values(allProducts.Brands).flat(),
-      ...Object.values(allProducts).filter(Array.isArray).flat()
-    ].filter((product, index, self) => 
-      index === self.findIndex((p) => p.id === product.id)
-    );
-  }
-  
-  setProducts(filteredProducts);
-  setLoading(false);
-}, [brand, category, price, categoryFilter]);
+    else if (category || categoryFilter) {
+      // Filter by other categories
+      const activeCategory = category || categoryFilter;
+      if (activeCategory === "Brands") {
+        // Special case: show all brands
+        filteredProducts = Object.values(allProducts.Brands).flat();
+      }
+      else if (allProducts[activeCategory]) {
+        filteredProducts = allProducts[activeCategory];
+      }
+    }
+    else {
+      // Default view: show all products
+      filteredProducts = [
+        ...Object.values(allProducts.Brands).flat(),
+        ...Object.values(allProducts).filter(Array.isArray).flat()
+      ].filter((product, index, self) =>
+        index === self.findIndex((p) => p.id === product.id)
+      );
+    }
 
-
+    setProducts(filteredProducts);
+    setLoading(false);
+  }, [brand, category, price, categoryFilter]);
 
   return (
     <>
-      <Flex w="90%" m="auto" justify="space-between" mt={["12","12","12","12","auto"]}>
+      <Flex w="90%" m="auto" justify="space-between" mt={["12", "12", "12", "12", "auto"]}>
+        {/* Left sidebar - Removed filter content */}
         <Box
           w="25%"
-          display={["none", "none", "block"]}
+          display={["none", "none", "none"]} // Changed to always hide since we're removing filters
           style={{ fontFamily: "sans-serif" }}
         >
-          <Box borderBottom="1px solid gainsboro" p="20px" mb="50px">
-            <Heading size="lg">Refine</Heading>
-          </Box>
-          <Accordion defaultIndex={[0, 1, 2, 3, 4, 5, 6, 7]} allowMultiple>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box
-                    as="span"
-                    fontSize="md"
-                    fontWeight="bold"
-                    flex="1"
-                    textAlign="left"
-                  >
-                    Brands
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {filters.brands.map((b) => (
-                  <Box>
-                    <Checkbox size="md">{b}</Checkbox>
-                  </Box>
-                ))}
-              </AccordionPanel>
-            </AccordionItem>
-
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box
-                    as="span"
-                    flex="1"
-                    fontSize="md"
-                    fontWeight="bold"
-                    textAlign="left"
-                  >
-                    SkinCare Product Type
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {filters.skinCare.map((s) => (
-                  <Box>
-                    <Checkbox size="md">{s}</Checkbox>
-                  </Box>
-                ))}
-              </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box
-                    fontSize="md"
-                    fontWeight="bold"
-                    as="span"
-                    flex="1"
-                    textAlign="left"
-                  >
-                    SkinCare Format
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {filters.format.map((s) => (
-                  <Box>
-                    <Checkbox size="md">{s}</Checkbox>
-                  </Box>
-                ))}
-              </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box
-                    fontSize="md"
-                    fontWeight="bold"
-                    as="span"
-                    flex="1"
-                    textAlign="left"
-                  >
-                    SkinType
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {filters.skintype.map((s) => (
-                  <Box>
-                    <Checkbox size="md">{s}</Checkbox>
-                  </Box>
-                ))}
-              </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box
-                    fontSize="md"
-                    fontWeight="bold"
-                    as="span"
-                    flex="1"
-                    textAlign="left"
-                  >
-                    Gender
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {filters.gender.map((s) => (
-                  <Box>
-                    <Checkbox size="md">{s}</Checkbox>
-                  </Box>
-                ))}
-              </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box
-                    as="span"
-                    fontSize="md"
-                    fontWeight="bold"
-                    flex="1"
-                    textAlign="left"
-                  >
-                    Review
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                {filters.review.map((s) => (
-                  <Box>
-                    <Checkbox size="md">{s}</Checkbox>
-                  </Box>
-                ))}
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
+          {/* Empty box since we're removing all filter content */}
         </Box>
-      
-      
-      {/* This is for the top categories */}
 
-
-      
-        <Box w={["100", "100%", "70%"]} mt="25px">
+        {/* Main content area */}
+        <Box w={["100", "100%", "100%"]} mt="25px"> {/* Adjusted width to take full space */}
           <Heading mb="30px">{`Up to 50% off!`}</Heading>
           <Flex justify="space-between">
-            {/* <Select
-              w="30%"
-              borderRadius="0px"
-              border="1px solid black"
-              onChange={handleSelect}
-              name="price"
-            >
-              <option value="40">By Default</option>
-              <option value="10">lesser than 10$</option>
-              <option value="20">lesser than 20$</option>
-              <option value="30">lesser than 30$</option>
-              <option value="40">lesser than 35$</option>
-            </Select>
-            <Select
-              w="30%"
-              borderRadius="0px"
-              border="1px solid black"
-              placeholder="Sort By Brand"
-              onChange={handleSelect}
-              name="brand"
-            >
-              {brands.map((b) => (
-                <option value={b}>{b}</option>
-              ))}
-            </Select> */}
             <Select
               w="30%"
               borderRadius="0px"
@@ -503,22 +285,33 @@ useEffect(() => {
                 ))}
             </SimpleGrid>
           ) : (
-            <SimpleGrid w="100%" columns={[2, 2, 3]} spacing="40px" pt="10">
-              {products.map((p, i) => {
-                if (i < 25) {
-                  return (
-                    <SingleProduct
-                      {...p}
-                      handleModal={handleModal}
-                      key={p.id}
-                    />
-                  );
-                }
-              })}
-            </SimpleGrid>
+            // <SimpleGrid w="100%" columns={[2, 2, 6]} spacing="40px" pt="10">
+            //   {products.map((p, i) => {
+            //     if (i < 25) {
+            //       return (
+            //         <SingleProduct
+            //           {...p}
+            //           handleModal={handleModal}
+            //           key={p.id}
+            //         />
+            //       );
+            //     }
+            //   })}
+            // </SimpleGrid>
+
+            <SimpleGrid w="100%" columns={[2, 2, 6]} spacing="40px" pt="10">
+  {products.map((p) => (
+    <SingleProduct
+      {...p}
+      handleModal={handleModal}
+      key={p.id}
+    />
+  ))}
+</SimpleGrid>
+
           )}
         </Box>
-        )
+        
         <Modal
           isCentered
           onClose={onClose}
@@ -529,13 +322,13 @@ useEffect(() => {
           <ModalOverlay />
           <ModalContent borderRadius="0px">
             <ModalHeader
-            p="10px"
-            bgColor="gainsboro"
-            borderBottom="1px solid black"
-            fontSize="20px"
-          >
-            {`Get Your ${modalProps.category} Fast Order Is Limited!!!`}
-          </ModalHeader>
+              p="10px"
+              bgColor="gainsboro"
+              borderBottom="1px solid black"
+              fontSize="20px"
+            >
+              {`Get Your ${modalProps.category} Fast Order Is Limited!!!`}
+            </ModalHeader>
             <ModalCloseButton />
             <ModalBody pt="35px" pb="35px">
               <Flex mt="10px" justify="space-between">
@@ -543,18 +336,18 @@ useEffect(() => {
                   <Image w="100%" src={modalProps.image_link} />
                 </Box>
                 <Box width="50%">
-  <Text mb="15px" fontSize="xl">
-    {modalProps.name}
-  </Text>
-  <Text mb="15px">{`Brand - ${modalProps.brand || 'Generic'}`}</Text>
-  <Text mb="15px">Quantity 1</Text>
-  <Heading>{`$${modalProps.price || 'Price not available'}`}</Heading>
-</Box>
+                  <Text mb="15px" fontSize="xl">
+                    {modalProps.name}
+                  </Text>
+                  <Text mb="15px">{`Brand - ${modalProps.brand || 'Generic'}`}</Text>
+                  <Text mb="15px">Quantity 1</Text>
+                  <Heading>{`£${modalProps.price || 'Price not available'}`}</Heading>
+                </Box>
               </Flex>
               <Text fontSize="20px">{"Subtotal:"}</Text>
               <Flex justify="space-between">
                 <Text fontSize="20px">{`( ${cartProducts.length} items in your cart)`}</Text>
-                <Text fontSize="20px">{`$${cartTotal}`}</Text>
+                <Text fontSize="20px">{`£${cartTotal}`}</Text>
               </Flex>
               <Flex
                 p="15px"

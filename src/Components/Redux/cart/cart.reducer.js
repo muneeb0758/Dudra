@@ -3,33 +3,63 @@ import {
   DELETE_FROM_CART,
   GET_CART_PRODUCTS,
   RESET_CART,
+  UPDATE_QUANTITY
 } from "./cart.action.types";
 
 let initialState = {
   products: JSON.parse(localStorage.getItem("cartItems")) || [],
 };
+
 const cartReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+  
     case ADD_TO_CART: {
-      let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-      cartItems.push(payload);
+  const existingItem = state.products.find(item => item.id === payload.id);
+  
+  let updatedCart;
+  // Normalize image property
+  const normalizedPayload = {
+    ...payload,
+    image: payload.image || payload.image_link || null, // Fallback to image_link if image is missing
+  };
+  
+  if (existingItem) {
+    // If item exists, update quantity
+    updatedCart = state.products.map(item =>
+      item.id === payload.id
+        ? { ...item, quantity: (item.quantity || 1) + 1 }
+        : item
+    );
+  } else {
+    // Add new item with quantity 1
+    updatedCart = [...state.products, { ...normalizedPayload, quantity: 1 }];
+  }
 
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  return { ...state, products: updatedCart };
+}
 
-      return { ...state, products: [...state.products, payload] };
-    }
-    case GET_CART_PRODUCTS: {
-      return { ...state };
-    }
+    
     case DELETE_FROM_CART: {
-      let updatedCart = state.products.filter((p) => p.id != payload);
+      const updatedCart = state.products.filter((p) => p.id !== payload);
       localStorage.setItem("cartItems", JSON.stringify(updatedCart));
       return { ...state, products: updatedCart };
     }
+    
+  case UPDATE_QUANTITY: {
+  const { id, quantity } = payload;
+  const updatedCart = state.products.map(item =>
+    item.id === id ? { ...item, quantity } : item
+  ).filter(item => item.quantity > 0); // Remove if quantity is 0
+
+  localStorage.setItem("cartItems", JSON.stringify(updatedCart));
+  return { ...state, products: updatedCart };
+}
     case RESET_CART: {
       localStorage.setItem("cartItems", JSON.stringify([]));
       return { ...state, products: [] };
     }
+    
     default: {
       return state;
     }

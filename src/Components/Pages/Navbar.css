@@ -89,6 +89,7 @@
   }
   #dropdown-account:hover #dropdown-account-content{
     display: block;
+    transition-duration: 0.3s;
   }
  
  

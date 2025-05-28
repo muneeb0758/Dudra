@@ -1,344 +1,363 @@
-
-//   Vikrant is responsible 
-
-
 import React from 'react';
-
 import { BiShoppingBag } from "react-icons/bi";
-
-import { Box, Center, Heading, Text, Image, Flex, Button, Card, CardBody, Stack, Divider, CardFooter } from "@chakra-ui/react"
-  ;
+import { Box, Center, Heading, Text, Image, Flex, Button, Card, CardBody, Stack, Divider, CardFooter, Badge } from "@chakra-ui/react";
 import SliderImage from './Slider/SliderImage';
-import { Link } from "react-router-dom"
-import dudracar from './images/dudracar.png'
-import banner from './images/banner.png'
+import { Link } from "react-router-dom";
+import dudracar from './images/dudracar.png';
+import banner from './images/banner.png';
 import ProductSlider1 from './Slider/ProductSlider1';
 import BrandSlider from './Slider/BrandSlider';
 import Footer from './Footer';
-import breakfast from './images/breakfast.png'
-import fruits from './images/FRUITS&VEG.png'
-import snacks from './images/SNACKS.png'
-import spices from './images/spices.png'
-import bath from './images/bath.png'
-import packaging from './images/packaging.png'
+import { allProducts } from '../ProductsPage/allprooducts';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Redux/cart/cart.actions';
+
+// Green color scheme constants
+const COLORS = {
+  primary: "#2e856e",       // Dark teal green
+  accent: "#4caf93",        // Medium teal
+  lightAccent: "#e0f2f1",   // Very light teal
+  price: "#388e3c",         // Green for prices
+  button: "#4caf50",        // Material green
+  buttonHover: "#43a047",   // Darker green
+  badge: "#2e7d32",         // Dark green for badge
+  text: "#2d3748",          // Dark gray for text
+  lightText: "#718096"      // Light gray for secondary text
+};
+
+const getRandomProducts = (count) => {
+  // Flatten all products from all top-level keys
+  const allProductsArray = Object.values(allProducts).flatMap(category => 
+    Array.isArray(category) ? category : Object.values(category).flat()
+  );
+  // Remove duplicates based on id
+  const uniqueProducts = Array.from(
+    new Map(allProductsArray.map(product => [product.id, product])).values()
+  );
+  
+  console.log("Total unique products available:", uniqueProducts.length); // Debug log
+  
+  if (uniqueProducts.length <= count) {
+    console.warn(`Requested ${count} products, but only ${uniqueProducts.length} available`);
+    return uniqueProducts;
+  }
+  
+  // Shuffle and select count products
+  const shuffled = [...uniqueProducts].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+};
 
 const Home = () => {
+  const dispatch = useDispatch();
+
   return (
-    <div >
-
-      {/* **********************************************************First section************************************** */}
-
-
-      {/* **********************************************************First section************************************** */}
-
-
-      {/* **********************************************************Slider ************************************** */}
+    <div>
+      {/* **********************************************************Slider************************************** */}
       <Box marginBottom={12}>
         <SliderImage />
       </Box>
     
-    
-      {/* **********************************************************shop by Category ************************************** */}
-      <Text fontSize={45} mb="14px" mt="14px" align="center">Shop by Category</Text>
-      <Box mt={8} alignItems='center' w='85%' margin='auto'>
+      {/* **********************************************************shop by Category************************************** */}
+      <Text fontSize="3xl" mb={6} mt={6} align="center" fontWeight="bold" color={COLORS.primary}>
+        Shop by Category
+      </Text>
 
-        <Box display={['grid', 'grid', 'flex']} justifyContent='space-between' gridTemplateColumns={'1fr 1fr'} >
-          <Link to= '/breakfast'>
-            <Image w={395} src= {breakfast} alt="cat-1" />
-          </Link>
-          <Link to={'/fruits'}>
-           <Image w={310} src={fruits} alt="Fruits & Veg" />
-          </Link>
-          <Link to={'/snacks'}>
-            <Image w={205} src={snacks} alt="cat-3" />
-          </Link>
-          <Link to={'/spices'}>
-            <Image w={305} src={spices} alt="cat-4" />
-          </Link>
-          <Link to={'/bathbeauty'}>
-            <Image w={315} src={bath} alt="cat-5" />
-          </Link>
-          <Link to={'/packaging'}>
-            <Image w={295} src={packaging} alt="cat-6" />
-          </Link>
-        </Box>
+      <Box mt={8} w="85%" mx="auto">
+        <Flex wrap="wrap" justify="space-between" gap={4}>
+          {[
+            { name: "Fruits", image: "https://i.imgur.com/Mjhd6vT.jpg", link: "/fruits" },
+            { name: "Snacks", image: "https://i.imgur.com/EgBLfRb.jpg", link: "/snacks" },
+            { name: "Spices", image: "https://i.imgur.com/i5lej1W.jpg", link: "/spices" },
+            { name: "Beauty", image: "https://i.imgur.com/OyU6PfV.jpg", link: "/bathbeauty" },
+            { name: "Packaging", image: "https://i.imgur.com/FXMSePz.jpg", link: "/packaging" }
+          ].map((category) => (
+            <Link to={category.link} key={category.name}>
+              <Box 
+                position="relative"
+                transition="all 0.2s ease"
+                _hover={{
+                  transform: 'scale(1.05)',
+                  shadow: 'md'
+                }}
+              >
+                <Image 
+                  boxSize="150px" 
+                  objectFit="cover" 
+                  borderRadius="full" 
+                  src={category.image} 
+                  alt={category.name}
+                  border={`2px solid ${COLORS.lightAccent}`}
+                  _hover={{
+                    borderColor: COLORS.accent
+                  }}
+                />
+                <Badge
+                  mt={2}
+                  bg={COLORS.badge}
+                  color="white"
+                  px={4}
+                  py={1}
+                  borderRadius="md"
+                  textAlign="center"
+                  display="inline-block"
+                  position="absolute"
+                  bottom="-10px"
+                  left="50%"
+                  transform="translateX(-50%)"
+                >
+                  {category.name}
+                </Badge>
+              </Box>
+            </Link>
+          ))}
+        </Flex>
 
       </Box>
 
-      {/* **********************************************************Missed Black Friday  ************************************** */}
-      <Text fontSize={45} mt={"14px"} mb={"14px"} align="center">Missed Black Friday?</Text>
+      {/* **********************************************************Missed Black Friday************************************** */}
+      <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
+        Missed Black Friday?
+      </Text>
       <Box mt={8}><ProductSlider1 /></Box>
 
-      {/* **********************************************************   Trending Offers ************************************** */}
+      {/* **********************************************************Logos************************************** */}
+      <Box mt={12} mb={8} width="100%" overflow="hidden">
+        <Flex width="100%" height="140px">
+          {[
+            { src: "https://i.imgur.com/eutfBfy.jpg", alt: "Dudra Van" },
+            { src: "https://i.imgur.com/L4APjwZ.jpg?1", alt: "Brand 2" },
+            { src: "https://i.imgur.com/5YnP6z2.png", alt: "Brand 3" }
+          ].map((brand, index) => (
+            <Box 
+              key={index} 
+              flex={1} 
+              height="100%" 
+              position="relative" 
+              borderRight={index < 2 ? "1px solid #f0f0f0" : "none"}
+              _hover={{
+                zIndex: 1
+              }}
+            >
+              <Image
+                src={brand.src}
+                alt={brand.alt}
+                width="100%"
+                height="100%"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </Box>
+          ))}
+        </Flex>
 
-      <Text fontSize={45} mt={"14px"} mb="14px" align="center">Trending Offers</Text>
-      <Box>
-        <Center>
-        <Flex direction={['column', 'column', 'row']} gap={6} justify="center">
-  {/* Product 1 - Kelloggs Breakfast Cereal */}
-  <Box w={['100%', '100%', '30%']}>
-    <Center>
-      <Image 
-        src="https://i.imgur.com/L4env9T.jpg" 
-        w={'100%'} 
-        alt="Kelloggs Fruit N Fiber" 
-      />
-    </Center>
-    <Heading fontSize={20} mt={4}>Kelloggs Fruit N Fiber</Heading>
-    <Text fontSize={13} mt={2} color="gray">
-      High fiber breakfast cereal with dried fruits - 40x45g portion packs
-    </Text>
-    <Link to="/breakfast">
-      <Button 
-        bgColor={"white"} 
-        border='1px solid gray' 
-        borderRadius={'0'} 
-        mt={5}
-      >
-        SHOP NOW - £18.99
-      </Button>
-    </Link>
-  </Box>
-
-  {/* Product 2 - Nature Valley Snack Bars */}
-  <Box w={['100%', '100%', '30%']}>
-    <Center>
-      <Image 
-        src="https://i.imgur.com/L4env9T.jpg" 
-        w={'100%'} 
-        alt="Nature Valley Bars" 
-      />
-    </Center>
-    <Heading fontSize={20} mt={4}>Nature Valley Protein Bars</Heading>
-    <Text fontSize={13} mt={2} color="gray">
-      Protein and cereal bars, 42g each - case of 40
-    </Text>
-    <Link to="/snacks">
-      <Button 
-        bgColor={"white"} 
-        border='1px solid gray' 
-        borderRadius={'0'} 
-        mt={5}
-      >
-        SHOP NOW - £26.99
-      </Button>
-    </Link>
-  </Box>
-
-  {/* Product 3 - Kesar Mango Pulp */}
-  <Box w={['100%', '100%', '30%']}>
-    <Center>
-      <Image 
-        src="https://i.imgur.com/L4env9T.jpg" 
-        w={'100%'} 
-        alt="Kesar Mango Pulp" 
-      />
-    </Center>
-    <Heading fontSize={20} mt={4}>Kesar Mango Pulp</Heading>
-    <Text fontSize={13} mt={2} color="gray">
-      Premium mango pulp in 850g cans - case of 6
-    </Text>
-    <Link to="/fruits">
-      <Button 
-        bgColor={"white"} 
-        border='1px solid gray' 
-        borderRadius={'0'} 
-        mt={5}
-      >
-        SHOP NOW - £19.99
-      </Button>
-    </Link>
-  </Box>
-</Flex>
-</Center>
-</Box>
-      {/* **********************************************************  Logos ************************************** */}
-
-      <Box mt={12}>
-        <Center>
-          <Box display={['grid', 'grid', 'flex']} gap={8} justifyContent='center' gridTemplateColumns={'1fr 1fr'}>
-            <Link to="/skin">
-              <Image w={205} src='https://static.thcdn.com/images/small/webp/widgets/121-us/26/180x72_4_233548301_CA_SS_Logo_Amend_BAU_THG0030424-041301-124116-063126.png' alt="cat-1" />
-            </Link>
-            <Link to="/skin">
-              <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/18/original-logo-1024x383-035229-063318.png" alt="cat-2" />
-            </Link>
-            <Link to="/skin">
-              <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/11/Revision_Skincare_Logo_without_Tag_Line-052511.png" alt="cat-3" />
-            </Link>
-            <Link to="/skin">
-              <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/46/original-NF_Skinstore_Banner_Logo_Color_320x140-01-011402-010546.png" alt="cat-4" />
-            </Link>
-            <Link to="/skin">
-              <Image w={190} src="https://static.thcdn.com/images/small/webp/widgets/121-us/27/220322-ELTAMD-LOGO-RGB-01-065127.png" alt="cat-5" />
-            </Link>
-            <Link to="/skin">
-              <Image w={205} src="https://static.thcdn.com/images/small/webp/widgets/121-us/07/original-LOGO-2022_SkinStore_Landing_Page-BLACK-060107.png" alt="cat-6" />
-            </Link>
-          </Box>
-        </Center>
       </Box>
 
-      {/* ********************************************************** What People Are Buying Right Now ************************************** */}
-      <Text fontSize={35} mt={"14px"} mb="14px" align="center">What People Are Buying Right Now</Text>
+      {/* **********************************************************What People Are Buying Right Now************************************** */}
+     <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
+  What People Are Buying Right Now
+</Text>
 
-<Box>
-  <Center>
-    <Flex direction={['column', 'column', 'row']} w={"95%"} gap={4} m='auto' justifyContent={'space-between'} wrap="wrap">
-
-      {/* Card 1 - Kelloggs Fruit N Fiber */}
-      <Card w={['70%', '70%', '30%']} marginLeft={12} cursor='pointer' margin='auto'>
-        <CardBody>
-          <Image
-            src='https://i.imgur.com/QLp1XeQ.jpg'
-            alt='Kelloggs Fruit N Fiber 40x45g'
-          />
-          <Stack mt='6' spacing='3'>
-            <Text color={"gray"}>
-              Kelloggs Fruit N Fiber 40x45g - High fiber breakfast cereal with dried fruits
-            </Text>
-            <Text fontSize={23} textAlign="left">
-              £18.99
-            </Text>
-          </Stack>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <Box w="100%">
-            <Link to="/breakfast">
-              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                <BiShoppingBag color='white' fontSize={25} /> View More
-              </Button>
-            </Link>
-          </Box>
-        </CardFooter>
-      </Card>
-
-      {/* Card 2 - Nature Valley Protein Bars */}
-      <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
-        <CardBody>
-          <Image
-            src='https://i.imgur.com/QLp1XeQ.jpg'
-            alt='Nature Valley P&C 1x42g 40 count'
-          />
-          <Stack mt='6' spacing='3'>
-            <Text color={"gray"}>
-              Nature Valley Protein & Cereal Bars - 42g each, case of 40
-            </Text>
-            <Text fontSize={23} textAlign="left">
-              £26.99
-            </Text>
-          </Stack>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <Box w="100%">
-            <Link to="/snacks">
-              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                <BiShoppingBag color='white' fontSize={25} /> View More
-              </Button>
-            </Link>
-          </Box>
-        </CardFooter>
-      </Card>
-
-      {/* Card 3 - Kesar Mango Pulp */}
-      <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
-        <CardBody>
-          <Image
-            src='https://i.imgur.com/QLp1XeQ.jpg'
-            alt='Kesar Mango Pulp 6x850g'
-          />
-          <Stack mt='6' spacing='3'>
-            <Text color={"gray"}>
-              Kesar Mango Pulp - Premium mango in 850g cans, case of 6
-            </Text>
-            <Text fontSize={23} textAlign="left">
-              £19.99
-            </Text>
-          </Stack>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <Box w="100%">
-            <Link to="/fruits">
-              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                <BiShoppingBag color='white' fontSize={25} /> View More
-              </Button>
-            </Link>
-          </Box>
-        </CardFooter>
-      </Card>
-
-      {/* Card 4 - Dettol Antibacterial Wipes */}
-      <Card w={['70%', '70%', '30%']} cursor='pointer' margin='auto'>
-        <CardBody>
-          <Image
-            src='https://i.imgur.com/QLp1XeQ.jpg'
-            alt='Dettol Antibacterial Wipes'
-          />
-          <Stack mt='6' spacing='3'>
-            <Text color={"gray"}>
-              Dettol Antibacterial Wipes - 10 packs of 30 wipes, kills 99.9% of bacteria
-            </Text>
-            <Text fontSize={23} textAlign="left">
-              £12.99
-            </Text>
-          </Stack>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <Box w="100%">
-            <Link to="/cleaning-supplies">
-              <Button borderRadius="0px" bgColor='black' _hover={{ bgColor: "#28bdb7" }} color={'white'} w='100%'>
-                <BiShoppingBag color='white' fontSize={25} /> View More
-              </Button>
-            </Link>
-          </Box>
-        </CardFooter>
-      </Card>
-    </Flex>
-  </Center>
+<Box px={[4, 6, 8, 12]} maxW="1800px" mx="auto">
+  {(() => {
+    const totalProducts = 40; // Set desired number of products
+    const productsPerRow = 6; // 6 products per row
+    const randomProducts = getRandomProducts(totalProducts); // Call once
+    
+    return [...Array(Math.ceil(totalProducts / productsPerRow))].map((_, rowIndex) => {
+      const rowProducts = randomProducts.slice(rowIndex * productsPerRow, (rowIndex + 1) * productsPerRow);
+      
+      return (
+        <Flex 
+          key={rowIndex}
+          direction="row" 
+          wrap="wrap"
+          justify={["center", "center", "space-between"]}
+          mb={8}
+          gap={[4, 4, 4, 4]}
+        >
+          {rowProducts.map((product) => (
+            <Card 
+              key={product.id} 
+              w={['45%', '45%', '30%', '15.5%']}
+              minH="380px"
+              borderWidth="1px" 
+              borderColor="gray.100"
+              display="flex"
+              flexDirection="column"
+              flexShrink={0}
+              transition="all 0.2s ease"
+              _hover={{
+                shadow: 'lg',
+                transform: 'translateY(-5px)',
+                borderColor: COLORS.accent
+              }}
+            >
+              <Link to={`/products/${product.id}`}>
+                <CardBody flex={1} display="flex" flexDirection="column">
+                  <Box 
+                    flexShrink={0}
+                    h="160px"
+                    w="100%"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    mb={3}
+                    overflow="hidden"
+                  >
+                    <Image 
+                      src={product.image_link} 
+                      alt={product.name} 
+                      maxH="100%"
+                      maxW="100%"
+                      objectFit="contain"
+                      fallbackSrc="https://via.placeholder.com/160"
+                      transition="transform 0.3s ease"
+                      _hover={{
+                        transform: 'scale(1.1)'
+                      }}
+                    />
+                  </Box>
+                  
+                  <Stack spacing={2} flex={1} px={1}>
+                    <Text 
+                      color={COLORS.lightText} 
+                      minH="50px" 
+                      display="flex" 
+                      alignItems="center"
+                      textAlign="center"
+                      justifyContent="center"
+                      fontSize="sm"
+                      lineHeight="tight"
+                      _hover={{
+                        color: COLORS.accent
+                      }}
+                    >
+                      {product.name}
+                    </Text>
+                    
+                    <Flex 
+                      align="center" 
+                      justify="center"
+                      minH="28px"
+                      wrap="wrap"
+                      gap={1}
+                    >
+                      <Heading size="sm" color={COLORS.price} textAlign="center">
+                        £{product.price || 'Price not available'}
+                      </Heading>
+                      {product.price && (
+                        <Badge 
+                          bg={COLORS.badge} 
+                          color="white" 
+                          whiteSpace="nowrap"
+                          fontSize="xs"
+                        >
+                          {Math.random() > 0.5 ? 'SAVE 20%' : 'BESTSELLER'}
+                        </Badge>
+                      )}
+                    </Flex>
+                  </Stack>
+                </CardBody>
+              </Link>
+              
+              <Divider />
+              
+              <CardFooter p={0}>
+                <Button 
+                  w="100%"
+                  borderRadius={0}
+                  bg={COLORS.button} 
+                  color="white"
+                  _hover={{ 
+                    bg: COLORS.buttonHover,
+                    transform: 'translateY(-2px)'
+                  }}
+                  _active={{ bg: COLORS.primary }}
+                  leftIcon={<BiShoppingBag size="16px" />}
+                  py={4}
+                  fontSize="sm"
+                  transition="all 0.2s ease"
+                  onClick={() => dispatch(addToCart({
+                    ...product,
+                    quantity: 1,
+                    image: product.image_link // Ensure image is included
+                  }))}
+                >
+                  Add to Cart
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </Flex>
+      );
+    });
+  })()}
 </Box>
 
-      {/* ********************************************************** Brand of the Month: Olaplex************************************** */}
-      <Text fontSize={35} mt={"14px"} mb="14px" align="center">Brand of the Month: Olaplex</Text>
+      {/* **********************************************************Brand of the Month************************************** */}
+      <Text fontSize="3xl" mt={8} mb={6} align="center" fontWeight="bold" color={COLORS.primary}>
+        Brand of the Month
+      </Text>
       <Box w='90%' margin={'auto'}>
+        <Flex gap={12} direction={['column', 'column', 'row']} w={"95%"} m='auto' justifyContent={'space-between'}>
+          <Box 
+            w={['100%', '100%', '55%']}
+            transition="all 0.3s ease"
+            _hover={{
+              transform: 'scale(1.02)'
+            }}
+          >
+            <Image w={"120%"} h='100%' src='https://i.imgur.com/ntye4EU.jpg' alt='brand-feature' />
 
-        <Flex gap={12} direction={['column', 'column', 'row']} w={"95%"} m='auto' justifyContent={'space-between'} >
-          <Box w={['100%', '100%', '55%']}>
-            <Image w={"120%"} h='100%' src='https://i.imgur.com/QyX4txm.jpg' alt='1' />
           </Box>
-
           <Box w={['100%', '100%', '65%']}>
             <BrandSlider />
           </Box>
-
         </Flex>
       </Box>
 
       {/* **********************************************************before footer Images************************************** */}
-      <Center>
-        <Box w={'90%'} mt={8}>
-          <Link>
-            <Image src={dudracar} alt='img1' />
-          </Link>
-        </Box>
-      </Center>
-      <Center>
-        <Box w={'90%'} mt={8}>
-          <Link>
-            <Image src={banner} alt='img1' />
-          </Link>
-        </Box>
+   <Center>
+  <Box w="90%" mt={8}>
+    <Link>
+      <Image 
+        src='https://i.imgur.com/yzrtOhI.jpg' 
+        alt="promo-banner"
+        h="320px"           // 👈 compressed height
+        w="100%"            // keep full width
+        
+        objectFit="cover"   // crop to fill, or use "contain" to shrink
+        transition="all 0.3s ease"
+        _hover={{
+          shadow: 'lg',
+          transform: 'translateY(-3px)',
+        }}
+      />
+    </Link>
+  </Box>
+</Center>
 
+
+      <Center>
+        <Box w={'90%'} mt={8}>
+          <Link>
+            <Image 
+              src={banner} 
+              alt='promo-banner-2' 
+              transition="all 0.3s ease"
+              _hover={{
+                shadow: 'lg',
+                transform: 'translateY(-3px)'
+              }}
+            />
+
+          </Link>
+        </Box>
       </Center>
-      <hr />
+      
       <Footer />
     </div>
   );
 }
 
 export default Home;
-
-
