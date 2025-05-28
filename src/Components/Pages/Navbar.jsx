@@ -60,7 +60,7 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
     e.target.src = rating < 3 
       ? "https://www.dior.com/beauty/version-5.1432748111912/resize-image/ep/0/390/100/0/packshots%252FPDG_Y0715100.jpg" 
       : "https://www.nyxcosmetics.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-cpd-nyxusa-master-catalog/default/dwa8106b14/ProductImages/Face/BB_Cream/800897822927_bbcream_natural_main.jpg?sw=390&sh=390&sm=fit";
-    e.target.error = null;
+    e.target.onerror = null;
   };
 
   useEffect(() => {
@@ -142,7 +142,7 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
               style={{ width: "20px", height: "20px", borderRadius: "50%" }}
               src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg"
             />
-            <Text>us - GBP</Text>
+            <Text>UK - GBP</Text>
           </Box>
         </Box>
       </Box>
@@ -175,13 +175,14 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                 right="0"
                 zIndex="1000"
                 bg="white"
-                boxShadow="md"
+                boxShadow="lg"
                 borderRadius="md"
                 mt={1}
-                maxHeight="300px"
+                maxHeight="200px" // Reduced height for compactness
                 overflowY="auto"
                 border="1px solid"
                 borderColor="gray.200"
+                p={2}
               >
                 {filteredItems.map((product) => (
                   <Link
@@ -196,24 +197,30 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                   >
                     <Box
                       p={2}
-                      _hover={{ bg: "gray.100" }}
+                      _hover={{ bg: "gray.50" }}
                       borderBottom="1px solid"
                       borderColor="gray.100"
                       display="flex"
                       alignItems="center"
+                      gap={3}
+                      height="60px" // Fixed height for each item
                     >
                       <Image
                         src={product.image_link}
-                        h="35%"
-                        w="35%"
+                        boxSize="40px" // Smaller, fixed image size
                         objectFit="contain"
                         onError={handleImageError}
                         alt={product.name}
+                        borderRadius="sm"
                       />
-                      <Box>
-                        <Text fontWeight="bold">{product.name}</Text>
-                        <Text fontSize="sm" color="gray.600">{product.brand}</Text>
-                        <Text fontSize="sm" color="blue.600">
+                      <Box flex="1">
+                        <Text fontSize="sm" fontWeight="medium" noOfLines={1}>
+                          {product.name}
+                        </Text>
+                        <Text fontSize="xs" color="gray.600" noOfLines={1}>
+                          {product.brand}
+                        </Text>
+                        <Text fontSize="sm" color="blue.600" fontWeight="semibold">
                           {product.price ? `£${product.price}` : "Price not available"}
                         </Text>
                       </Box>
@@ -275,7 +282,7 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                 >
                   <p>Wishlist</p>
                   <p>Your Orders</p>
-                  <p>Your Referrels</p>
+                  <p>Your Referrals</p>
                 </div>
               </div>
             </div>
@@ -368,7 +375,7 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                       <Link to='/hair'><p>View All Snacks</p></Link>
                       <Link to='/hair'><p>New In</p></Link>
                       <Link to='/hair'><p>Breakfast Cereals</p></Link>
-                      <Link to='/hair'><p>Choclates and Biscuits</p></Link>
+                      <Link to='/hair'><p>Chocolates and Biscuits</p></Link>
                       <Link to='/hair'><p>Drinks</p></Link>
                     </div>
                   </div>
@@ -452,7 +459,7 @@ const Navbar = ({ onSearch, setSearchTerm }) => {
                 <DrawerBody>
                   <Box display="flex" flexDirection="column" gap="20px">
                     <Link to="/brands" onClick={onClose}>Brands</Link>
-                    <Link to="/holiday" onClick={onClose}>Holiday Gif</Link>
+                    <Link to="/holiday" onClick={onClose}>Holiday Gift</Link>
                     <Link to="/sale" onClick={onClose}>Sale</Link>
                     <Link to="/skincare" onClick={onClose}>Skin Care</Link>
                     <Link to="/hair" onClick={onClose}>Hair Care</Link>

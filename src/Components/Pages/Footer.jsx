@@ -101,7 +101,7 @@ const Footer = () => {
           </Flex>
           <Flex display={["none", "none", "flex"]} justify="space-between" textAlign="left" w={["100%", "48%"]}>
             <Box w="30%" borderTop="1px solid black">
-              <Heading size="sm" ml="14px" mt="15px" mb="25px">About SkinStore</Heading>
+              <Heading size="sm" ml="14px" mt="15px" mb="25px">About Dudra</Heading>
               {about.map((a) => <Button key={a} fontSize="13px" textAlign="left" display="block" w="100%" mb="10px" borderRadius="0px" bgColor="white" _hover={{ bgColor: "gainsboro" }} >{a}</Button>)}
             </Box>
             <Box w="30%" borderTop="1px solid black">
@@ -121,7 +121,7 @@ const Footer = () => {
         <Flex textAlign="left" w={["95%", "95%", "90%"]} m="auto" direction={["column-reverse", "column-reverse", "row"]} >
           <Box w={["100%", "100%", "50%"]}>
             <Heading size="lg">THG</Heading>
-            <Text>2022 © The Hut.com Ltd.</Text>
+            <Text>2025 © The Dudra.co.uk Ltd.</Text>
           </Box>
           <Box w={["100%", "100%", "50%"]}>
             <Heading size="sm" mb="25px" >Pay securely with</Heading>

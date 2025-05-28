@@ -1,14 +1,21 @@
-
 .checkout-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   font-family: 'Amazon Ember', Arial, sans-serif;
+  position: relative;
+  z-index: 1;
 }
 
 .checkout-header {
   text-align: center;
   margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 20px 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .checkout-header h1 {
@@ -47,11 +54,14 @@
   border-radius: 4px;
   margin-bottom: 20px;
   border: 1px solid #d00;
+  position: relative;
+  z-index: 2;
 }
 
 .checkout-content {
   display: flex;
   gap: 30px;
+  position: relative;
 }
 
 .checkout-main {
@@ -60,10 +70,15 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .checkout-sidebar {
   flex: 1;
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
 }
 
 .shipping-section h2, .payment-section h2 {
@@ -85,6 +100,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  position: relative;
 }
 
 .form-group label {
@@ -97,6 +113,9 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
+  background: white;
+  position: relative;
+  z-index: 1;
 }
 
 .form-group input:focus, .form-group select:focus {
@@ -125,6 +144,7 @@
   margin-top: 10px;
   width: 100%;
   font-weight: 600;
+  transition: background 0.2s;
 }
 
 .continue-button:hover, .back-button:hover {
@@ -136,6 +156,8 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 120px;
 }
 
 .order-summary-box h3 {
@@ -200,19 +222,33 @@
   padding-bottom: 15px;
   border-bottom: 1px solid #eee;
 }
-
 .item-image {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   background: #f7f7f7;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .item-image img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  color: #777;
+  font-size: 12px;
 }
 
 .item-details {
@@ -236,6 +272,8 @@
 
 .paypal-container {
   margin-top: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -246,5 +284,14 @@
   .form-row {
     flex-direction: column;
     gap: 15px;
+  }
+
+  .checkout-sidebar {
+    position: static;
+    margin-top: 30px;
+  }
+
+  .checkout-header {
+    position: static;
   }
 }

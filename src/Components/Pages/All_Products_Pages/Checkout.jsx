@@ -1,4 +1,4 @@
-import './checkout.css'
+import './checkout.css';
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
@@ -7,12 +7,23 @@ import { collection, doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { clearCart } from "../../Redux/cart/cart.actions";
 import { useNavigate } from "react-router-dom";
 import { FaLock, FaMapMarkerAlt, FaShoppingBag, FaCreditCard } from "react-icons/fa";
+import { allProducts } from "../../ProductsPage/allprooducts"; // Import allProducts
+
+// Define getProductDetails function
+const getProductDetails = (id) => {
+  for (const brand in allProducts.Brands) {
+    const product = allProducts.Brands[brand].find(p => p.id === id);
+    if (product) return product;
+  }
+  return null;
+};
 
 const Checkout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cartManager.products) || [];
   const userId = useSelector((state) => state.authManager.userdata?.uid);
+
   const [address, setAddress] = useState({
     line1: "",
     city: "",
@@ -48,7 +59,8 @@ const Checkout = () => {
       address.city &&
       address.state &&
       address.postalCode &&
-      address.country
+      address.country &&
+      email
     );
   };
 
@@ -57,12 +69,16 @@ const Checkout = () => {
       if (!userId) throw new Error("User not authenticated");
       if (cartItems.length === 0) throw new Error("Cart is empty");
 
-      const validatedItems = cartItems.map((item) => ({
-        id: item.id || `unknown-${Math.random().toString(36).substring(2)}`,
-        name: item.name || "Unknown Product",
-        quantity: item.quantity || 1,
-        price: parseFloat(item.price || 0),
-      }));
+      const validatedItems = cartItems.map((item) => {
+        const product = getProductDetails(item.id) || item; // Fetch product details
+        return {
+          id: item.id || `unknown-${Math.random().toString(36).substring(2)}`,
+          name: item.name || "Unknown Product",
+          quantity: item.quantity || 1,
+          price: parseFloat(item.price || 0),
+          image: item.image || item.image_link || product.image_link || null, // Normalize image property
+        };
+      });
 
       const orderId = doc(collection(db, "orders")).id;
       const orderData = {
@@ -102,7 +118,7 @@ const Checkout = () => {
     if (validateAddress()) {
       setActiveStep(2);
     } else {
-      setError("Please fill in all address fields");
+      setError("Please fill in all required fields");
     }
   };
 
@@ -136,7 +152,7 @@ const Checkout = () => {
                 <h2><FaMapMarkerAlt /> Shipping Address</h2>
                 <form className="address-form">
                   <div className="form-group">
-                    <label>Email</label>
+                    <label>Email *</label>
                     <input
                       type="email"
                       placeholder="Enter your email"
@@ -147,7 +163,7 @@ const Checkout = () => {
                   </div>
                   
                   <div className="form-group">
-                    <label>Address Line 1</label>
+                    <label>Address Line 1 *</label>
                     <input
                       type="text"
                       name="line1"
@@ -160,7 +176,7 @@ const Checkout = () => {
                   
                   <div className="form-row">
                     <div className="form-group">
-                      <label>City</label>
+                      <label>City *</label>
                       <input
                         type="text"
                         name="city"
@@ -171,7 +187,7 @@ const Checkout = () => {
                       />
                     </div>
                     <div className="form-group">
-                      <label>State/Province</label>
+                      <label>State/Province *</label>
                       <input
                         type="text"
                         name="state"
@@ -185,7 +201,7 @@ const Checkout = () => {
                   
                   <div className="form-row">
                     <div className="form-group">
-                      <label>Postal Code</label>
+                      <label>Postal Code *</label>
                       <input
                         type="text"
                         name="postalCode"
@@ -196,7 +212,7 @@ const Checkout = () => {
                       />
                     </div>
                     <div className="form-group">
-                      <label>Country</label>
+                      <label>Country *</label>
                       <select
                         name="country"
                         value={address.country}
@@ -207,7 +223,6 @@ const Checkout = () => {
                         <option value="US">United States</option>
                         <option value="CA">Canada</option>
                         <option value="AU">Australia</option>
-                        {/* Add more countries as needed */}
                       </select>
                     </div>
                   </div>
@@ -228,18 +243,30 @@ const Checkout = () => {
                   <h3><FaShoppingBag /> Order Summary</h3>
                   {cartItems.length > 0 ? (
                     <div className="order-items">
-                      {cartItems.map((item) => (
-                        <div key={item.id || Math.random()} className="order-item">
-                          <div className="item-image">
-                            {item.image && <img src={item.image} alt={item.name} />}
+                      {cartItems.map((item) => {
+                        const product = getProductDetails(item.id) || item;
+                        const imageSrc = item.image || item.image_link || product.image_link || "https://via.placeholder.com/80?text=No+Image";
+                        return (
+                          <div key={item.id || Math.random()} className="order-item">
+                            <div className="item-image">
+                              <img
+                                src={imageSrc}
+                                alt={item.name || "Product"}
+                                onError={(e) => {
+                                  console.error(`Image failed to load for product ${item.id}: ${imageSrc}`);
+                                  e.target.onerror = null;
+                                  e.target.src = "https://via.placeholder.com/80?text=No+Image";
+                                }}
+                              />
+                            </div>
+                            <div className="item-details">
+                              <p className="item-name">{item.name || "Unknown Product"}</p>
+                              <p className="item-quantity">Quantity: {item.quantity || 1}</p>
+                              <p className="item-price">£{(parseFloat(item.price || 0) * (item.quantity || 1)).toFixed(2)}</p>
+                            </div>
                           </div>
-                          <div className="item-details">
-                            <p className="item-name">{item.name || "Unknown Product"}</p>
-                            <p className="item-quantity">Quantity: {item.quantity || 1}</p>
-                            <p className="item-price">£{(parseFloat(item.price || 0) * (item.quantity || 1)).toFixed(2)}</p>
-                          </div>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   ) : (
                     <p>Cart is empty.</p>
@@ -352,4 +379,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-

@@ -130,7 +130,7 @@ export const allProducts = {
         brand: "Country Range",
         category: "Jams & Preserves",
         price: "21.99",
-        image_link: "https://i.imgur.com/jam2.jpg",
+        image_link: "https://i.imgur.com/vkaT2sI.png",
         description: "Spiced eggo jam",
         dietary: ["Vegetarian"],
         packageType: "Portion packs"
@@ -317,7 +317,7 @@ export const allProducts = {
       name: "Oat So Simple",
       brand: "Quaker",
       category: "Breakfast",
-      price: "",
+      price: "14.99",
       image_link: "https://i.imgur.com/Qb9EbVk.jpg",
       description: "Quick and easy instant oats breakfast cereal.",
       dietary: ["Vegan"],
@@ -409,36 +409,33 @@ export const allProducts = {
     } ,
         {
       id: "CF05",
-      name: "Fruitpack Peach & Pearl in Juice Pets - 181x11.5g",
+      name: "Fruitypot Peach & Pear in Juice Pets - 181x11.5g",
       brand: "",
       category: "Fruits & Veg",
       price: "28.99",
-      image_link: "https://i.imgur.com/fruit1.jpg",
-      description: "Peach and pearl fruit in juice",
+      image_link: "https://i.imgur.com/Q9MQJvY.jpg",
+      description: "Peach and pear fruit in juice",
       dietary: ["Vegan", "Fruit"],
       packageType: "Packs"
     },
     {
       id: "CF06",
-      name: "Fruitpack Mountain Segments in July Pots - 181x12kg",
+      name: "Fruitypot Orange Mountain Segments in July Pots - 181x12kg",
       brand: "",
       category: "Fruits & Veg",
       price: "32.99",
-      image_link: "https://i.imgur.com/fruit2.jpg",
+      image_link: "https://i.imgur.com/o38AQvq.jpg",
       description: "Mountain fruit segments in pots",
       dietary: ["Vegan", "Fruit"],
       packageType: "Pots"
     },
     {
       id: "CF07",
-      name: "Fruitpack Pineapple in Juice Pets - 18 x 11.5g",
+      name: "Fruitypot Pineapple in Juice Pets - 18 x 11.5g",
       brand: "",
       category: "Fruits & Veg",
       price: "29.99",
-      image_link: "https://i.imgur.com/fruit3.jpg",
-      description: "Pineapple in juice",
-      dietary: ["Vegan", "Fruit"],
-      packageType: "Pets"
+      image_link: "https://i.imgur.com/YfNMNTc.jpg"
     }
   ],
   
@@ -533,12 +530,12 @@ export const allProducts = {
     },
         {
       id: "NS01",
-      name: "Worpuckle Hair Hair Red Catering Kitchen Mole",
+      name: "Hairnet Catering Kitchen Mole",
       brand: "",
       category: "National Safety",
       price: "15.99",
-      image_link: "https://i.imgur.com/safety1.jpg",
-      description: "Worpuckle Hair Hair Red Catering Kitchen Mole",
+      image_link: "https://i.imgur.com/qAY79TV.jpg",
+      description: "Worpuckle  Hair Red Catering Kitchen Mole",
       dietary: [],
       packageType: "Pcs"
     },
@@ -548,7 +545,7 @@ export const allProducts = {
       brand: "",
       category: "National Safety",
       price: "12.99",
-      image_link: "https://i.imgur.com/safety2.jpg",
+      image_link: "https://i.imgur.com/3If16uC.jpg",
       description: "DISPOSABLE BEARD MET (DOPK!). Blue Net",
       dietary: [],
       packageType: "Pcs"
@@ -739,48 +736,37 @@ export const allProducts = {
     },
     {
       id: "WB03",
-      name: "200x Honey Grey Cleaner Fan Lines 18 x 22 x 28",
+      name: "200x Green Bags",
       brand: "",
       category: "Waste Bins & Dualities",
       price: "24.99",
-      image_link: "https://i.imgur.com/bins1.jpg",
+      image_link: "https://i.imgur.com/TKFsqz9.jpg",
       description: "200 x Medium Duty Green Backs 182x25px -Green",
       dietary: [],
       packageType: "Pcs"
     },
     {
       id: "WB04",
-      name: "200x Wash Kinks Garbage Bags",
+      name: "200x Black Garbage Bags",
       brand: "",
       category: "Waste Bins & Dualities",
       price: "19.99",
-      image_link: "https://i.imgur.com/bags2.jpg",
+      image_link: "https://i.imgur.com/FA4Bem1.jpg",
       description: "Wash kinks garbage bags",
       dietary: [],
       packageType: "Bags"
     },
     {
       id: "WB05",
-      name: "200x Insight And Dust Tilt 15 x 23 x 38 inch",
+      name: "200x Red Bags 15 x 23 x 38 inch",
       brand: "",
       category: "Waste Bins & Dualities",
       price: "21.99",
-      image_link: "https://i.imgur.com/bins2.jpg",
+      image_link: "https://i.imgur.com/EdxDGio.jpg",
       description: "Insight and dust tilt bags",
       dietary: [],
       packageType: "Pcs"
     },
-    {
-      id: "WB06",
-      name: "White Barber Garbage Bags",
-      brand: "",
-      category: "Waste Bins & Dualities",
-      price: "17.99",
-      image_link: "https://i.imgur.com/bags3.jpg",
-      description: "White barber garbage bags",
-      dietary: [],
-      packageType: "Bags"
-    }
   ],
   
   "Bakery": [
@@ -862,11 +848,11 @@ export const allProducts = {
   "Jams & Preserves": [
     {
       id: "JR01",
-      name: "Country Rings Assorted Jam Perfects 100 x 20g - Mixed Deficient",
+      name: "Country Range Assorted Jam Perfects 100 x 20g - Mixed Deficient",
       brand: "Country Range",
       category: "Jams & Preserves",
       price: "22.99",
-      image_link: "https://i.imgur.com/jam1.jpg",
+      image_link: "https://i.imgur.com/vC1RTT7.jpg",
       description: "Assorted jam perfects in mixed flavors",
       dietary: ["Vegetarian"],
       packageType: "Portion packs"
@@ -877,7 +863,7 @@ export const allProducts = {
       brand: "Country Range",
       category: "Jams & Preserves",
       price: "21.99",
-      image_link: "https://i.imgur.com/jam2.jpg",
+      image_link: "https://i.imgur.com/vkaT2sI.png",
       description: "Spiced eggo jam",
       dietary: ["Vegetarian"],
       packageType: "Portion packs"
@@ -902,12 +888,12 @@ export const allProducts = {
   "National Safety": [
     {
       id: "NS01",
-      name: "Worpuckle Hair Hair Red Catering Kitchen Mole",
+      name: "Hairnet Catering Kitchen Mole",
       brand: "",
       category: "National Safety",
       price: "15.99",
-      image_link: "https://i.imgur.com/safety1.jpg",
-      description: "Worpuckle Hair Hair Red Catering Kitchen Mole",
+      image_link: "https://i.imgur.com/qAY79TV.jpg",
+      description: "Hair Red Catering Kitchen Mole",
       dietary: [],
       packageType: "Pcs"
     },
@@ -917,7 +903,7 @@ export const allProducts = {
       brand: "",
       category: "National Safety",
       price: "12.99",
-      image_link: "https://i.imgur.com/safety2.jpg",
+      image_link: "https://i.imgur.com/3If16uC.jpg",
       description: "DISPOSABLE BEARD MET (DOPK!). Blue Net",
       dietary: [],
       packageType: "Pcs"
