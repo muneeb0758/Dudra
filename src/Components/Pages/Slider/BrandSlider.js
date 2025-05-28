@@ -38,6 +38,7 @@ const BrandSlider = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: Math.min(2, packagingProducts.length),
+
         },
       },
       {

@@ -111,6 +111,7 @@ const Home = () => {
             </Link>
           ))}
         </Flex>
+
       </Box>
 
       {/* **********************************************************Missed Black Friday************************************** */}
@@ -148,6 +149,7 @@ const Home = () => {
             </Box>
           ))}
         </Flex>
+
       </Box>
 
       {/* **********************************************************What People Are Buying Right Now************************************** */}
@@ -306,6 +308,7 @@ const Home = () => {
             }}
           >
             <Image w={"120%"} h='100%' src='https://i.imgur.com/ntye4EU.jpg' alt='brand-feature' />
+
           </Box>
           <Box w={['100%', '100%', '65%']}>
             <BrandSlider />
@@ -347,6 +350,7 @@ const Home = () => {
                 transform: 'translateY(-3px)'
               }}
             />
+
           </Link>
         </Box>
       </Center>

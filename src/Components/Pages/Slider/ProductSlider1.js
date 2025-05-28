@@ -37,6 +37,7 @@ class ProductSlider1 extends Component {
     super(props);
     this.state = {
       slides: getRandomProducts(9), // Fetch 9 random products from allProducts
+
     };
   }
 

@@ -13,6 +13,7 @@ const SingleProduct = (props) => {
 
     const addDefault = (e) => {
         e.target.src = "https://via.placeholder.com/300x300?text=Product+Image";
+
         e.target.error = null;
     }
 
@@ -84,6 +85,7 @@ const SingleProduct = (props) => {
                         }}
                     />
                 </Box>
+
 
                 {/* Product Title */}
                 <Text 
