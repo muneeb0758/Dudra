@@ -1,5 +1,5 @@
 import { loginStart, loginSuccess, loginFailure, logout } from './auth.reducer';
-import { auth, signInWithEmailAndPassword, signInWithPopup, googleProvider, createUserWithEmailAndPassword, signOut } from '../../firebase';
+import { auth, signInWithEmailAndPassword, signInWithPopup, googleProvider, createUserWithEmailAndPassword, signOut } from '../../Pages/firebase';
 
 export const userLogin = (email, password) => async (dispatch) => {
   dispatch(loginStart());

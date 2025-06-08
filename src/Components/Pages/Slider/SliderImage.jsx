@@ -6,7 +6,7 @@ const SliderImage = () => {
     { url: "https://i.imgur.com/fLovcfe.jpg", title: "boat" },
     { url: "https://i.imgur.com/tB4DOPs.jpg", title: "dudrabanner" },
     { url: "https://i.imgur.com/n7UPT01.png", title: "city" },
-    { url: "https://i.imgur.com/5YnP6z2.png", title: "forest" },
+    { url: "https://i.imgur.com/VyswD2n.jpg", title: "forest" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

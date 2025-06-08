@@ -2,7 +2,7 @@ import './checkout.css';
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { db } from "../../firebase";
+import { db } from '../firebase';
 import { collection, doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { clearCart } from "../../Redux/cart/cart.actions";
 import { useNavigate } from "react-router-dom";

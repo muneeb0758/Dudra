@@ -5,7 +5,7 @@ import Navbar from "./Components/Pages/Navbar.jsx";
 import AllRoutes from "./Components/Roouters/AllRoutes.jsx";
 import { useDispatch } from 'react-redux';
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './Components/firebase'; // Correct path based on your structure
+import { auth } from "./Components/Pages/firebase.js";
 import { loginSuccess } from './Components/Redux/auth/auth.reducer'; // Corrected import
 
 function App() {

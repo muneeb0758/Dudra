@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { db } from "./firebase";
+import { db } from "./Pages/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 const OrderConfirmation = () => {
